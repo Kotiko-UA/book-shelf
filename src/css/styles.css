@@ -4,9 +4,15 @@
   | default @import url()
   |============================
 */
+@import url('../../node_modules/modern-normalize/modern-normalize.css');
+
+@import url('./fonts.css');
+
 @import url('./reset.css');
 /*------------------HEADER--------------*/
 @import url('./header.css');
-:root  {
+:root {
+}
 
+:root {
 }
