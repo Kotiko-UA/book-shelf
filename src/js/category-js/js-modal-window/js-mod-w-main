@@ -1,0 +1,54 @@
+
+
+const listBook = document.querySelector('.js-list-book');  //.js-list-book - клас для ul
+listBook.addEventListener('click', handlerClickOpenModal);
+
+function handlerClickOpenModal(evt) {
+    const bookItem = evt.target.closest('.js-book-item');  //js-book-item  - клас для li
+    if (!bookItem) {   // або (evt.target === evt.currentarget)
+        return;
+            } else {
+        serviceBooks()
+            .then(response => {
+                console.log(response);
+                console.log(bookModalMarkup(response.data))
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    } 
+}
+
+
+
+async function serviceBooks() {
+    const BASE_URL = 'https://books-backend.p.goit.global/books/643282b1e85766588626a0dc';
+    const response = await axios.get(`${BASE_URL}`);
+    console.log(response);
+    return response;
+}
+
+
+
+// async function serviceBooks() {
+//     const BASE_URL = 'https://books-backend.p.goit.global/books';
+//     const { id } = bookItem.dataset; // або evt.target.dataset
+//     const response = await axios.get(`${BASE_URL}${id}`);
+//     console.log(response);
+//     return response;
+// }
+
+
+
+function bookModalMarkup(arr) {
+    return arr.map(({ book_image, list_name, author, description, }) => `
+    <div>
+        <img src="${book_image}" alt="" />
+        <h2>${list_name}</h2>
+        <p>${author}</p>
+        <p>${description}</p>
+        <button>ADD</button>
+      </div>`)
+        .join('')
+
+}
