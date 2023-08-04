@@ -1,25 +1,27 @@
 
 
-const listBook = document.querySelector('.js-list-book');  //.js-list-book - клас для ul
-listBook.addEventListener('click', handlerClickOpenModal);
+//    const elements = {
+//         categoryList: document.querySelector(".js-category-list"),
+//         books_showcase: document.querySelector(".books-showcase")
+//     }
 
-function handlerClickOpenModal(evt) {
-    const bookItem = evt.target.closest('.js-book-item');  //js-book-item  - клас для li
-    if (!bookItem) {   // або (evt.target === evt.currentarget)
-        return;
-            } else {
-        serviceBooks()
-            .then(response => {
-                console.log(response);
-                console.log(bookModalMarkup(response.data))
-            })
-            .catch(err => {
-                console.log(err);
-            })
-    } 
-}
+elements.books_showcase.addEventListener('click', handlerClickOpenModal);
 
-
+// function handlerClickOpenModal(evt) {
+//     const bookItem = evt.target.closest('.js-book-item');  //js-book-item  - клас для li
+//     if (!bookItem) {   // або (evt.target === evt.currentarget)
+//         return;
+//             } else {
+//         serviceBooks()
+//             .then(response => {
+//                 console.log(response);
+//                 console.log(bookModalMarkup(response.data))
+//             })
+//             .catch(err => {
+//                 console.log(err);
+//             })
+//     } 
+// }
 
 async function serviceBooks() {
     const BASE_URL = 'https://books-backend.p.goit.global/books/';
@@ -28,7 +30,6 @@ async function serviceBooks() {
     console.log(response);
     return response;
 }
-
 
 function bookModalMarkup({_id, book_image, list_name, author, description}) {
    const arr = `<div>
