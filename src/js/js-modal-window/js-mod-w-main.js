@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as basicLightbox from 'basiclightbox';
+import 'basiclightbox/dist/basicLightbox.min.css'
 
 
 const elements = {
@@ -8,6 +9,7 @@ const elements = {
 }
 
 elements.books_showcase.addEventListener('click', handlerClickOpenModal);
+
 
 async function handlerClickOpenModal(evt) {
   const bookItem = evt.target.closest('.js-book-item');
