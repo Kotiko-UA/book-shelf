@@ -1,4 +1,6 @@
 import axios from 'axios';
+import * as basicLightbox from 'basiclightbox';
+
 
 const elements = {
     categoryList: document.querySelector(".js-category-list"),
@@ -7,52 +9,41 @@ const elements = {
 
 elements.books_showcase.addEventListener('click', handlerClickOpenModal);
 
-function handlerClickOpenModal(evt) {
-  const bookItem = evt.target.closest('.js-book-item'); //js-book-item  - клас для li
-  if (!bookItem) {     // або (evt.target === evt.currentarget)
+async function handlerClickOpenModal(evt) {
+  const bookItem = evt.target.closest('.js-book-item');
+  if (!bookItem) {
     return;
   } else {
     const { id } = bookItem.dataset;
-    console.log(id);
-      serviceBooks()
-        .then(response => {
-      console.log(response);
-          bookModalMarkup(response.data);
-        })
-        .catch(err => {
-          console.log(err);
-        });
+    try {
+      const bookData = await serviceBooks(id);
+      const modalMarkup = bookModalMarkup(bookData);
+      openModalWithContent(modalMarkup);
+    } catch (error) {
+      console.error(error);
     }
   }
+}
+
+function openModalWithContent(content) {
+  const modal = basicLightbox.create(content);
+  modal.show();
+}
 
 
 async function serviceBooks(id) {
-    const BASE_URL = 'https://books-backend.p.goit.global/books';
-    const response = await axios.get(`${BASE_URL}${id}`);
-    console.log(response);
-    return response;
+  const BASE_URL = 'https://books-backend.p.goit.global/books/';
+  const response = await axios.get(`${BASE_URL}${id}`);
+  return response.data; // Повертайте тільки дані з response, а не увесь об'єкт response
 }
-
 
 function bookModalMarkup({ book_image, list_name, author, description }) {
-  const arr = `<div>
-        <img src="${book_image}" alt="" />
-        <h2>${list_name}</h2>
-        <p>${author}</p>
-        <p>${description}</p>
-        <button>ADD</button>
-      </div>`;
-  console.log(arr);
-  return arr;
+  const markup = `<div>
+    <img src="${book_image}" alt="" />
+    <h2>${list_name}</h2>
+    <p>${author}</p>
+    <p>${description}</p>
+    <button>ADD</button>
+  </div>`;
+  return markup;
 }
-
-
-
-// async function serviceBooks() {
-//   const BASE_URL = 'https://books-backend.p.goit.global/books/';
-//   const id = '643282b1e85766588626a0dc';
-//   const response = await axios.get(`${BASE_URL}${id}`);
-//   //   console.log(response);
-//   return response;
-// }
-
