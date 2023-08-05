@@ -28,35 +28,26 @@
     margin-bottom: 40px;
 }
 
-.js-category-item, .category-paragraf{
+.js-category-item{
     margin-bottom: 24px;
     font-size: 16;
     line-height: 1,12;
-    letter-spacing: 0,02;
+    letter-spacing: -0,02;
 }
 
 .js-category-item:last-child{
     margin-bottom: 0;
 }
 
-.js-category-item:hover{
+.js-category-item:hover,
+.category-hover{
     color:var(--violet);
     text-transform: uppercase;
     font-weight: bold;
     font-size: 16;
     line-height: 1, 12;
-    letter-spacing: 0, 02;
+    letter-spacing: -0, 02;
 }
-
-.category-paragraf:hover{
-    color: var(--violet);
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 16;
-    line-height: 1, 12;
-    letter-spacing: 0, 02;
-}
-
 
 
 /* div 'support-ukr' for correct css drawing---*/
@@ -69,11 +60,11 @@
 }
 
 
-.bestSellers-title{
+.titleCategory{
     font-weight: bold;
     font-size: 32;
     line-height: 1,18;
-    letter-spacing: 0, 04;
+    letter-spacing: -0, 04;
     margin-top: 40px;
     margin-bottom: 40px;
 }
@@ -81,6 +72,15 @@
 .last-word-in-catName{
 color:var(--violet);
 }
+
+.categoryName{
+    font-weight: regular;
+    font-size: 14;
+    line-height: 1, 18;
+    letter-spacing: 0, 03;
+    margin-bottom: 18px;
+}
+
 
 
 /*-------tab-------*/

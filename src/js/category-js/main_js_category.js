@@ -26,7 +26,7 @@ function fetchCategories() {
 
 
 function createCategoriesListMarkup(arr) {
-    return  `<p class="category-paragraf">All categories</p>`+arr.map(({list_name}) => `
+    return  `<li class="js-category-item category-hover" name="allCategories" >All categories</li>`+arr.map(({list_name}) => `
     <li class="js-category-item">${list_name}</li>
     `).sort((a, b) => a.localeCompare(b))
         .join("");
@@ -61,8 +61,7 @@ function createBooksMarkup(arr) {
 //а нужно при клике на All cat.
 
 function createBestSellersMarkup(arr) {
-    //if (evt.target.textContent = arr.firstChild){
-   return `<h1 class="bestSellers-title">Best Sellers <span class="last-word-in-catName">Books</span></h1>` + arr.map(({ list_name, books }) => `
+   return `<h1 class="titleCategory">Best Sellers <span class="last-word-in-catName">Books</span></h1>` + arr.map(({ list_name, books }) => `
     <h2 class="categoryName">${list_name}</h2> 
 <div>
     <ul>`+ createBooksMarkup(books)+ `
@@ -106,7 +105,7 @@ function fetchCategoryBooks(categoryName) {
 
 
 function getCategoryMarkup(arr, categoryName) {
-    return `<h1>${categoryName}</h1>` + 
+    return `<h2 class="categoryName">${categoryName}</h2>` + 
 `<div>
     <ul>`+ createBooksMarkup(arr)+ `</ul>
 </div>`
@@ -117,5 +116,12 @@ elements.categoryList.addEventListener("click", clickOnCategoryList);
 
 function clickOnCategoryList(event) {
     event.preventDefault();
-    getCategoryBooks(event.target.textContent);
+    event.currentTarget.firstChild.classList.remove('category-hover');
+    
+    if (event.target.getAttribute("name") === "allCategories") {
+        getBestSellersList()
+    } else {
+        getCategoryBooks(event.target.textContent);
+    }
+    
 }
