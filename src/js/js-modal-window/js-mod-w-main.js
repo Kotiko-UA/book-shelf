@@ -24,11 +24,21 @@ async function handlerClickOpenModal(evt) {
       const bookData = await serviceBooks(id);
       const modalMarkup = bookModalMarkup(bookData);
       openModalWithContent(modalMarkup);
-       const modalWindow = document.querySelector('.modal-window-conteiner');
+const modalWindow = document.querySelector('.modal-window-conteiner');
       text = modalWindow.querySelector('.added-modal-window');
-      btn = modalWindow.querySelector('.add-delete-book')
-      text.classList.add('after');
-      modalWindow.addEventListener('click', handlerAddToBascet);
+      btn = modalWindow.querySelector('.add-delete-book');
+  // Перевірити, чи книга вже додана до списку покупок
+      const arrForBAcket = JSON.parse(localStorage.getItem('KEY')) ?? [];
+      const bookId = bookData._id;
+      if (checkIfBookIsAdded(bookId, arrForBAcket)) {
+        text.classList.remove('after');
+        btn.textContent = 'remove from the shopping list';
+      } else {
+        text.classList.add('after');
+        btn.textContent = 'ADD TO SHOPPING LIST';
+      }
+
+      modalWindow.addEventListener('click', handlerAddToBascet);;
     } catch (error) {
       console.error(error);
     }

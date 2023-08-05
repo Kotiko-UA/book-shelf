@@ -70,6 +70,10 @@
     align-items: center;
 }
 
+.after {
+    display: none;
+}
+
 @media screen and (min-width: 428px) {
     .modal-window-conteiner {
         width: 579px;
