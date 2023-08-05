@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css'
@@ -9,7 +10,9 @@ const elements = {
 }
 
 elements.books_showcase.addEventListener('click', handlerClickOpenModal);
-
+let text;
+let btn; 
+let modalWindow;
 
 async function handlerClickOpenModal(evt) {
   const bookItem = evt.target.closest('.js-book-item');
@@ -22,7 +25,8 @@ async function handlerClickOpenModal(evt) {
       const modalMarkup = bookModalMarkup(bookData);
       openModalWithContent(modalMarkup);
        const modalWindow = document.querySelector('.modal-window-conteiner');
-      const text = modalWindow.querySelector('.added-modal-window');
+      text = modalWindow.querySelector('.added-modal-window');
+      btn = modalWindow.querySelector('.add-delete-book')
       text.classList.add('after');
       modalWindow.addEventListener('click', handlerAddToBascet);
     } catch (error) {
@@ -88,16 +92,25 @@ function handlerAddToBascet(event) {
   if (!event.target.classList.contains('add-delete-book')) {
     return;
   }
-  console.log(event.target);
+
+  const bookId = event.target.closest('.modal-window-conteiner').dataset.id;
   const arrForBAcket = JSON.parse(localStorage.getItem('KEY')) ?? [];
-  const { id } = event.target.closest('.modal-window-conteiner').dataset;
-  console.log(id);
-  if (_id === id) {
-    arrForBAcket.push(arr);
+
+  if (checkIfBookIsAdded(bookId, arrForBAcket)) {
+    // Видалити книгу зі списку покупок
+    const updatedList = arrForBAcket.filter((item) => item.id !== bookId);
+    localStorage.setItem('KEY', JSON.stringify(updatedList));
+    text.classList.add('after');
+    btn.textContent = 'ADD TO SHOPPING LIST';
+  } else {
+    // Додати книгу до списку покупок
+    arrForBAcket.push({ id: bookId });
     localStorage.setItem('KEY', JSON.stringify(arrForBAcket));
-    console.log(JSON.parse(localStorage.getItem('KEY')));
     text.classList.remove('after');
-    btn.textContent = 'Remove from the shopping list';
-    modalWindow.removeEventListener('click', handlerAddToBascet);
+    btn.textContent = 'remove from the shopping list';
   }
+}
+
+function checkIfBookIsAdded(bookId, shoppingList) {
+  return shoppingList.some((item) => item.id === bookId);
 }
