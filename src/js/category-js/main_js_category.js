@@ -3,7 +3,8 @@ import Notiflix from 'notiflix';
 
 const elements = {
     categoryList: document.querySelector(".js-category-list"),
-    books_showcase: document.querySelector(".books-showcase")
+    books_showcase: document.querySelector(".books-showcase"),
+    btnSeeMore: document.querySelector(".btnSeeMore")
 }
 
 
@@ -27,10 +28,12 @@ function fetchCategories() {
 function createCategoriesListMarkup(arr) {
     return arr.map(({list_name}) => `
     <li>${list_name}</li>
-    `).join("");
+    `).sort((a, b) => a.localeCompare(b))
+        .join("");
+    
 }
 
-function categoryListRequest() {
+function getCategoryList() {
     fetchCategories()
     .then(data => {
         elements.categoryList.innerHTML=createCategoriesListMarkup(data);
@@ -40,42 +43,77 @@ function categoryListRequest() {
     });
 }
 
-categoryListRequest();
+getCategoryList();
 
 
-function booksMarkup(arr) {
-    return arr.map(({_id, book_image, list_name, author}) => `
+function createBooksMarkup(arr) {
+    return arr.map(({_id, book_image, title, author}) => `
    <li data-id = '${_id}' class = 'js-book-item'>
         <img src="${book_image}" alt="" />
+        <p>${title}</p>
         <p>${author}</p>
       </li>`)
         .join('')
 }
 
-function categoryMarkup(arr) {
-    return arr.map(({ list_name, books }) => `
-      <h2>${list_name}</h2> 
+function createBestSellersMarkup(arr) {
+    return `<h1>Best Sellers Books</h1>` + arr.map(({ list_name, books }) => `
+    <h2>${list_name}</h2> 
 <div>
-    <ul>`+ booksMarkup(books)+ `
+    <ul>`+ createBooksMarkup(books)+ `
     </ul>
-    <button type="button">See more</button>
+    <button type="button" class="btnSeeMore">See more</button>
 </div>`)
         .join('')
 }
 
-function bestSellersListRequest() {
+function getBestSellersList() {
     fetchBestSellers()
     .then(data => {
-        elements.books_showcase.innerHTML=categoryMarkup(data);
+        elements.books_showcase.innerHTML=createBestSellersMarkup(data);
     })
     .catch((err) => {
         console.log(err)
     });
 }
 
-bestSellersListRequest()
+getBestSellersList()
 
 
 function fetchBestSellers() {
     return fetchData("/top-books");
+}
+
+
+function getCategoryBooks(categoryName) {
+    fetchCategoryBooks(categoryName)
+    .then(data => {
+        elements.books_showcase.innerHTML=getCategoryMarkup(data, categoryName);
+    })
+    .catch((err) => {
+        console.log(err)
+    });
+}
+
+//getCategoryBooks("Hardcover Nonfiction")
+
+
+function fetchCategoryBooks(categoryName) {
+    return fetchData(`/category?category=${categoryName}`);
+}
+
+
+function getCategoryMarkup(arr, categoryName) {
+    return `<h1>${categoryName}</h1>` + 
+`<div>
+    <ul>`+ createBooksMarkup(arr)+ `</ul>
+</div>`
+}
+
+
+elements.categoryList.addEventListener("click", clickOnCategoryList);
+
+function clickOnCategoryList(event) {
+    event.preventDefault();
+    getCategoryBooks(event.target.textContent);
 }
