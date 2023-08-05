@@ -1,0 +1,66 @@
+.modal-window-conteiner {
+    width: 335px;
+    height: 100%;
+    border-radius: 18px;
+    border: 2px solid #111;
+    background: #FFF;
+}
+
+.mw-content-conteiner {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+.book-modal-window {
+    width: 287px;
+    height: 408px;
+    padding-top: 40px;
+}
+
+.book-title-modal {
+    color: var(--black);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.64px;
+    margin-top: 14px;
+    margin-bottom: 4px;
+}
+
+.author-modal-window {
+    color: #B4AFAF;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: -0.48px;
+    margin-bottom: 18px;
+}
+
+.desc-modal-window {
+    color: var(--black);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.28;
+    letter-spacing: -0.56px;
+    margin-bottom: 14px;
+}
+
+.add-btn-modal-window {
+    border-radius: 40px;
+    border: 2px solid #4F2EE8;
+    display: inline-flex;
+    padding: 14px 28px;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--black);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    margin: 40px 38px;
+}

@@ -39,13 +39,15 @@ async function serviceBooks(id) {
   return response.data; // Повертайте тільки дані з response, а не увесь об'єкт response
 }
 
-function bookModalMarkup({ book_image, list_name, author, description }) {
-  const markup = `<div>
-    <img src="${book_image}" alt="" />
-    <h2>${list_name}</h2>
-    <p>${author}</p>
-    <p>${description}</p>
-    <button>ADD</button>
-  </div>`;
+function bookModalMarkup({ book_image, list_name, author, description } = {}) {
+  const markup = `<div class = "modal-window-conteiner">
+   <div class = "mw-content-conteiner">
+    <img class = "book-modal-window" src="${book_image}" alt="" />
+    <h2 class = "book-title-modal">${list_name}</h2>
+    <p class = "author-modal-window">${author}</p>
+    <p class = "desc-modal-window">${description}</p>
+    <button class = "add-btn-modal-window">ADD TO SHOPPING LIST</button>
+  </div></div>
+ `;
   return markup;
 }
