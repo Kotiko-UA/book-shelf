@@ -10,7 +10,6 @@ const elements = {
 
 elements.books_showcase.addEventListener('click', handlerClickOpenModal);
 
-
 async function handlerClickOpenModal(evt) {
   const bookItem = evt.target.closest('.js-book-item');
   if (!bookItem) {
@@ -27,19 +26,13 @@ async function handlerClickOpenModal(evt) {
   }
 }
 
-function openModalWithContent(content) {
-  const modal = basicLightbox.create(content);
-  modal.show();
-}
-
-
 async function serviceBooks(id) {
   const BASE_URL = 'https://books-backend.p.goit.global/books/';
   const response = await axios.get(`${BASE_URL}${id}`);
   return response.data; // Повертайте тільки дані з response, а не увесь об'єкт response
 }
 
-function bookModalMarkup({ book_image, list_name, author, description } = {}) {
+function bookModalMarkup({ book_image, list_name, author, description} = {}) {
   const markup = `
   <div class = "modal-window-conteiner">
     <div class = "mw-content-conteiner">
@@ -56,4 +49,9 @@ function bookModalMarkup({ book_image, list_name, author, description } = {}) {
   </div>
  `;
   return markup;
+}
+
+function openModalWithContent(content) {
+  const modal = basicLightbox.create(content);
+  modal.show();
 }
