@@ -1,3 +1,6 @@
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+
 const bookList = document.querySelector('.shopping-list');
 
 function generateMovieHTML(bookData) {
@@ -37,22 +40,19 @@ function generateMovieHTML(bookData) {
     </div>
     </div>
   </div>
-</li> `
-  }
+</li> `;
+}
 
-  const books = [
-    {
-      image: 'Example',
-      title: 'Example TITLE',
-      genre: 'Example GENRE',
-      description: 'Example DESC',
-      author: 'Example AUTHOR',
-    },
-  ];
+const books = [
+  {
+    image: 'Example',
+    title: 'Example TITLE',
+    genre: 'Example GENRE',
+    description: 'Example DESC',
+    author: 'Example AUTHOR',
+  },
+];
 
-  books.forEach(book => {
-    bookList.insertAdjacentHTML('beforeend', generateMovieHTML(book));
-  });
-
-
-
+books.forEach(book => {
+  bookList.insertAdjacentHTML('beforeend', generateMovieHTML(book));
+});
