@@ -1,14 +1,15 @@
 import axios from 'axios';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css'
-import {elements} from "../category-js/main_js_category"
 
-// const elements = {
-//     categoryList: document.querySelector(".js-category-list"),
-//     books_showcase: document.querySelector(".books-showcase")
-// }
+
+const elements = {
+    categoryList: document.querySelector(".js-category-list"),
+    books_showcase: document.querySelector(".books-showcase")
+}
 
 elements.books_showcase.addEventListener('click', handlerClickOpenModal);
+
 
 async function handlerClickOpenModal(evt) {
   const bookItem = evt.target.closest('.js-book-item');
@@ -26,6 +27,12 @@ async function handlerClickOpenModal(evt) {
   }
 }
 
+function openModalWithContent(content) {
+  const modal = basicLightbox.create(content);
+  modal.show();
+}
+
+
 async function serviceBooks(id) {
   const BASE_URL = 'https://books-backend.p.goit.global/books/';
   const response = await axios.get(`${BASE_URL}${id}`);
@@ -36,10 +43,10 @@ function bookModalMarkup({ book_image, list_name, author, description} = {}) {
   const markup = `
   <div class = "modal-window-conteiner">
     <div class = "mw-content-conteiner">
-      <div>
+      <div class ="mw-image-conteiner">
         <img class = "book-img-modal-window" src="${book_image}" alt="" />
       </div>
-      <div>
+      <div class ="mw-data-conteiner">
         <h2 class = "book-title-modal">${list_name}</h2>
         <p class = "author-modal-window">${author}</p>
         <p class = "desc-modal-window">${description}</p>
@@ -49,9 +56,4 @@ function bookModalMarkup({ book_image, list_name, author, description} = {}) {
   </div>
  `;
   return markup;
-}
-
-function openModalWithContent(content) {
-  const modal = basicLightbox.create(content);
-  modal.show();
 }
