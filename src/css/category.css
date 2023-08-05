@@ -1,3 +1,107 @@
-.category-section{
-    display:flex;
+/*:root {
+    --black: #111111;
+    --gray: #202024;
+    --violet: #4f2ee8;
+    --yellow: #eac645;
+    --white: #ffffff;
+}*/
+
+/*-------mob---------*/
+
+.body {
+    background-color: #f6f6f6;
 }
+
+.category-container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.books-category{
+    width: 335px;
+    height: 228px;
+    overflow: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.js-category-item, .category-paragraf{
+    margin-bottom: 24px;
+    font-size: 16;
+    line-height: 1,12;
+    letter-spacing: 0,02;
+}
+
+.js-category-item:last-child{
+    margin-bottom: 0;
+}
+
+.js-category-item:hover{
+    color:var(--violet);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16;
+    line-height: 1, 12;
+    letter-spacing: 0, 02;
+}
+
+.category-paragraf:hover{
+    color: var(--violet);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16;
+    line-height: 1, 12;
+    letter-spacing: 0, 02;
+}
+
+
+
+/* div 'support-ukr' for correct css drawing---*/
+.support-ukr{
+    background-color: var(--violet);
+    width:335px;
+    height:352px;
+    border-radius: 16%;
+    text-align: center;
+}
+
+
+.bestSellers-title{
+    font-weight: bold;
+    font-size: 32;
+    line-height: 1,18;
+    letter-spacing: 0, 04;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.last-word-in-catName{
+color:var(--violet);
+}
+
+
+/*-------tab-------*/
+/*@media screen and (min-width: 768px) {
+    .container {
+        width: 768px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+/*
+
+
+
+
+/*--------desktop-------*/
+
+/*@media screen and (min-width: 1280px) {
+    .container {
+        width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+} */

@@ -26,8 +26,8 @@ function fetchCategories() {
 
 
 function createCategoriesListMarkup(arr) {
-    return arr.map(({list_name}) => `
-    <li>${list_name}</li>
+    return  `<p class="category-paragraf">All categories</p>`+arr.map(({list_name}) => `
+    <li class="js-category-item">${list_name}</li>
     `).sort((a, b) => a.localeCompare(b))
         .join("");
     
@@ -56,9 +56,14 @@ function createBooksMarkup(arr) {
         .join('')
 }
 
+//при клике на Alll categories не отрисовывается блок с Best Sellers 
+//(этот блок прорисовівается по умолчанию призагрузке страраницы), 
+//а нужно при клике на All cat.
+
 function createBestSellersMarkup(arr) {
-    return `<h1>Best Sellers Books</h1>` + arr.map(({ list_name, books }) => `
-    <h2>${list_name}</h2> 
+    //if (evt.target.textContent = arr.firstChild){
+   return `<h1 class="bestSellers-title">Best Sellers <span class="last-word-in-catName">Books</span></h1>` + arr.map(({ list_name, books }) => `
+    <h2 class="categoryName">${list_name}</h2> 
 <div>
     <ul>`+ createBooksMarkup(books)+ `
     </ul>
@@ -94,9 +99,6 @@ function getCategoryBooks(categoryName) {
         console.log(err)
     });
 }
-
-//getCategoryBooks("Hardcover Nonfiction")
-
 
 function fetchCategoryBooks(categoryName) {
     return fetchData(`/category?category=${categoryName}`);

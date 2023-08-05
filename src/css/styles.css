@@ -10,6 +10,7 @@
 
 @import url('./reset.css');
 @import url('./shopping-list.css');
+@import url('./category.css');
 
 :root {
   --black: #111111;
