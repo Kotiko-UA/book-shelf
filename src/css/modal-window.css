@@ -8,8 +8,6 @@
     margin: 0 auto;
 }
 
-.mw-content-conteiner {}
-
 .book-img-modal-window {
     width: 287px;
     height: 408px;
@@ -65,6 +63,12 @@
     margin-right: 32px;
 }
 
+.markets-list-modal-window {
+    display: flex;
+    gap: 20px;
+    height: 36px;
+    align-items: center;
+}
 
 @media screen and (min-width: 428px) {
     .modal-window-conteiner {
@@ -107,8 +111,6 @@
         margin-left: auto;
         margin-right: auto;
     }
-
-    .mw-image-conteiner {}
 
     .mw-data-conteiner {
         max-width: 279px;
