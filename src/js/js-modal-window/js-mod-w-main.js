@@ -1,47 +1,57 @@
 import axios from 'axios';
+import * as basicLightbox from 'basiclightbox';
+import 'basiclightbox/dist/basicLightbox.min.css'
+import {elements} from "../category-js/main_js_category"
+
+// const elements = {
+//     categoryList: document.querySelector(".js-category-list"),
+//     books_showcase: document.querySelector(".books-showcase")
+// }
 
 elements.books_showcase.addEventListener('click', handlerClickOpenModal);
 
-function handlerClickOpenModal(evt) {
-  const bookItem = evt.target.closest('.js-book-item'); //js-book-item  - клас для li
+async function handlerClickOpenModal(evt) {
+  const bookItem = evt.target.closest('.js-book-item');
   if (!bookItem) {
-    // або (evt.target === evt.currentarget)
     return;
   } else {
-    serviceBooks()
-      .then(response => {
-        bookModalMarkup(response.data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    const { id } = bookItem.dataset;
+    try {
+      const bookData = await serviceBooks(id);
+      const modalMarkup = bookModalMarkup(bookData);
+      openModalWithContent(modalMarkup);
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
 
-async function serviceBooks() {
+async function serviceBooks(id) {
   const BASE_URL = 'https://books-backend.p.goit.global/books/';
-  const id = '643282b1e85766588626a0dc';
   const response = await axios.get(`${BASE_URL}${id}`);
-  //   console.log(response);
-  return response;
+  return response.data; // Повертайте тільки дані з response, а не увесь об'єкт response
 }
 
-function bookModalMarkup({ book_image, list_name, author, description }) {
-  const arr = `<div>
-        <img src="${book_image}" alt="" />
-        <h2>${list_name}</h2>
-        <p>${author}</p>
-        <p>${description}</p>
-        <button>ADD</button>
-      </div>`;
-  console.log(arr);
-  return arr;
+function bookModalMarkup({ book_image, list_name, author, description} = {}) {
+  const markup = `
+  <div class = "modal-window-conteiner">
+    <div class = "mw-content-conteiner">
+      <div>
+        <img class = "book-img-modal-window" src="${book_image}" alt="" />
+      </div>
+      <div>
+        <h2 class = "book-title-modal">${list_name}</h2>
+        <p class = "author-modal-window">${author}</p>
+        <p class = "desc-modal-window">${description}</p>
+      </div>
+    </div>
+    <button class = "add-btn-modal-window">ADD TO SHOPPING LIST</button>
+  </div>
+ `;
+  return markup;
 }
 
-// async function serviceBooks() {
-//     const BASE_URL = 'https://books-backend.p.goit.global/books';
-//     const { id } = bookItem.dataset; // або evt.target.dataset
-//     const response = await axios.get(`${BASE_URL}${id}`);
-//     console.log(response);
-//     return response;
-// }
+function openModalWithContent(content) {
+  const modal = basicLightbox.create(content);
+  modal.show();
+}
