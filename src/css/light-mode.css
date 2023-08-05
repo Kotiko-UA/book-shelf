@@ -2,36 +2,19 @@
   transition: 1s;
 }
 .header {
-  display: flex;
-  height: 72px;
-  align-items: center;
-  border-radius: 0px 0px 8px 8px;
   border: 1.5px solid #111;
   background: #f3f3f3;
 }
-.logo {
-  color: #000;
-}
 
-.nav {
-  display: flex;
-}
-.nav-link {
+.nav-link-decor {
   color: 111;
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 24px;
-}
-
-.switch input {
-  display: none;
-}
 .nav-item {
   color: black;
+}
+.svg-cart {
+  fill: #111;
 }
 .slider.round {
   border-radius: 34px;
