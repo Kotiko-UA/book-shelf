@@ -4,18 +4,15 @@
     border-radius: 18px;
     border: 2px solid #111;
     background: #FFF;
-}
-
-.mw-content-conteiner {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 40px 24px;
     margin: 0 auto;
 }
 
-.book-modal-window {
+.mw-content-conteiner {}
+
+.book-img-modal-window {
     width: 287px;
     height: 408px;
-    padding-top: 40px;
 }
 
 .book-title-modal {
@@ -25,6 +22,7 @@
     font-weight: 700;
     line-height: 1.12;
     letter-spacing: -0.64px;
+    text-transform: uppercase;
     margin-top: 14px;
     margin-bottom: 4px;
 }
@@ -62,5 +60,52 @@
     line-height: 1.28;
     letter-spacing: -0.14px;
     text-transform: uppercase;
-    margin: 40px 38px;
+    margin-top: 40px;
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+
+@media screen and (min-width: 428px) {
+    .modal-window-conteiner {
+        width: 579px;
+        padding: 40px;
+    }
+
+    .mw-content-conteiner {
+        display: flex;
+        gap: 24px;
+
+    }
+
+    .book-img-modal-window {
+        width: 192px;
+        height: 281px;
+    }
+
+    .book-title-modal {
+        font-size: 24px;
+        line-height: 1.16;
+        letter-spacing: -0.96px;
+    }
+
+    .author-modal-window {
+        font-size: 14px;
+        line-height: 1.28;
+        letter-spacing: -0.56px;
+    }
+
+    .add-btn-modal-window {
+        display: flex;
+        width: 499px;
+        padding: 20px 143px;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        line-height: 1.33;
+        letter-spacing: -0.18px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
