@@ -1,12 +1,12 @@
 import axios from 'axios';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css'
+import {elements} from "../category-js/main_js_category"
 
-
-const elements = {
-    categoryList: document.querySelector(".js-category-list"),
-    books_showcase: document.querySelector(".books-showcase")
-}
+// const elements = {
+//     categoryList: document.querySelector(".js-category-list"),
+//     books_showcase: document.querySelector(".books-showcase")
+// }
 
 elements.books_showcase.addEventListener('click', handlerClickOpenModal);
 
