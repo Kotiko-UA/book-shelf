@@ -1,11 +1,12 @@
 .header {
-  justify-content: space-between;
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 72px;
+
   padding-left: 24px;
   padding-right: 24px;
-  align-items: center;
   border-radius: 0px 0px 8px 8px;
 }
 
@@ -15,13 +16,14 @@
 }
 .nav {
   display: flex;
+  align-items: center;
   gap: 76px;
 }
 
 .nav-list {
   display: flex;
-  align-items: end;
-  gap: 24px;
+  align-items: center;
+  gap: 8px;
 }
 .switch {
   position: relative;
@@ -29,19 +31,42 @@
   width: 40px;
   height: 20px;
 }
-.nav-link {
-  display: flex;
-  align-items: end;
-  gap: 4px;
-}
-.nav-link-decor {
+.home-page {
+  padding: 8px 16px;
+
+  background-color: var(--yellow);
+  border-radius: 36px;
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 18px; /* 128.571% */
+  font-weight: 700;
+  line-height: 18px;
   letter-spacing: -0.56px;
   text-transform: uppercase;
+}
+.shop-page {
+  display: flex;
+  align-items: end;
+  gap: 4px;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+
+  line-height: 18px;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+}
+.header-shop .shop-page {
+  padding: 8px 16px;
+  font-weight: 700;
+  background-color: var(--yellow);
+  border-radius: 36px;
+}
+.header-shop .home-page {
+  background-color: inherit;
+  font-weight: 500;
 }
 .switch input {
   display: none;
@@ -108,8 +133,8 @@ input:checked + .slider:before {
 .user-icon-hed {
   display: block;
   background-color: #fff;
-  width: 19px;
-  height: 19px;
+  width: 37px;
+  height: 37px;
   margin-right: 9px;
   padding: 9px 9px 9px 9px;
   border-radius: 50%;
@@ -201,4 +226,43 @@ input:checked + .slider:before {
 .tupe-out_active {
   transform: scaleY(1) translateY(0%);
   opacity: 1;
+}
+.burger-open-mob {
+  display: none;
+}
+/* ---------------------------------------------------------------------------- */
+@media screen and (min-width: 376px) and (max-width: 768px) {
+  .header {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .nav {
+    gap: 40px;
+  }
+  .nav-list {
+    gap: 0px;
+  }
+  .log-out-wrap {
+    right: 32px;
+  }
+  .burger-open-mob {
+    display: none;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 376px) {
+  .nav-list {
+    display: none;
+  }
+  .but-sing {
+    display: none;
+  }
+
+  .burger-open-mob {
+    display: block;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+  }
 }

@@ -1,15 +1,17 @@
 * {
-  transition: 1s;
+  transition: 0.5s;
 }
 .header {
   border: 1.5px solid #111;
   background: #f3f3f3;
 }
 
-.nav-link-decor {
-  color: 111;
+.shop-page {
+  color: #111;
 }
-
+.home-page {
+  color: #111;
+}
 .nav-item {
   color: black;
 }
