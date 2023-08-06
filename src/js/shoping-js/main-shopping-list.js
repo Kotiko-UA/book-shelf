@@ -53,6 +53,61 @@ function generateMovieHTML(bookData) {
   </div>
 </li> `;
 }
+///// пагинация не пробовал как работает \\\\\\\
+// прикрутить в файл и попробывать когда будет разметка возможно будет дублироваться код ///
+
+// const visiblePages = 3;
+
+// const paginBook = document.querySelector('.tui-pagination');
+
+// let bascet = Json.parse(localStorag.getItem('ключ локала'));
+
+// let itemsPerPage = 3;
+// let bookCounter = bascet.length;
+// let curPage = 1;
+
+// let pagination = getPagination(bookCounter, itemsPerPage);
+
+// pagination.on('beforeMove', event => {
+//   curPage = event.page;
+//   'функция рендара карточек с локала'(bascet, event.page);
+// });
+// 'функция рендара карточек с локала'(bascet, curPage);
+
+// function getPagination(totalItems, itemsPerPage) {
+//   const options = {
+//     totalItems: totalItems,
+//     itemsPerPage: itemsPerPage,
+//     visiblePages: visiblePages,
+//     centerAlign: true,
+//     firstItemClassName: 'pagination__first-item',
+//     lastItemClassName: 'pagination__last-item',
+//     prevButtonClassName: 'pagination__prev-btn',
+//     nextButtonClassName: 'pagination__next-btn',
+//     pageLinkClassName: 'pagination__page-link',
+//     activePageLinkClassName: 'pagination__page-link--active',
+//   };
+
+//   return new Pagination(paginBook, options);
+// }
+
+// function 'функция рендара карточек с локала'(data, page = 1) {
+//   const startIdx = (page - 1) * itemsPerPage;
+//   const endIdx = startIdx + itemsPerPage;
+//   let curData = data.slice(startIdx, endIdx);
+
+//     const markup = curData
+//       .map("разметка")
+
+/////   в функцию удаления по свгшке добавить/////////
+
+// const page = pagination.getCurrentPage();//
+
+//  когда пустая корзина скріть пагинацию///////
+
+// if (!bascet.length) {
+//     refs.paginBook.style.display = 'none';
+//   }
 
 /////////////приклад масив для тесту, надалі видалити
 // const books = [
