@@ -49,7 +49,7 @@ getCategoryList();
 function createBooksMarkup(arr) {
     return arr.map(({_id, book_image, title, author}) => `
    <li data-id = '${_id}' class = 'js-book-item'>
-        <img src="${book_image}" alt="" />
+        <img src="${book_image}" alt="${title}" class="img-category"/>
         <p>${title}</p>
         <p>${author}</p>
       </li>`)
@@ -68,6 +68,15 @@ function createBestSellersMarkup(arr) {
 </div>`)
         .join('')
 }
+
+function getMarkupForCategoryHeader(categoryName) {
+    let categoryName
+    
+    categoryName.split(({ list_name }).join(" ")
+    .slice())
+}
+
+
 
 function getBestSellersList() {
     fetchBestSellers()
@@ -103,7 +112,7 @@ function fetchCategoryBooks(categoryName) {
 
 
 function getCategoryMarkup(arr, categoryName) {
-    return `<h2 class="">${categoryName}</h2>` + 
+    return `<h2 class="titleCategory">${categoryName}</h2>` + 
 `<div>
     <ul>`+ createBooksMarkup(arr)+ `</ul>
 </div>`
