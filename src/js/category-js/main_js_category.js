@@ -49,21 +49,23 @@ getCategoryList();
 function createBooksMarkup(arr) {
     return arr.map(({_id, book_image, title, author}) => `
    <li data-id = '${_id}' class = 'js-book-item'>
-        <div class="thumb-category">
+   <div class="wrapper">
+   <div class="thumb-category">
         <img src="${book_image}" alt="${title}" class="img-category"/>
         </div>     
-        <p>${title}</p>
-        <p>${author}</p>
+        <p class="catalogue-book-title">${title}</p>
+        <p class="catalogue-book-author">${author}</p>
+   </div>     
+   
       </li>`)
         .join('')
 }
 
-//class="categoryName" <h1 class="titleCategory">Best Sellers <span class="last-word-in-catName">Books</span></h1>`
-
 function createBestSellersMarkup(arr) {
    return getMarkupForCategoryHeader("Best Sellers Books") + arr.map(({ list_name, books }) => `
-    <h2 class="categoryName">${list_name}</h2>  
-<div>
+     
+<div class="best-sellers-wrapper">
+    <h2 class="categoryName">${list_name}</h2> 
     <ul class="category-list">`+ createBooksMarkup(books)+ `
     </ul>
     <button type="button" class="btnSeeMore">See more</button>
