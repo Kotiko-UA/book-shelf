@@ -57,6 +57,10 @@ function openModalWithContent(content) {
   closeButton.addEventListener('click', () => {
     closeModal();
   });
+
+  // Add event listener for clicking on the backdrop
+  modal.element().addEventListener('click', handleBackdropClick);
+
   modal.show();
 
   document.documentElement.style.overflow = 'hidden';
@@ -65,10 +69,13 @@ function openModalWithContent(content) {
 }
 
 function closeModal() {
-  modal.close(); 
+  modal.close();
   document.documentElement.style.overflow = 'auto';
   isModalOpen = false;
   document.removeEventListener('keydown', handleEscapeKeyPress);
+
+  // Remove event listener for clicking on the backdrop when closing the modal
+  modal.element().removeEventListener('click', handleBackdropClick);
 }
 
 function handleEscapeKeyPress(event) {
@@ -77,6 +84,12 @@ function handleEscapeKeyPress(event) {
   }
 }
 
+function handleBackdropClick(event) {
+  // Check if the click was on the backdrop element itself
+  if (event.target === event.currentTarget) {
+    closeModal();
+  }
+}
 
 async function serviceBooks(id) {
   const BASE_URL = 'https://books-backend.p.goit.global/books/';
@@ -84,7 +97,7 @@ async function serviceBooks(id) {
   return response.data;
 }
 
-function bookModalMarkup({ _id, book_image, list_name, author, description, buy_links: [amazon, Bookshop, Apple, Barnes, IndieBound] } = {}) {
+function bookModalMarkup({ _id, book_image, title, author, description, buy_links: [amazon, Bookshop, Apple, Barnes, IndieBound] } = {}) {
   const markup = `
     <div data-id=${_id} class="modal-window-conteiner">
       <button class = "btn-close">
@@ -97,23 +110,23 @@ function bookModalMarkup({ _id, book_image, list_name, author, description, buy_
           <img class="book-img-modal-window" src="${book_image}" alt="" />
         </div>
         <div class="mw-data-conteiner">
-          <h2 class="book-title-modal">${list_name}</h2>
+          <h2 class="book-title-modal">${title}</h2>
           <p class="author-modal-window">${author}</p>
           <p class="desc-modal-window">${description}</p>
           <ul class="markets-list-modal-window">
             <li>
               <a href="${amazon.url}">
-                <img class = "img-market"src="/img/amazon.png" alt="${list_name}">
+                <img class = "img-market"src="/img/amazon.png" alt="${title}">
               </a>
             </li>
             <li>
               <a href="${Bookshop.url}">
-                <img class = "img-market" src="/img/book-market.png" alt="${list_name}">
+                <img class = "img-market" src="/img/book-market.png" alt="${title}">
               </a>
             </li>
             <li>
               <a href="${Apple.url}">
-                <img class = "img-market" src="/img/book-shelf.png" alt="${list_name}">
+                <img class = "img-market" src="/img/book-shelf.png" alt="${title}">
               </a>
             </li>
           </ul>

@@ -1,4 +1,5 @@
 .modal-window-conteiner {
+    position: relative;
     width: 335px;
     height: 100%;
     border-radius: 18px;
@@ -108,7 +109,7 @@
     letter-spacing: -0.4px;
 }
 
-/* .backdrop {
+.backdrop {
     position: fixed;
     z-index: 100;
     top: 0;
@@ -116,7 +117,7 @@
     width: 100%;
     height: 100%;
     background: rgba(17, 17, 17, 0.40);
-} */
+}
 
 /* .modal-window-conteiner {
     outline: 1px solid green;
@@ -140,7 +141,6 @@
 
 .btn-close:is(:hover, :focus) .icon-close {
     fill: #4F2EE8;
-    /* stroke: #4F2EE8; */
 }
 
 .after {
