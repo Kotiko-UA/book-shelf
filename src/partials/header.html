@@ -64,17 +64,31 @@
       <input type="checkbox" id="switchMode" />
       <span class="slider round"></span>
     </label>
-    <button class="but-sing">
-      <span class="user-sing">Sign up</span>
+    <div class="sign-buttons">
+      <button
+        type="button"
+        class="but-sing modal-open-btn"
+        style="display: none"
+        data-sign-up
+      >
+        <span class="user-sing">Sign up</span>
 
-      <svg class="arrow-right-wrap">
-        <use
-          width="20px"
-          height="20px"
-          stroke="#EAC645"
-          href="../img/spryte.svg#icon-arrow-right"
-        ></use>
-      </svg>
-    </button>
+        <svg class="arrow-right-wrap">
+          <use
+            width="20px"
+            height="20px"
+            stroke="#EAC645"
+            href="../img/spryte.svg#icon-arrow-right"
+          ></use>
+        </svg>
+      </button>
+      <div class="user-bar" style="display: none">
+        <span class="user-image">
+          <img src="" alt="" />
+        </span>
+        <span class="user-name"></span>
+        <button type="button" class="log-out-btn">Log Out</button>
+      </div>
+    </div>
   </div>
 </header>

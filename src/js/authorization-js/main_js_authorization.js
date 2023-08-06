@@ -1,5 +1,10 @@
 import { signUpModal, signInModal } from './auth_modals';
-import { logOutUser, signIn, registrateUser } from './auth_firebase';
+import {
+  logOutUser,
+  signIn,
+  signInWithGoogle,
+  registrateUser,
+} from './auth_firebase';
 
 //===========================================================
 
@@ -24,8 +29,12 @@ function clickHandlerAuth(e) {
   if (e.target.closest('.sign-in-btn')) {
     signIn();
   }
+  if (e.target.closest('[data-g-sign-in]')) {
+    signInWithGoogle();
+  }
+
   if (e.target.closest('.sign-up-btn')) {
     registrateUser();
   }
 }
-document.querySelector('body').classList.add('dark-theme');
+//document.querySelector('body').classList.add('dark-theme');

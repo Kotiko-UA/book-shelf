@@ -1,3 +1,4 @@
+import { signUpModal, signInModal } from './auth_modals';
 import { initializeApp } from 'firebase/app';
 const firebaseConfig = {
   apiKey: 'AIzaSyCJ7bTyjKvQtJTxa9hFVg3AHb0bG9xVu8w',
@@ -52,6 +53,8 @@ import {
   signOut,
   updateProfile,
   onAuthStateChanged,
+  signInWithPopup,
+  GoogleAuthProvider,
 } from 'firebase/auth';
 
 const auth = getAuth();
@@ -62,7 +65,7 @@ onAuthStateChanged(auth, user => {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/auth.user
     const uid = user.uid;
-    console.log(uid);
+    console.log(uid, user);
     showUserBar(user);
     //updateUserShopList(uid, [145, 568]);
     getUserShopList(uid).then(userData => {
@@ -77,7 +80,7 @@ function showUserBar(user) {
   const userName = document.querySelector('.user-name');
   userName.textContent = user.displayName;
   document.querySelector('.user-image img').src =
-    user.photoUrl ?? '/img/noimage.png';
+    user.photoURL ?? '/img/noimage.png';
   document.querySelector('.user-image img').alt = user.displayName;
 
   document.querySelector('.user-bar').style.display = '';
@@ -140,7 +143,29 @@ function signIn() {
       alert(errorMessage);
     });
 }
-//signIn(email, password);
+function signInWithGoogle() {
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider)
+    .then(result => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      // IdP data available using getAdditionalUserInfo(result)
+      // ...
+    })
+    .catch(error => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+    });
+}
 
 function logOutUser() {
   signOut(auth)
@@ -169,4 +194,4 @@ function updateUserProfile(name = null, photoUrl = null) {
     });
 }
 //signIn('hjkj@gmail.com', 'password1');
-export { logOutUser, signIn, registrateUser };
+export { logOutUser, signIn, signInWithGoogle, registrateUser };

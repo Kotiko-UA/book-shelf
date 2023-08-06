@@ -216,7 +216,9 @@
 }
 
 .sign-min-btn {
+  position: relative;
   padding: 0;
+  margin-bottom: 20px;
   border: transparent;
   background-color: transparent;
   color: rgba(17, 17, 17, 0.5);
@@ -233,4 +235,11 @@
 .sign-min-btn.active {
   color: var(--violet);
   text-decoration-line: underline;
+}
+.sign-google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
 }

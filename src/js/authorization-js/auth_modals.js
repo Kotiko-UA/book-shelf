@@ -66,6 +66,12 @@ const signUpModal = basicLightbox.create(
         <button class="sign-min-btn active" type="button" data-sign-up>sign up</button>
         <button class="sign-min-btn" type="button" data-sign-in>sign in</button>
       </div>
+       <button class="sign-min-btn sign-google-btn" type="button" data-g-sign-in>
+            <svg class="icon-google"" width="28" height="28">
+                <use href="img/spryte.svg#icon-google"></use>
+            </svg>
+        Sign in with Google
+       </button>
     </div>
   </div>
 `,
@@ -126,6 +132,13 @@ const signInModal = basicLightbox.create(
         <button class="sign-min-btn" type="button" data-sign-up>sign up</button>
         <button class="sign-min-btn active" type="button" data-sign-in>sign in</button>
       </div>
+      <button class="sign-min-btn sign-google-btn" type="button" data-g-sign-in>
+            <svg class="icon-google" width="28" height="28">
+                <use href="img/spryte.svg#icon-google"></use>
+            </svg>
+         Sign in with Google
+       </button>
+
     </div>
   </div>
 `,
