@@ -12,6 +12,7 @@ elements.books_showcase.addEventListener('click', handlerClickOpenModal);
 let text;
 let btn;
 let isModalOpen = false;
+let modal = null;
 
 async function handlerClickOpenModal(evt) {
   const bookItem = evt.target.closest('.js-book-item');
@@ -51,36 +52,31 @@ async function handlerClickOpenModal(evt) {
 }
 
 function openModalWithContent(content) {
-  const modal = basicLightbox.create(content);
+  modal = basicLightbox.create(content);
   const closeButton = modal.element().querySelector('.btn-close');
   closeButton.addEventListener('click', () => {
     closeModal();
-    modal.close();
   });
-
   modal.show();
 
-  // Disable body scroll when the modal is opened
   document.documentElement.style.overflow = 'hidden';
   isModalOpen = true;
-
   document.addEventListener('keydown', handleEscapeKeyPress);
 }
 
 function closeModal() {
-  // Enable body scroll when the modal is closed
+  modal.close(); 
   document.documentElement.style.overflow = 'auto';
   isModalOpen = false;
   document.removeEventListener('keydown', handleEscapeKeyPress);
 }
 
 function handleEscapeKeyPress(event) {
-  // Check if "Escape" key is pressed and the modal is open
   if (event.key === 'Escape' && isModalOpen) {
     closeModal();
-    basicLightbox.close();
   }
 }
+
 
 async function serviceBooks(id) {
   const BASE_URL = 'https://books-backend.p.goit.global/books/';
@@ -107,17 +103,17 @@ function bookModalMarkup({ _id, book_image, list_name, author, description, buy_
           <ul class="markets-list-modal-window">
             <li>
               <a href="${amazon.url}">
-                <img src="/img/amazon.png" alt="${list_name}">
+                <img class = "img-market"src="/img/amazon.png" alt="${list_name}">
               </a>
             </li>
             <li>
               <a href="${Bookshop.url}">
-                <img src="/img/book-market.png" alt="${list_name}">
+                <img class = "img-market" src="/img/book-market.png" alt="${list_name}">
               </a>
             </li>
             <li>
               <a href="${Apple.url}">
-                <img src="/img/book-shelf.png" alt="${list_name}">
+                <img class = "img-market" src="/img/book-shelf.png" alt="${list_name}">
               </a>
             </li>
           </ul>
