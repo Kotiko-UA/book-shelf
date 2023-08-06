@@ -9,6 +9,7 @@ let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 console.log(arrForBacket)
 const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
 
+
 generatePage();
 
 //вимальовує пустий або повний шопінг ліст
