@@ -11,6 +11,8 @@
 @import url('./reset.css');
 @import url('./shopping-list.css');
 @import url('./styles_paganation.css');
+@import url("./modal-window.css");
+
 :root {
   --black: #111111;
   --gray: #202024;
