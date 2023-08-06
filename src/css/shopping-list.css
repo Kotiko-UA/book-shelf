@@ -208,6 +208,7 @@
   transition-property: transform;
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
 }
 
 .shopping-card-bin-link:hover,
@@ -215,6 +216,7 @@
   background: #3113b9;
   transform: scale(1.02);
 }
+
 
 .img-bin-icon {
   width: 16px;
@@ -236,6 +238,10 @@
   letter-spacing: -0.56px;
 }
 
+.empty-shopping-list-wrap {
+  display: none;
+}
+
 .shopping-card-author {
   font-size: 12px;
   font-style: italic;
@@ -246,7 +252,7 @@
 .botton-wrap {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
 .shopping-card-sponsor-icons {

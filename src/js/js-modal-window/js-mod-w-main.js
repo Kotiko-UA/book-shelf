@@ -3,6 +3,7 @@ import axios from 'axios';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
+
 const elements = {
   categoryList: document.querySelector(".js-category-list"),
   books_showcase: document.querySelector(".books-showcase"),
@@ -102,6 +103,7 @@ function bookModalMarkup({ _id, book_image, list_name, author, description, buy_
   `;
   return markup;
 }
+
 
 function checkIfBookIsAdded(bookId, shoppingList) {
   return shoppingList.some((item) => item._id === bookId);
