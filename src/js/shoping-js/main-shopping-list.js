@@ -98,6 +98,7 @@ function onButtonDeleteClick(event) {
 
   arrForBacket.splice(removeIndexFromLocalStorage, 1);
   localStorage.setItem('KEY', JSON.stringify(arrForBacket));
+  const liEl = event.target.closest('.shopping-list-item');
+  liEl.remove();
   generatePage();
 }
-
