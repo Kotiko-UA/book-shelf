@@ -1,74 +1,43 @@
-// // import Pagination from 'tui-pagination';
-// // import 'tui-pagination/dist/tui-pagination.css';
+// import Pagination from 'tui-pagination';
+// import 'tui-pagination/dist/tui-pagination.css';
+// import { KEY } from '../js-modal-window/js-mod-w-main';
+// console.log(KEY);
 
-// // const BOOK_ID_INFO = 'book-id-info' - взяти від Ані
-// const bookList = document.querySelector('.shopping-list');
-
-// const BOOK_ID_INFO = 'book-id-info' - взяти від Ані
 const bookList = document.querySelector('.shopping-list');
 
-// choosedBooksArray.map(book => {
-//   bookList.insertAdjacentHTML('beforeend', generateMovieHTML(book));
-// });
-// function generateMovieHTML(bookData) {
-//   const { book_image, list_name, author, description } = bookData;
-//   return `
-//   <li class="shopping-list-item">
-//   <img
-//     src="${book_image}"
-//     alt="book's image"
-//     class="shopping-card-img"
-//   />
-//   <div class="right-part-wrap">
-//     <div class="shopping-card-bin-wrap">
-//      <div>
-//         <h4 class="shopping-card-tittle">${list_name}</h4>
+let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
+console.log(arrForBacket)
+const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
 
-//         <p class="shopping-card-genre">${book_id_genre}</p>
-//      </div>
-//       <a href="" class="shopping-card-bin-link">
-//         <button type="button" class ="btn-png-bin">
-//           <svg class="img-bin-icon">
-//             <use href="../img/spryte.svg#icon-trash"></use>
-//           </svg>
-//       </button>
 
-//       </a>
-//     </div>
+generatePage();
 
-  const choosedBooksArray = JSON.parse(localStorage.getItem(BOOK_ID_INFO)) || [];
-  console.log("choosedBooks", choosedBooks)
-  //прилітає масив доданих у кошик книг
+//вимальовує пустий або повний шопінг ліст
+function generatePage() {
+  let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 
-// /////////////приклад масив для тесту, надалі видалити
-// // const books = [
-// //   {
-// //     image: 'Example',
-// //     title: 'Example TITLE',
-// //     genre: 'Example GENRE',
-// //     description: 'Example DESC',
-// //     author: 'Example AUTHOR',
-// //   },
-// // ];
+  if (!arrForBacket.length) {
+    emptyShopList.style.display = 'block';
+  } else {
+    emptyShopList.style.display = 'none';
+  }
+}
 
-  choosedBooksArray.map(book => {
-  bookList.insertAdjacentHTML('beforeend', generateMovieHTML(book));
-});
+bookList.insertAdjacentHTML('beforeend', createMarkupBook(arrForBacket));
 
-// // function saveToLocalStorage({ book_image, title, author, description }) {
-// //   const cartBooks = JSON.parse(localStorage.getItem(BOOK_ID_INFO)) || [];
-// //   cartBooks.push({
-
-// //     book_image:book_image.textContent,
-// //     title,
-// //     author,
-// //     description,
-// //   });
-
-function generateMovieHTML(bookData) {
-  const { book_image, list_name, author, description } = bookData;
-  return `
-  <li class="shopping-list-item">
+function createMarkupBook(arr) {
+  return arr
+    .map(
+      ({
+        _id,
+        book_image,
+        title,
+        list_name,
+        author,
+        description,
+        buy_links: [amazon, Bookshop, Apple],
+      }) => `
+  <li class="shopping-list-item" data-id=${_id} >
   <img
     src="${book_image}"
     alt="book's image"
@@ -77,83 +46,60 @@ function generateMovieHTML(bookData) {
   <div class="right-part-wrap">
     <div class="shopping-card-bin-wrap">
      <div>
-        <h4 class="shopping-card-tittle">${list_name}</h4>
+        <h4 class="shopping-card-tittle">${title}</h4>
 
-        <p class="shopping-card-genre">${book_id_genre}</p>
+        <p class="shopping-card-genre">${list_name}</p>
      </div>
-      <a href="" class="shopping-card-bin-link">
-        <button type="button" class ="btn-png-bin">
+     <button type="button" class="shopping-card-bin-link">
           <svg class="img-bin-icon">
             <use href="../img/spryte.svg#icon-trash"></use>
           </svg>
       </button>
-
-      </a>
     </div>
 
     <p class="shopping-card-description">${description}
     </p>
     <div class="botton-wrap">
         <p class="shopping-card-author">${author}</p>
-    <div class="shopping-card-sponsor-icons">
-      <img src="#" alt="amazon"  class="icon-amazon"/>
-      <img src="#" alt="apple"  class="icon-apple-book"/>
-      <img
-        src="#"
-        alt="shop" class="icon-book-shop"
-      />
-    </div>
+
+
+              <ul class="markets-list-modal-window">
+              <li>
+                <a href="${amazon.url}" class="icon-amazon">
+                  <img src="../../img/amazon.png" alt="${list_name}">
+                </a>
+              </li>
+              <li>
+                <a href="${Bookshop.url}" class="icon-apple-book">
+                  <img src="../../img/book-market.png" alt="${list_name}">
+                </a>
+              </li>
+              <li>
+                <a href="${Apple.url}"  class="icon-book-shop">
+                <img src="/img/book-shelf.png" alt="${list_name}">
+                </a>
     </div>
   </div>
-</li> `;
+</li> `
+    )
+    .join(' ');
 }
 
-/////////////приклад масив для тесту, надалі видалити
-// const books = [
-//   {
-//     image: 'Example',
-//     title: 'Example TITLE',
-//     genre: 'Example GENRE',
-//     description: 'Example DESC',
-//     author: 'Example AUTHOR',
-//   },
-// ];
+const shoppingBinBtns = document.querySelectorAll('.shopping-card-bin-link');
 
+shoppingBinBtns.forEach(function (shoppingBinBtn) {
+  shoppingBinBtn.addEventListener('click', onButtonDeleteClick);
+});
 
-
-
-
-
-//////////// додавання книг в локал сторидж, та повернення книг з локалу
-
-// function saveToLocalStorage({ book_image, title, author, description }) {
-//   const cartBooks = JSON.parse(localStorage.getItem(BOOK_ID_INFO)) || [];
-//   cartBooks.push({
-//     book_image:book_image.textContent, 
-//     title, 
-//     author, 
-//     description,
-//   });
-
-//   localStorage.setItem(BOOK_ID_INFO, JSON.stringify(cartBooks));
-
-//   const choosedBooks = JSON.parse(localStorage.getItem(BOOK_ID_INFO)) || [];
-// console.log("choosedBooks", choosedBooks)
-// }
-
-
-// функція для видалення книги при нажиманні смітника
-const shoppingBin = document.querySelector('.btn-png-bin')
-
-shoppingBin.addEventListener('click', onButtonDeletClick);
-function onButtonDeletClick(event) {
-  if (!event.target.classList.contains("btn-png-bin")) {
-    return;
-  } else{
-  const { id } = Number(event.target.closest("класс родителя кнопки").dataset);
-  // const page = pagination.getCurrentPage();
-  const removeIndexFromLocalStorage = choosedBooksArray.findIndex(
-    item => item.id === id
+function onButtonDeleteClick(event) {
+  const { id } = event.target.closest('.shopping-list-item').dataset;
+  const removeIndexFromLocalStorage = arrForBacket.findIndex(
+    item => item._id === id
   );
-  choosedBooksArray.splice(removeIndexFromLocalStorage, 1);
-  localStorage.setItem("ключ", "массив первоначальный");}}
+
+  arrForBacket.splice(removeIndexFromLocalStorage, 1);
+  localStorage.setItem('KEY', JSON.stringify(arrForBacket));
+  const liEl = event.target.closest('.shopping-list-item');
+  liEl.remove();
+  generatePage();
+}
