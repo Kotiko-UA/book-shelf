@@ -44,7 +44,7 @@
     margin-bottom: 14px;
 }
 
-.add-delete-book {
+.add-delete-book-btn {
     border-radius: 40px;
     border: 2px solid #4F2EE8;
     display: inline-flex;
@@ -59,8 +59,13 @@
     letter-spacing: -0.14px;
     text-transform: uppercase;
     margin-top: 40px;
-    margin-left: 32px;
-    margin-right: 32px;
+
+}
+
+.add-shopping {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .markets-list-modal-window {
@@ -70,8 +75,29 @@
     align-items: center;
 }
 
+.text-conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.added-modal-window {
+    width: 242px;
+    margin-top: 8px;
+    color: rgba(17, 17, 17, 0.50);
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+}
+
 .after {
     display: none;
+}
+
+.small {
+    font-size: 13px;
 }
 
 @media screen and (min-width: 428px) {
@@ -118,5 +144,9 @@
 
     .mw-data-conteiner {
         max-width: 279px;
+    }
+
+    .added-modal-window {
+        width: 324px;
     }
 }
