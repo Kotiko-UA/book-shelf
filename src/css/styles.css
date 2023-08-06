@@ -12,6 +12,7 @@
 @import url('./shopping-list.css');
 @import url('./styles_paganation.css');
 @import url("./modal-window.css");
+@import url('./header.css');
 
 :root {
   --black: #111111;

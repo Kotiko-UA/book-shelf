@@ -1,0 +1,20 @@
+* {
+  transition: 1s;
+}
+.header {
+  border: 1.5px solid #fff;
+  background: #111;
+}
+.logo {
+  color: #f3f3f3;
+}
+.svg-cart {
+  fill: #fff;
+}
+.slider.round {
+  border-radius: 34px;
+  background-image: linear-gradient(180deg, #4f2ee8, #686868);
+}
+.nav-link-decor {
+  color: #fff;
+}
