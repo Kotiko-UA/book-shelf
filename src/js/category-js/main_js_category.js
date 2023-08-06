@@ -49,20 +49,22 @@ getCategoryList();
 function createBooksMarkup(arr) {
     return arr.map(({_id, book_image, title, author}) => `
    <li data-id = '${_id}' class = 'js-book-item'>
+        <div class="thumb-category">
         <img src="${book_image}" alt="${title}" class="img-category"/>
+        </div>     
         <p>${title}</p>
         <p>${author}</p>
       </li>`)
         .join('')
 }
 
-//class="categoryName"
+//class="categoryName" <h1 class="titleCategory">Best Sellers <span class="last-word-in-catName">Books</span></h1>`
 
 function createBestSellersMarkup(arr) {
-   return `<h1 class="titleCategory">Best Sellers <span class="last-word-in-catName">Books</span></h1>` + arr.map(({ list_name, books }) => `
+   return getMarkupForCategoryHeader("Best Sellers Books") + arr.map(({ list_name, books }) => `
     <h2 class="categoryName">${list_name}</h2>  
 <div>
-    <ul>`+ createBooksMarkup(books)+ `
+    <ul class="category-list">`+ createBooksMarkup(books)+ `
     </ul>
     <button type="button" class="btnSeeMore">See more</button>
 </div>`)
@@ -70,10 +72,10 @@ function createBestSellersMarkup(arr) {
 }
 
 function getMarkupForCategoryHeader(categoryName) {
-    let categoryName
-    
-    categoryName.split(({ list_name }).join(" ")
-    .slice())
+    let categoryNameSplited = categoryName.split(" ");
+    let originalColor = categoryNameSplited.slice(0, categoryNameSplited.length - 1).join(" ");
+    let violetColor = categoryNameSplited[categoryNameSplited.length-1]
+    return `<h2 class="titleCategory">${originalColor} <span class="last-word-in-catName">${violetColor}</span></h2>`
 }
 
 
@@ -112,7 +114,7 @@ function fetchCategoryBooks(categoryName) {
 
 
 function getCategoryMarkup(arr, categoryName) {
-    return `<h2 class="titleCategory">${categoryName}</h2>` + 
+    return getMarkupForCategoryHeader(categoryName) + 
 `<div>
     <ul>`+ createBooksMarkup(arr)+ `</ul>
 </div>`

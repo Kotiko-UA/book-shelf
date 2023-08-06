@@ -88,8 +88,29 @@ color: var(--violet);
 }
 
 .img-category{
-
+    display: block;
+    max-width: 100%;
 }
+
+.thumb-category{
+    border: none;
+    outline: none;
+    border-radius: 8%;
+    overflow: hidden;
+    object-fit: none;
+    width:335px;
+    height:485px;
+    margin-right:25px;
+}
+
+.thumb-category:last-child{
+    margin-right: 0;
+}
+
+.category-list{
+    display: flex;
+}
+
 
 /*-------tab-------*/
 /*@media screen and (min-width: 768px) {
