@@ -1,13 +1,80 @@
 <header class="header">
   <nav class="nav">
+    <a href="../index.html" class="logo"></a>
+
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="./page-2.html" class="nav-link">Page 2</a>
+        <a href="../index.html"><span class="nav-link-decor">HOME</span></a
+        ><!-- ./page-2.html -->
       </li>
 
       <li class="nav-item">
-        <a href="./page-3.html" class="nav-link">Page 3</a>
+        <a
+          href="../shopping-list.html"
+          class="nav-link"
+          width="20px"
+          height="20px"
+          ><span class="nav-link-decor">SHOPPING LIST</span
+          ><svg class="svg-cart" width="20px" height="20px">
+            <use
+              href="../img/spryte.svg#icon-cart"
+              width="20px"
+              height="20px"
+            ></use></svg></a
+        ><!-- ./page-3.html -->
       </li>
     </ul>
   </nav>
+
+  <div class="log-out-wrap">
+    <a href="#" class="menu-btn">
+      <svg class="user-icon-hed">
+        <use
+          fill="#4f2ee8"
+          width="19px"
+          height="19px"
+          href="../img/spryte.svg#icon-user"
+        ></use>
+      </svg>
+      <span class="user-text">Stephen</span>
+
+      <svg class="daun-wrap">
+        <use
+          width="23px"
+          height="26px"
+          fill="white"
+          href="../img/spryte.svg#icon-dropdown"
+        ></use>
+      </svg>
+    </a>
+    <a href="#" class="tupe-out tupe-out_active"
+      ><span class="text-out">Log out</span
+      ><svg class="arrow-right-wrap">
+        <use
+          width="20px"
+          height="20px"
+          stroke="#EAC645"
+          href="../img/spryte.svg#icon-arrow-right"
+        ></use>
+      </svg>
+    </a>
+  </div>
+  <div class="sing-wrap">
+    <label class="switch">
+      <input type="checkbox" id="switchMode" />
+      <span class="slider round"></span>
+    </label>
+    <button class="but-sing">
+      <span class="user-sing">Sign up</span>
+
+      <svg class="arrow-right-wrap">
+        <use
+          width="20px"
+          height="20px"
+          stroke="#EAC645"
+          href="../img/spryte.svg#icon-arrow-right"
+        ></use>
+      </svg>
+    </button>
+  </div>
 </header>
