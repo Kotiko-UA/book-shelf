@@ -26,16 +26,11 @@
     </ul>
   </nav>
 
-  <div class="log-out-wrap">
+  <div class="log-out-wrap" style="display: none">
     <a href="#" class="menu-btn">
-      <svg class="user-icon-hed">
-        <use
-          fill="#4f2ee8"
-          width="19px"
-          height="19px"
-          href="./img/spryte.svg#icon-user"
-        ></use>
-      </svg>
+      <span class="user-image">
+        <img src="" alt="" />
+      </span>
       <span class="user-text">Stephen</span>
 
       <svg class="daun-wrap">
@@ -47,7 +42,7 @@
         ></use>
       </svg>
     </a>
-    <a href="#" class="tupe-out tupe-out_active"
+    <a href="#" class="log-out-btn tupe-out"
       ><span class="text-out">Log out</span
       ><svg class="arrow-right-wrap">
         <use
@@ -59,12 +54,12 @@
       </svg>
     </a>
   </div>
-  <div class="sing-wrap">
+  <div class="sing-wrap" style="display: none">
     <label class="switch">
       <input type="checkbox" id="switchMode" />
       <span class="slider round"></span>
     </label>
-    <button class="but-sing">
+    <button class="but-sing" data-sign-up>
       <span class="user-sing">Sign up</span>
 
       <svg class="arrow-right-wrap">

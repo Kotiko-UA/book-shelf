@@ -69,22 +69,22 @@ onAuthStateChanged(auth, user => {
     showUserBar(user);
     //updateUserShopList(uid, [145, 568]);
     getUserShopList(uid).then(userData => {
-      console.log(userData.shopList);
+      //console.log(userData.shopList);
     });
   } else {
-    document.querySelector('.modal-open-btn').style.display = '';
-    document.querySelector('.user-bar').style.display = 'none';
+    document.querySelector('.sing-wrap').style.display = '';
+    document.querySelector('.log-out-wrap').style.display = 'none';
   }
 });
 function showUserBar(user) {
-  const userName = document.querySelector('.user-name');
+  const userName = document.querySelector('.user-text');
   userName.textContent = user.displayName;
   document.querySelector('.user-image img').src =
     user.photoURL ?? '/img/noimage.png';
   document.querySelector('.user-image img').alt = user.displayName;
 
-  document.querySelector('.user-bar').style.display = '';
-  document.querySelector('.modal-open-btn').style.display = 'none';
+  document.querySelector('.log-out-wrap').style.display = '';
+  document.querySelector('.sing-wrap').style.display = 'none';
 }
 
 function registrateUser() {
@@ -153,7 +153,7 @@ function signInWithGoogle() {
       // The signed-in user info.
       const user = result.user;
       // IdP data available using getAdditionalUserInfo(result)
-      // ...
+      signInModal.close();
     })
     .catch(error => {
       // Handle Errors here.
