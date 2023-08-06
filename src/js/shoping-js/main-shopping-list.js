@@ -11,7 +11,6 @@ console.log('choosedBooks', choosedBooks);
 choosedBooksArray.map(book => {
   bookList.insertAdjacentHTML('beforeend', generateMovieHTML(book));
 });
-
 function generateMovieHTML(bookData) {
   const { book_image, list_name, author, description } = bookData;
   return `
@@ -71,6 +70,7 @@ function generateMovieHTML(bookData) {
 // function saveToLocalStorage({ book_image, title, author, description }) {
 //   const cartBooks = JSON.parse(localStorage.getItem(BOOK_ID_INFO)) || [];
 //   cartBooks.push({
+
 //     book_image:book_image.textContent,
 //     title,
 //     author,

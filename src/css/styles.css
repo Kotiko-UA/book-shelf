@@ -5,14 +5,12 @@
   |============================
 */
 @import url('./normalize.css');
-
 @import url('./fonts.css');
-
 @import url('./reset.css');
 @import url('./shopping-list.css');
 @import url('./styles_paganation.css');
-@import url("./modal-window.css");
 @import url('./header.css');
+@import url("./modal-window.css");
 
 :root {
   --black: #111111;
