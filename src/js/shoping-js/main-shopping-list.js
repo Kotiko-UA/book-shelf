@@ -4,9 +4,9 @@
 // console.log(KEY);
 
 const bookList = document.querySelector('.shopping-list');
+const titleShoopingList = document.querySelector('.shopping-title');
 
 let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
-console.log(arrForBacket)
 const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
 
 
@@ -20,6 +20,7 @@ function generatePage() {
     emptyShopList.style.display = 'block';
   } else {
     emptyShopList.style.display = 'none';
+    titleShoopingList.classList.replace("empty-title-margin", "full-title-margin")
   }
 }
 
@@ -63,20 +64,20 @@ function createMarkupBook(arr) {
         <p class="shopping-card-author">${author}</p>
 
 
-              <ul class="markets-list-modal-window">
+              <ul class="markets-list-shopping">
               <li>
-                <a href="${amazon.url}" class="icon-amazon">
-                  <img src="../../img/amazon.png" alt="${list_name}">
+                <a href="${amazon.url}">
+                  <img src="../../img/amazon.png" alt="${list_name}" class="icon-amazon">
                 </a>
               </li>
               <li>
-                <a href="${Bookshop.url}" class="icon-apple-book">
-                  <img src="../../img/book-market.png" alt="${list_name}">
+                <a href="${Bookshop.url}">
+                  <img src="../../img/book-market.png" alt="${list_name}" class="icon-apple-book">
                 </a>
               </li>
               <li>
-                <a href="${Apple.url}"  class="icon-book-shop">
-                <img src="/img/book-shelf.png" alt="${list_name}">
+                <a href="${Apple.url}">
+                <img src="/img/book-shelf.png" alt="${list_name}" class="icon-book-shop">
                 </a>
     </div>
   </div>
