@@ -64,15 +64,15 @@ function generateMovieHTML(bookData) {
 
 // let itemsPerPage = 3;
 // let bookCounter = bascet.length;
-// let curPage = 1;
+// let currentPage = 1;
 
 // let pagination = getPagination(bookCounter, itemsPerPage);
 
 // pagination.on('beforeMove', event => {
-//   curPage = event.page;
+//   currentPage = event.page;
 //   'функция рендара карточек с локала'(bascet, event.page);
 // });
-// 'функция рендара карточек с локала'(bascet, curPage);
+// 'функция рендара карточек с локала'(bascet, currentPage);
 
 // function getPagination(totalItems, itemsPerPage) {
 //   const options = {
