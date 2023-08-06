@@ -11,6 +11,7 @@ const elements = {
 elements.books_showcase.addEventListener('click', handlerClickOpenModal);
 let text;
 let btn;
+let isModalOpen = false;
 
 async function handlerClickOpenModal(evt) {
   const bookItem = evt.target.closest('.js-book-item');
@@ -51,7 +52,34 @@ async function handlerClickOpenModal(evt) {
 
 function openModalWithContent(content) {
   const modal = basicLightbox.create(content);
+  const closeButton = modal.element().querySelector('.btn-close');
+  closeButton.addEventListener('click', () => {
+    closeModal();
+    modal.close();
+  });
+
   modal.show();
+
+  // Disable body scroll when the modal is opened
+  document.documentElement.style.overflow = 'hidden';
+  isModalOpen = true;
+
+  document.addEventListener('keydown', handleEscapeKeyPress);
+}
+
+function closeModal() {
+  // Enable body scroll when the modal is closed
+  document.documentElement.style.overflow = 'auto';
+  isModalOpen = false;
+  document.removeEventListener('keydown', handleEscapeKeyPress);
+}
+
+function handleEscapeKeyPress(event) {
+  // Check if "Escape" key is pressed and the modal is open
+  if (event.key === 'Escape' && isModalOpen) {
+    closeModal();
+    basicLightbox.close();
+  }
 }
 
 async function serviceBooks(id) {
@@ -63,6 +91,11 @@ async function serviceBooks(id) {
 function bookModalMarkup({ _id, book_image, list_name, author, description, buy_links: [amazon, Bookshop, Apple, Barnes, IndieBound] } = {}) {
   const markup = `
     <div data-id=${_id} class="modal-window-conteiner">
+      <button class = "btn-close">
+        <svg class="icon-close">
+          <use href="./img/spryte.svg#icon-close ">
+        </svg>
+      </button>
       <div class="mw-content-conteiner">
         <div class="mw-image-conteiner">
           <img class="book-img-modal-window" src="${book_image}" alt="" />
@@ -132,3 +165,4 @@ function handlerAddToBascet(event) {
     btn.textContent = 'remove from the shopping list';
   }
 }
+

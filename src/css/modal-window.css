@@ -92,6 +92,37 @@
     letter-spacing: -0.4px;
 }
 
+.backdrop {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 17, 17, 0.40);
+}
+
+/* .modal-window-conteiner {
+    outline: 1px solid green;
+    position: relative;
+    background: #F6F6F6;
+} */
+
+.icon-close {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-close {
+    position: absolute;
+    outline: none;
+    border: none;
+    background: #F6F6F6;
+    right: 0;
+    top: 12px;
+}
+
+
 .after {
     display: none;
 }
