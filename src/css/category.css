@@ -74,11 +74,9 @@ color:var(--violet);
 }
 
 .categoryName{
-    font-weight: regular;
     font-size: 14;
-    line-height: 1, 18;
-    letter-spacing: 0, 03;
-    margin-bottom: 18px;
+    line-height: 1, 12;
+    letter-spacing: -0, 02;
 }
 
 

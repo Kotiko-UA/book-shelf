@@ -56,13 +56,11 @@ function createBooksMarkup(arr) {
         .join('')
 }
 
-//при клике на Alll categories не отрисовывается блок с Best Sellers 
-//(этот блок прорисовівается по умолчанию призагрузке страраницы), 
-//а нужно при клике на All cat.
+//class="categoryName"
 
 function createBestSellersMarkup(arr) {
    return `<h1 class="titleCategory">Best Sellers <span class="last-word-in-catName">Books</span></h1>` + arr.map(({ list_name, books }) => `
-    <h2 class="categoryName">${list_name}</h2> 
+    <h2 class="categoryName">${list_name}</h2>  
 <div>
     <ul>`+ createBooksMarkup(books)+ `
     </ul>
@@ -105,7 +103,7 @@ function fetchCategoryBooks(categoryName) {
 
 
 function getCategoryMarkup(arr, categoryName) {
-    return `<h2 class="categoryName">${categoryName}</h2>` + 
+    return `<h2 class="">${categoryName}</h2>` + 
 `<div>
     <ul>`+ createBooksMarkup(arr)+ `</ul>
 </div>`
