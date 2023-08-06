@@ -6,6 +6,7 @@
 const bookList = document.querySelector('.shopping-list');
 
 let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
+console.log(arrForBacket)
 const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
 
 generatePage();
@@ -64,12 +65,12 @@ function createMarkupBook(arr) {
               <ul class="markets-list-modal-window">
               <li>
                 <a href="${amazon.url}" class="icon-amazon">
-                  <img src="/img/amazon.png" alt="${list_name}">
+                  <img src="../../img/amazon.png" alt="${list_name}">
                 </a>
               </li>
               <li>
                 <a href="${Bookshop.url}" class="icon-apple-book">
-                  <img src="/img/book-market.png" alt="${list_name}">
+                  <img src="../../img/book-market.png" alt="${list_name}">
                 </a>
               </li>
               <li>
