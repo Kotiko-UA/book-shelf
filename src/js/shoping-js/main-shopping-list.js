@@ -96,6 +96,8 @@ function generateMovieHTML(bookData) {
 // }
 
 
+
+
 // функція для видалення книги при нажиманні смітника
 const shoppingBin = document.querySelector('.btn-png-bin')
 
