@@ -1,24 +1,16 @@
 // import Pagination from 'tui-pagination';
 // import 'tui-pagination/dist/tui-pagination.css';
 
-
 // const BOOK_ID_INFO = 'book-id-info' - взяти від Ані
 const bookList = document.querySelector('.shopping-list');
 
+const choosedBooksArray = JSON.parse(localStorage.getItem(BOOK_ID_INFO)) || [];
+console.log('choosedBooks', choosedBooks);
+//прилітає масив доданих у кошик книг
 
-
-
-  const choosedBooksArray = JSON.parse(localStorage.getItem(BOOK_ID_INFO)) || [];
-  console.log("choosedBooks", choosedBooks)
-  //прилітає масив доданих у кошик книг
-
-
-  choosedBooksArray.map(book => {
+choosedBooksArray.map(book => {
   bookList.insertAdjacentHTML('beforeend', generateMovieHTML(book));
 });
-
-
-
 function generateMovieHTML(bookData) {
   const { book_image, list_name, author, description } = bookData;
   return `
@@ -73,19 +65,15 @@ function generateMovieHTML(bookData) {
 //   },
 // ];
 
-
-
-
-
-
 //////////// додавання книг в локал сторидж, та повернення книг з локалу
 
 // function saveToLocalStorage({ book_image, title, author, description }) {
 //   const cartBooks = JSON.parse(localStorage.getItem(BOOK_ID_INFO)) || [];
 //   cartBooks.push({
-//     book_image:book_image.textContent, 
-//     title, 
-//     author, 
+
+//     book_image:book_image.textContent,
+//     title,
+//     author,
 //     description,
 //   });
 
@@ -95,19 +83,22 @@ function generateMovieHTML(bookData) {
 // console.log("choosedBooks", choosedBooks)
 // }
 
-
 // функція для видалення книги при нажиманні смітника
-const shoppingBin = document.querySelector('.btn-png-bin')
+const shoppingBin = document.querySelector('.btn-png-bin');
 
 shoppingBin.addEventListener('click', onButtonDeletClick);
 function onButtonDeletClick(event) {
-  if (!event.target.classList.contains("btn-png-bin")) {
+  if (!event.target.classList.contains('btn-png-bin')) {
     return;
-  } else{
-  const { id } = Number(event.target.closest("класс родителя кнопки").dataset);
-  // const page = pagination.getCurrentPage();
-  const removeIndexFromLocalStorage = choosedBooksArray.findIndex(
-    item => item.id === id
-  );
-  choosedBooksArray.splice(removeIndexFromLocalStorage, 1);
-  localStorage.setItem("ключ", "массив первоначальный");}}
+  } else {
+    const { id } = Number(
+      event.target.closest('класс родителя кнопки').dataset
+    );
+    // const page = pagination.getCurrentPage();
+    const removeIndexFromLocalStorage = choosedBooksArray.findIndex(
+      item => item.id === id
+    );
+    choosedBooksArray.splice(removeIndexFromLocalStorage, 1);
+    localStorage.setItem('ключ', 'массив первоначальный');
+  }
+}
