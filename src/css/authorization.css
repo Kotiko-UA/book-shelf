@@ -56,11 +56,6 @@
   transform: scale(1);
 }
 
-/* html,
-body {
-  height: 100%;
-} */
-
 .modal {
   margin: auto;
   position: relative;
@@ -72,11 +67,13 @@ body {
   padding-right: 40px;
   padding-bottom: 40px;
 
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 18px;
   border: 2px solid var(--black);
   background: #f6f6f6;
+}
+.dark-theme .modal {
+  border: 2px solid #f6f6f6;
+  background: var(--gray);
 }
 .form {
   width: 100%;
@@ -100,13 +97,16 @@ body {
 
   transition: transform 250ms linear;
 
-  color: #111;
+  color: var(--black);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: 1.33;
   letter-spacing: -0.18px;
   text-transform: uppercase;
+}
+.dark-theme .form-label {
+  color: #f6f6f6;
 }
 
 .form-input {
@@ -118,11 +118,16 @@ body {
   font-size: 18px;
   line-height: 1.33;
   letter-spacing: -0.18px;
-
+  background-color: #f6f6f6;
   border-radius: 40px;
   border: 2px solid var(--black);
 
   transition: border var(--cubic-bezier);
+}
+.dark-theme .form-input {
+  border: 2px solid #f6f6f6;
+  background-color: var(--gray);
+  color: #f6f6f6;
 }
 .form-input:hover,
 .form-input:focus {
@@ -140,7 +145,9 @@ body {
   height: 28px;
   fill: var(--black);
 }
-
+.dark-theme .icon {
+  fill: #f6f6f6;
+}
 .form-field:focus-within > .icon {
   fill: var(--violet);
 }
@@ -157,8 +164,11 @@ body {
   width: 100%;
   padding: 20px;
   text-align: center;
+  margin-bottom: 20px;
   border-radius: 40px;
-  background: var(--black);
+  border-color: transparent;
+
+  background-color: var(--black);
 
   color: #f3f3f3;
   font-size: 18px;
@@ -167,6 +177,10 @@ body {
   line-height: 1.33;
   letter-spacing: -0.18px;
   text-transform: uppercase;
+}
+.dark-theme .form-button {
+  background-color: #f6f6f6;
+  color: var(--gray);
 }
 
 .modal-close-btn {
@@ -186,7 +200,37 @@ body {
 .icon-close {
   fill: var(--black);
 }
+.dark-theme .icon-close {
+  fill: #f6f6f6;
+}
 .modal-close-btn:hover .icon-close,
 .modal-close-btn:focus .icon-close {
   fill: var(--violet);
+}
+
+.wraper-min-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.sign-min-btn {
+  padding: 0;
+  border: transparent;
+  background-color: transparent;
+  color: rgba(17, 17, 17, 0.5);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.33;
+  letter-spacing: -0.18px;
+  text-transform: uppercase;
+}
+.dark-theme .sign-min-btn {
+  color: rgba(246, 246, 246, 0.5);
+}
+.sign-min-btn.active {
+  color: var(--violet);
+  text-decoration-line: underline;
 }
