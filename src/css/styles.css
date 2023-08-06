@@ -4,17 +4,17 @@
   | default @import url()
   |============================
 */
+
 @import url('./normalize.css');
-
 @import url('./fonts.css');
-
 @import url('./reset.css');
 @import url('./shopping-list.css');
 @import url('./styles_paganation.css');
+@import url('./support.css');
 :root {
-  --black: #111111;
-  --gray: #202024;
-  --violet: #4f2ee8;
-  --yellow: #eac645;
-  --white: #ffffff;
+    --black: #111111;
+    --gray: #202024;
+    --violet: #4f2ee8;
+    --yellow: #eac645;
+    --white: #ffffff;
 }
