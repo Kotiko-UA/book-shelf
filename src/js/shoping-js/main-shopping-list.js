@@ -45,7 +45,11 @@ function generatePage() {
     if (emptyShopList) emptyShopList.style.display = 'block';
   } else {
     emptyShopList.style.display = 'none';
-    titleShoopingList.classList.replace("empty-title-margin", "full-title-margin") 
+    titleShoopingList.classList.replace(
+      'empty-title-margin',
+      'full-title-margin'
+    );
+
   }
 }
 
