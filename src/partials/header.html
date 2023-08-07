@@ -1,6 +1,6 @@
 <div class="mob-menus">
   <div class="menu-dagraund"></div>
-  <button class="but-sing-mob" data-sign-up>
+  <button class="but-sing-mob sing-wrap" data-sign-up>
     <span class="user-sing">Sign up</span>
 
     <svg class="arrow-right-wrap">
@@ -12,51 +12,53 @@
       ></use>
     </svg>
   </button>
-  <a href="#" class="menu-btn-user">
-    <svg class="user-icon-hed">
-      <use
-        fill="#4f2ee8"
-        width="19px"
-        height="19px"
-        href="./img/spryte.svg#icon-user"
-      ></use>
-    </svg>
-    <span class="user-text">Stephen</span>
-  </a>
+  <div class="log-out-wrap">
+    <a href="#" class="menu-btn-user">
+      <svg class="user-icon-hed">
+        <use
+          fill="#4f2ee8"
+          width="19px"
+          height="19px"
+          href="./img/spryte.svg#icon-user"
+        ></use>
+      </svg>
+      <span class="user-text">Stephen</span>
+    </a>
 
-  <ul class="nav-list-mob">
-    <li>
-      <a href="./index.html" class="home-page"><span>HOME</span></a
-      ><!-- ./page-2.html -->
-    </li>
+    <ul class="nav-list-mob">
+      <li>
+        <a href="./index.html" class="home-page"><span>HOME</span></a
+        ><!-- ./page-2.html -->
+      </li>
 
-    <li>
-      <a
-        href="./shopping-list.html"
-        class="shop-page"
-        width="20px"
-        height="20px"
-        ><span>SHOPPING LIST</span
-        ><svg width="20px" height="20px">
-          <use
-            href="../img/spryte.svg#icon-cart"
-            width="20px"
-            height="20px"
-          ></use></svg></a
-      ><!-- ./page-3.html -->
-    </li>
-  </ul>
-  <a href="#" class="tupe-out-mob">
-    <span class="text-out">Log out</span
-    ><svg class="arrow-right-wrap">
-      <use
-        width="20px"
-        height="20px"
-        stroke="#EAC645"
-        href="./img/spryte.svg#icon-arrow-right"
-      ></use>
-    </svg>
-  </a>
+      <li>
+        <a
+          href="./shopping-list.html"
+          class="shop-page"
+          width="20px"
+          height="20px"
+          ><span>SHOPPING LIST</span
+          ><svg width="20px" height="20px">
+            <use
+              href="../img/spryte.svg#icon-cart"
+              width="20px"
+              height="20px"
+            ></use></svg></a
+        ><!-- ./page-3.html -->
+      </li>
+    </ul>
+    <a href="#" class="tupe-out-mob">
+      <span class="text-out">Log out</span
+      ><svg class="arrow-right-wrap">
+        <use
+          width="20px"
+          height="20px"
+          stroke="#EAC645"
+          href="./img/spryte.svg#icon-arrow-right"
+        ></use>
+      </svg>
+    </a>
+  </div>
 </div>
 <header class="header">
   <nav class="nav">
@@ -65,7 +67,7 @@
     <ul class="nav-list">
       <li>
         <a href="./index.html" class="home-page"><span>HOME</span></a
-        ><!-- ./page-2.html -->user-image
+        ><!-- ./page-2.html -->
       </li>
 
       <li>
@@ -85,13 +87,8 @@
       </li>
     </ul>
   </nav>
-  <label class="switch">
-    <input type="checkbox" id="switchMode" />
-    <span class="slider round"></span>
-  </label>
 
-  <div class="log-out-wrap">
-    <!--style="display: none" -->
+  <div class="log-out-wrap wrap-out">
     <a href="#" class="menu-btn">
       <span class="user-image">
         <img src="" alt="" />
@@ -128,7 +125,7 @@
       </svg>
     </a>
   </div>
-  <div class="sing-wrap">
+  <div class="wrap-sing">
     <!--style="display: none"-->
     <label class="switch">
       <input type="checkbox" id="switchMode" />
@@ -152,7 +149,7 @@
         ></use>
       </svg>
     </button>
-    <button class="but-sing" data-sign-up>
+    <button class="but-sing sing-wrap" data-sign-up>
       <span class="user-sing">Sign up</span>
 
       <svg class="arrow-right-wrap">

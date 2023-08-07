@@ -22,7 +22,7 @@
   height: 28px;
   width: 110px;
 }
-.sing-wrap {
+.wrap-sing {
   display: flex;
   gap: 14px;
   align-items: center;
@@ -273,7 +273,7 @@ input:checked + .slider:before {
 .but-sing {
   display: none;
 }
-.log-out-wrap {
+.wrap-out {
   display: none;
 }
 
@@ -385,11 +385,11 @@ input:checked + .slider:before {
     height: 26px;
     margin-left: 4px;
   }
-  .sing-wrap {
+  .wrap-sing {
     gap: 24px;
   }
   /*------------HIDEN--------*/
-  .log-out-wrap {
+  .wrap-out {
     position: absolute;
     display: block;
     right: 24px;
@@ -411,7 +411,7 @@ input:checked + .slider:before {
     gap: 40px;
   }
 
-  .log-out-wrap {
+  .wrap-out {
     right: 32px;
   }
   .burger-open-mob {
@@ -476,4 +476,9 @@ input:checked + .slider:before {
 }
 .no-scroll {
   overflow-y: clip;
+}
+/* ____________________CLASS________________ */
+.log-out-wrap {
+}
+.sing-wrap {
 }
