@@ -1,6 +1,9 @@
 .tui-pagination {
   height: auto !important;
-  margin-bottom: 40px !important;
+  padding-bottom: 40px !important;
+  padding-top: 20px !important;
+  margin: 0 !important;
+  background: #f6f6f6;
 }
 
 .tui-pagination .tui-page-btn {
@@ -37,8 +40,8 @@
 }
 
 .tui-pagination .tui-next-is-ellip,
-.tui-pagination .tui-first+.tui-prev,
-.tui-pagination .tui-next+.tui-last,
+.tui-pagination .tui-first + .tui-prev,
+.tui-pagination .tui-next + .tui-last,
 .tui-pagination .tui-next {
   height: 38px !important;
 }
@@ -84,8 +87,12 @@
 .tui-pagination .tui-page-btn:focus {
   transform: scale(1.2);
 }
-
-.tui-pagination .tui-ico-last {}
+.tui-pagination .tui-next + .tui-last,
+.tui-pagination .tui-next,
+.tui-pagination .tui-first + .tui-prev,
+.tui-pagination .tui-first {
+  padding-top: 6px !important;
+}
 
 @media screen and(min-width: 768px) {
   .tui-pagination .tui-page-btn {
@@ -103,4 +110,20 @@
 
 .tui-pagination .tui-page-btn {
   width: 44px !important;
+}
+
+/*    темная тема стили */
+
+.dark-theme .tui-pagination .tui-is-selected .tui-pagination strong {
+  background: #ffffff;
+  color: #111111;
+  border: 1.5px solid #ffffff;
+}
+
+.dark-theme .tui-pagination .tui-page-btn {
+  color: #ffffff;
+  border: 1.5px solid #ffffff;
+}
+.dark-theme .tui-pagination {
+  background: #111111;
 }
