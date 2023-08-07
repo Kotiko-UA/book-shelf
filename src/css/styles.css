@@ -8,13 +8,15 @@
 @import url('./fonts.css');
 @import url('./reset.css');
 @import url('./shopping-list.css');
+@import url('./paganation.css');
 @import url('./category.css');
 @import url('./category-tab.css');
-@import url('./styles_paganation.css');
+@import url('./paganation.css');
 @import url('./header.css');
 @import url('./modal-window.css');
 @import url('./authorization.css');
 @import url('./footer.css');
+
 :root {
   --black: #111111;
   --gray: #202024;
@@ -24,5 +26,3 @@
 
   --cubic-bezier: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-
