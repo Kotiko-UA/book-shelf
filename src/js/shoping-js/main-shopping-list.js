@@ -1,11 +1,36 @@
-// import Pagination from 'tui-pagination';
-// import 'tui-pagination/dist/tui-pagination.css';
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
 // import { KEY } from '../js-modal-window/js-mod-w-main';
 // console.log(KEY);
 
 const bookList = document.querySelector('.shopping-list');
 
+function getPagination(totalItems, itemsPerPage) {
+  const options = {
+    totalItems: totalItems,
+    itemsPerPage: itemsPerPage,
+    visiblePages: visiblePages,
+    centerAlign: true,
+    firstItemClassName: 'pagination__first-item',
+    lastItemClassName: 'pagination__last-item',
+    prevButtonClassName: 'pagination__prev-btn',
+    nextButtonClassName: 'pagination__next-btn',
+    pageLinkClassName: 'pagination__page-link',
+    activePageLinkClassName: 'pagination__page-link--active',
+  };
+
+  return new Pagination(paginationEl, options);
+}
+
 let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
+let currentPage = 1;
+let itemsPerPage = 3;
+let bookCount = bookList.length;
+// let pagination = getPagination(bookCount, itemsPerPage);
+// pagination.on('beforeMove', event => {
+//   currentPage = event.page;
+//   // renderList(bookList, event.page);
+// });
 console.log(arrForBacket);
 const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
 
