@@ -268,6 +268,12 @@ input:checked + .slider:before {
   line-height: 18px; /* 128.571% */
   letter-spacing: -0.56px;
 }
+.header-shop .nav-list-mob {
+  position: relative;
+  margin-top: 130px;
+  margin-left: 110px;
+  margin-right: 110px;
+}
 /* ______________________HIDEN ELEMENT________________________ */
 .nav-list {
   display: none;
@@ -279,6 +285,9 @@ input:checked + .slider:before {
   display: none;
 }
 
+.mob-menus {
+  display: none;
+}
 /* ________________________DESKTOP____________________________ */
 @media screen and (min-width: 376px) {
   .home-page {
@@ -292,14 +301,13 @@ input:checked + .slider:before {
   .header {
     height: 72px;
   }
-  .mob-menus {
-    display: none;
-  }
+
   .burger-close-mob {
     display: none;
   }
   .home-page {
     color: #111;
+    margin: 0;
   }
   .shop-page {
     color: #111;
@@ -428,11 +436,11 @@ input:checked + .slider:before {
   .body-burger {
     display: none;
   }
-}
-@media screen and (min-width: 376px) and (max-width: 769px) {
+
   .nav-list {
     display: flex;
     align-items: center;
+
     gap: 0px;
   }
   /* .arrow-right-wrap {
