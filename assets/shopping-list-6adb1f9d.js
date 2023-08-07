@@ -1,4 +1,4 @@
-import{g as Q}from"./main_js_authorization-2aa5dd83.js";var D={exports:{}};/*!
+import{g as Q}from"./main_js_authorization-3b161581.js";var D={exports:{}};/*!
  * TOAST UI Pagination
  * @version 3.4.1
  * @author NHN FE Development Team <dl_javascript@nhn.com>
@@ -29,17 +29,17 @@ import{g as Q}from"./main_js_authorization-2aa5dd83.js";var D={exports:{}};/*!
               <ul class="markets-list-shopping">
               <li>
                 <a href="${c.url}">
-                  <img src="../../img/amazon.png" alt="${e}" class="icon-amazon">
+                  <img src="./img/amazon.png" alt="${e}" class="icon-amazon">
                 </a>
               </li>
               <li>
                 <a href="${p.url}">
-                  <img src="../../img/book-market.png" alt="${e}" class="icon-apple-book">
+                  <img src="./img/book-market.png" alt="${e}" class="icon-apple-book">
                 </a>
               </li>
               <li>
                 <a href="${a.url}">
-                <img src="/img/book-shelf.png" alt="${e}" class="icon-book-shop">
+                <img src="./img/book-shelf.png" alt="${e}" class="icon-book-shop">
                 </a>
     </div>
   </div>
