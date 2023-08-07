@@ -26,6 +26,7 @@ function getPagination(totalItems, itemsPerPage) {
 
 let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 // let currentPage = 1;
+
 // let itemsPerPage = 3;
 // let bookCount = bookList.length;
 // let pagination = getPagination(bookCount, itemsPerPage);
