@@ -136,6 +136,9 @@ color:var(--violet);
     color: var(--black);
     margin-top: 14px;
     margin-bottom: 4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .catalogue-book-author{
@@ -144,6 +147,9 @@ color:var(--violet);
         line-height: 1.16;
         letter-spacing: -0.04em;
         color: #b4afaf;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
 }
 
 
