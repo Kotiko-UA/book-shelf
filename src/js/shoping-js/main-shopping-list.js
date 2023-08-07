@@ -35,8 +35,6 @@ let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 //   // renderList(bookList, event.page);
 // });
 // console.log(arrForBacket);
-
-console.log(emptyShopList);
 generatePage();
 
 //вимальовує пустий або повний шопінг ліст
