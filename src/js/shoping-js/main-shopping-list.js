@@ -5,6 +5,7 @@ import 'tui-pagination/dist/tui-pagination.css';
 
 const bookList = document.querySelector('.shopping-list');
 const titleShoopingList = document.querySelector('.shopping-title');
+const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
 
 function getPagination(totalItems, itemsPerPage) {
   const options = {
@@ -24,17 +25,17 @@ function getPagination(totalItems, itemsPerPage) {
 }
 
 let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
-let currentPage = 1;
-let itemsPerPage = 3;
-let bookCount = bookList.length;
+// let currentPage = 1;
+// let itemsPerPage = 3;
+// let bookCount = bookList.length;
 // let pagination = getPagination(bookCount, itemsPerPage);
 // pagination.on('beforeMove', event => {
 //   currentPage = event.page;
 //   // renderList(bookList, event.page);
 // });
-console.log(arrForBacket);
-const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
+// console.log(arrForBacket);
 
+console.log(emptyShopList);
 generatePage();
 
 //вимальовує пустий або повний шопінг ліст
@@ -42,14 +43,13 @@ function generatePage() {
   let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 
   if (!arrForBacket.length) {
-    if (emptyShopList) emptyShopList.style.display = 'block';
+    emptyShopList.style.display = 'block';
   } else {
     emptyShopList.style.display = 'none';
     titleShoopingList.classList.replace(
       'empty-title-margin',
       'full-title-margin'
     );
-
   }
 }
 
