@@ -1,6 +1,3 @@
-
-
-/* тимчасова дарк тема, поки не працює дарк тема боді */
 .dark-theme .shopping-list-section {
   background-color: var(--black);
 }
@@ -25,8 +22,8 @@
 
 .shopping-list-section {
   padding-top: 40px;
-  /* padding-bottom: 302px; */
   background: #F6F6F6;
+    /* padding-bottom: 302px; */
 }
 
 .support-ukr-shopping-list{
