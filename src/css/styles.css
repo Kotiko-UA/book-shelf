@@ -9,6 +9,8 @@
 
 @import url('./reset.css');
 @import url('./shopping-list.css');
+@import url('./category.css');
+@import url('./category-tab.css');
 @import url('./styles_paganation.css');
 @import url('./header.css');
 @import url('./modal-window.css');
