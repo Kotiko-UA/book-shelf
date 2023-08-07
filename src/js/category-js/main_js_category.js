@@ -1,53 +1,49 @@
-import axios from "axios";
+import axios from 'axios';
 import Notiflix from 'notiflix';
 
 const elements = {
-    categoryList: document.querySelector(".js-category-list"),
-    books_showcase: document.querySelector(".books-showcase"),
-    btnSeeMore: document.querySelector(".btnSeeMore")
-}
+  categoryList: document.querySelector('.js-category-list'),
+  books_showcase: document.querySelector('.books-showcase'),
+  btnSeeMore: document.querySelector('.btnSeeMore'),
+};
 
-
-axios.defaults.baseURL = "https://books-backend.p.goit.global/books";
-
+axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
 
 async function fetchData(URL) {
-    return axios.get(URL).then(response => {
-        if (response.status !== 200) {
-            throw new Error(response.Error);
-        }
-        return response.data;
-    });
+  return axios.get(URL).then(response => {
+    if (response.status !== 200) {
+      throw new Error(response.Error);
+    }
+    return response.data;
+  });
 }
 
 function fetchCategories() {
-    return fetchData("/category-list ");
+  return fetchData('/category-list ');
 }
-
 
 function createCategoriesListMarkup(arr) {
     return  `<li class="js-category-item category-hover" name="allCategories" >All categories</li>`+arr.map(({list_name}) => `
     <li class="js-category-item">${list_name}</li>
-    `).sort((a, b) => a.localeCompare(b))
-        .join("");
-    
+    `).sort((a, b) => a.localeCompare(b)).join("");
 }
 
 function getCategoryList() {
-    fetchCategories()
+  fetchCategories()
     .then(data => {
-        elements.categoryList.innerHTML=createCategoriesListMarkup(data);
+      elements.categoryList.innerHTML = createCategoriesListMarkup(data);
     })
-    .catch((err) => {
-        console.log(err)
+    .catch(err => {
+      console.log(err);
     });
 }
 
 getCategoryList();
 
-
 function createBooksMarkup(arr) {
-    return arr.map(({_id, book_image, title, author}) => `
+  return arr
+    .map(
+      ({ _id, book_image, title, author }) => `
    <li data-id = '${_id}' class = 'js-book-item'>
    <div class="wrapper">
    <div class="thumb-category">
@@ -82,47 +78,46 @@ function getMarkupForCategoryHeader(categoryName) {
 
 
 function getBestSellersList() {
-    fetchBestSellers()
+  fetchBestSellers()
     .then(data => {
-        elements.books_showcase.innerHTML=createBestSellersMarkup(data);
+      elements.books_showcase.innerHTML = createBestSellersMarkup(data);
     })
-    .catch((err) => {
-        console.log(err)
+    .catch(err => {
+      console.log(err);
     });
 }
 
-getBestSellersList()
-
+getBestSellersList();
 
 function fetchBestSellers() {
-    return fetchData("/top-books");
+  return fetchData('/top-books');
 }
 
-
 function getCategoryBooks(categoryName) {
-    fetchCategoryBooks(categoryName)
+  fetchCategoryBooks(categoryName)
     .then(data => {
-        elements.books_showcase.innerHTML=getCategoryMarkup(data, categoryName);
+      elements.books_showcase.innerHTML = getCategoryMarkup(data, categoryName);
     })
-    .catch((err) => {
-        console.log(err)
+    .catch(err => {
+      console.log(err);
     });
 }
 
 function fetchCategoryBooks(categoryName) {
-    return fetchData(`/category?category=${categoryName}`);
+  return fetchData(`/category?category=${categoryName}`);
 }
-
 
 function getCategoryMarkup(arr, categoryName) {
     return getMarkupForCategoryHeader(categoryName) + 
 `<div class="category-book-wrapper">
     <ul class="category-book-list">`+ createBooksMarkup(arr)+ `</ul>
+
 </div>`
+  );
 }
 
-
-elements.categoryList.addEventListener("click", clickOnCategoryList);
+if (elements && elements.categoryList)
+  elements.categoryList.addEventListener('click', clickOnCategoryList);
 
 function clickOnCategoryList(event) {
     event.preventDefault();
@@ -134,4 +129,5 @@ function clickOnCategoryList(event) {
         getCategoryBooks(event.target.textContent);
     }
     
+
 }

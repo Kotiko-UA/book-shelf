@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./img/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Shelf</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- header-------------->
+      <load ="partials/header.html" />
+    </header>
+    <main>
+      <section class="shopping-list-section">
+        <div class="container container-shoplist">
+          <div class="support">
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="content">
+            <h1 class="shopping-title empty-title-margin">
+              <span class="shopping-title-span">Shopping</span>List
+            </h1>
+            <div class="empty-shopping-list-wrap">
+              <p class="empty-shopping-text">
+                This page is empty, add some books and proceed to order.
+              </p>
+              <img
+                class="empty-img"
+                src="./img/books.png"
+                alt="books "
+                width="265"
+                height="198"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- контейнер, якщо є книги в шопінг лісту -->
+
+        <div class="content-shopping">
+          <div class="shopping-list-wraper">
+            <ul class="shopping-list list">
+              <!-- сюди будуть вставлятись лішки книг -->
+            </ul>
+          </div>
+        </div>
+      </section>
+      <div
+        id="tui-pagination-container"
+        class="tui-pagination paganation"
+      ></div>
+    </main>
+    <script type="module" src="/js/shoping-js/main-shopping-list.js"></script>
+  </body>
+</html>
