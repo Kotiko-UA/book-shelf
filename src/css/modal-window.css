@@ -74,6 +74,7 @@
     letter-spacing: -0.14px;
     text-transform: uppercase;
     margin-top: 40px;
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -104,6 +105,10 @@
     gap: 20px;
     height: 36px;
     align-items: center;
+}
+
+.img-market {
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .img-market:hover {
@@ -145,6 +150,7 @@
     right: 12px;
     top: 12px;
     fill: var(--black);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-close:is(:hover, :focus) .icon-close {
