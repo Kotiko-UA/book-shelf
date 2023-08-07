@@ -25,16 +25,17 @@ switchMode.onchange = function () {
     body.classList.add('dark-theme');
 
     logo.innerHTML = `<svg class="logo">
-        <use href="/img/spryte.svg#icon-logo-dark" height="28px"></use>
-      </svg>`;
+        <use href="./img/spryte.svg#icon-logo-dark" height="28px"></use>
+      </svg>`
+
   } else {
     localStorage.setItem('theme', false);
     
     body.classList.remove('dark-theme');
 
     logo.innerHTML = `<svg class="logo">
-        <use href="/img/spryte.svg#icon-logo-light" height="28px"></use>
-      </svg>`;
+        <use href="./img/spryte.svg#icon-logo-light" height="28px"></use>
+      </svg>`
   }
 };
 /*----------------------------OPEN LOG OUT----------------------------- */

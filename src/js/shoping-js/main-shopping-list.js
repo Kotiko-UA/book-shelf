@@ -32,6 +32,9 @@ function generatePage(curData) {
 
   if (!arrForBacket.length) {
     emptyShopList.style.display = 'block';
+    titleShoopingList.classList.replace(
+      'full-title-margin', 'empty-title-margin'
+    );
   } else {
     emptyShopList.style.display = 'none';
     titleShoopingList.classList.replace(
@@ -75,7 +78,7 @@ function createMarkupBook(arr) {
      </div>
      <button type="button" class="shopping-card-bin-link">
           <svg class="img-bin-icon">
-            <use href="../img/spryte.svg#icon-trash"></use>
+            <use class="img-bin-use" href="../img/spryte.svg#icon-trash"></use>
           </svg>
       </button>
     </div>
@@ -86,17 +89,19 @@ function createMarkupBook(arr) {
               <ul class="markets-list-shopping">
               <li>
                 <a href="${amazon.url}">
-                  <img src="../../img/amazon.png" alt="${list_name}" class="icon-amazon">
+                  <img src="./img/amazon.png" alt="${list_name}" class="icon-amazon light-theme-amazon">
+                  <img src="./img/amazon-black-theme.png" alt="${list_name}" class="icon-amazon dark-theme-amazon">
+
                 </a>
               </li>
               <li>
                 <a href="${Bookshop.url}">
-                  <img src="../../img/book-market.png" alt="${list_name}" class="icon-apple-book">
+                  <img src="./img/book-market.png" alt="${list_name}" class="icon-apple-book">
                 </a>
               </li>
               <li>
                 <a href="${Apple.url}">
-                <img src="/img/book-shelf.png" alt="${list_name}" class="icon-book-shop">
+                <img src="./img/book-shelf.png" alt="${list_name}" class="icon-book-shop">
                 </a>
     </div>
   </div>
@@ -108,7 +113,8 @@ function createMarkupBook(arr) {
 bookList.addEventListener('click', e => {
   if (
     e.target.classList.contains('shopping-card-bin-link') ||
-    e.target.classList.contains('img-bin-icon')
+    e.target.classList.contains('img-bin-icon') ||
+    e.target.classList.contains('img-bin-use')
   ) {
     onButtonDeleteClick(e);
   }
