@@ -98,7 +98,7 @@ input:checked + .slider:before {
 }
 .mob-menus {
   position: fixed;
-  /* display: none; */
+  display: none;
   width: 100%;
   height: 100%;
   background: radial-gradient(
@@ -111,13 +111,9 @@ input:checked + .slider:before {
   opacity: 0;
   transition: 1s;
 }
-.burgActiv {
-  /* display: block; */
-  transform: scaleY(1) translateY(0%);
-  opacity: 1;
-  transition: 1s;
-}
+
 .but-sing-mob {
+  position: relative;
   display: none;
 
   align-items: center;
@@ -130,8 +126,14 @@ input:checked + .slider:before {
   color: var(--white);
   padding-left: 14px;
   padding-right: 14px;
-  margin-left: 20px;
-  margin-top: 40px;
+  left: 20px;
+  top: 104px;
+}
+.burgActiv {
+  display: block;
+  transform: scaleY(1) translateY(0%);
+  opacity: 1;
+  transition: 1s;
 }
 .arrow-right-wrap {
   width: 20px;
@@ -285,11 +287,11 @@ input:checked + .slider:before {
   display: none;
 }
 
-.mob-menus {
-  display: none;
-}
 /* ________________________DESKTOP____________________________ */
 @media screen and (min-width: 376px) {
+  .mob-menus {
+    display: none;
+  }
   .home-page {
     color: #111;
   }
