@@ -479,6 +479,8 @@ input:checked + .slider:before {
 }
 /* ____________________CLASS________________ */
 .log-out-wrap {
+  display: block;
 }
 .sing-wrap {
+  display: flex;
 }
