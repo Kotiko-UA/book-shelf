@@ -149,7 +149,7 @@ const signInModal = basicLightbox.create(
 );
 
 function onEscKeyPress(evt) {
-  //console.log(evt.code);
+  console.log(evt.code);
   const ESC_KEY_CODE = 'Escape';
   if (evt.code === ESC_KEY_CODE) {
     signUpModal.close();

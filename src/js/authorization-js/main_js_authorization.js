@@ -5,12 +5,15 @@ import {
   signInWithGoogle,
   registrateUser,
 } from './auth_firebase';
+import {} from './auth_valid_form';
 
 //===========================================================
 
 document.addEventListener('click', clickHandlerAuth);
 
 function clickHandlerAuth(e) {
+  const inputs = document.querySelectorAll('.form-input');
+  inputs.forEach(input => input.classList.remove('invalid'));
   if (e.target.closest('.modal-close-btn')) {
     signUpModal.close();
     signInModal.close();

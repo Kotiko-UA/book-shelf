@@ -42,11 +42,11 @@
   letter-spacing: -0.64px;
 }
 
-.empty-title-margin{
+.empty-title-margin {
   margin-bottom: 120px;
 }
 
-.full-title-margin{
+.full-title-margin {
   margin-bottom: 40px;
 }
 
@@ -86,7 +86,6 @@
   text-transform: uppercase;
   font-weight: 700;
   line-height: 1.1;
-
 
   width: 115px;
 
@@ -188,7 +187,7 @@
   gap: 8px;
 }
 
-.markets-list-shopping{
+.markets-list-shopping {
   display: flex;
   height: 36px;
   align-items: center;
@@ -239,7 +238,7 @@
     line-height: 1.083;
   }
 
-  .empty-title-margin{
+  .empty-title-margin {
     margin-bottom: 140px;
   }
 
@@ -359,7 +358,6 @@
     /* отрисовать сапорт при  загрузке и скрыть */
   }
 }
-
 
 /* @media screen and (min-width: 375px) {
   .container {

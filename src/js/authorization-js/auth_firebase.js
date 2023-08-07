@@ -1,5 +1,11 @@
 import { signUpModal, signInModal } from './auth_modals';
 import { initializeApp } from 'firebase/app';
+import {
+  validateEmail,
+  validatePassword,
+  validateUserName,
+  isValidF,
+} from './auth_valid_form';
 const firebaseConfig = {
   apiKey: 'AIzaSyCJ7bTyjKvQtJTxa9hFVg3AHb0bG9xVu8w',
   authDomain: 'lets-do-it-bookshelf.firebaseapp.com',
@@ -88,7 +94,13 @@ function showUserBar(user) {
 }
 
 function registrateUser() {
-  if (signUpForm.email.value.length < 6) {
+  if (!validateUserName(signUpForm.name)) {
+    return;
+  }
+  if (!validateEmail(signUpForm.email)) {
+    return;
+  }
+  if (!validatePassword(signUpForm.password)) {
     return;
   }
 
@@ -121,7 +133,11 @@ function saveUserPhoto(file = null) {
 // new_user*pass
 
 function signIn() {
-  if (signInForm.email.value.length < 6) {
+  console.dir(signInForm);
+  if (!validateEmail(signInForm.email)) {
+    return;
+  }
+  if (!validatePassword(signInForm.password)) {
     return;
   }
 
@@ -140,7 +156,8 @@ function signIn() {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.dir(error, errorCode, errorMessage);
-      alert(errorMessage);
+
+      isValidF(errorMessage, false);
     });
 }
 function signInWithGoogle() {
@@ -183,7 +200,7 @@ function updateUserProfile(name = null, photoUrl = null) {
     photoURL: photoUrl,
   })
     .then(() => {
-      document.querySelector('.user-name').textContent = name;
+      document.querySelector('.user-text').textContent = name;
       document.querySelector('.user-image img').src =
         photoUrl ?? '/img/noimage.png';
       console.log(auth.currentUser);
