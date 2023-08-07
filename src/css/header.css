@@ -216,7 +216,7 @@ input:checked + .slider:before {
   .menu-btn {
     display: flex;
 
-    max-width: 184px;
+    /* max-width: 184px; */
     height: 45px;
 
     border-radius: 36px;

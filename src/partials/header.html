@@ -10,16 +10,16 @@
         ><!-- ./page-2.html -->
       </li>
 
-      <li>
+      <li class="nav-item">
         <a
           href="./shopping-list.html"
-          class="shop-page"
+          class="nav-link"
           width="20px"
           height="20px"
-          ><span>SHOPPING LIST</span
-          ><svg width="20px" height="20px">
+          ><span class="nav-link-decor">SHOPPING LIST</span
+          ><svg class="svg-cart" width="20px" height="20px">
             <use
-              href="../img/spryte.svg#icon-cart"
+              href="./img/spryte.svg#icon-cart"
               width="20px"
               height="20px"
             ></use></svg></a
@@ -28,7 +28,7 @@
     </ul>
   </nav>
 
-  <div class="log-out-wrap">
+  <div class="log-out-wrap" style="display: none">
     <a href="#" class="menu-btn">
       <svg class="user-icon-hed">
         <use
@@ -61,29 +61,11 @@
       </svg>
     </a>
   </div>
-  <div class="sing-wrap">
+  <div class="sing-wrap" style="display: none">
     <label class="switch">
       <input type="checkbox" id="switchMode" />
       <span class="slider round"></span>
     </label>
-    <button class="burger-open-mob">
-      <svg class=" " width="28px" height="28px">
-        <use
-          width="28px"
-          height="28px"
-          href="../img/spryte.svg#icon-burger"
-        ></use>
-      </svg>
-    </button>
-    <button class="burger-close-mob">
-      <svg class=" " width="28px" height="28px">
-        <use
-          width="28px"
-          height="28px"
-          href="../img/spryte.svg#icon-close"
-        ></use>
-      </svg>
-    </button>
     <button class="but-sing">
       <span class="user-sing">Sign up</span>
 

@@ -1,27 +1,59 @@
-// import Pagination from 'tui-pagination';
-// import 'tui-pagination/dist/tui-pagination.css';
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
 // import { KEY } from '../js-modal-window/js-mod-w-main';
 // console.log(KEY);
 
 const bookList = document.querySelector('.shopping-list');
-
-let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
+const titleShoopingList = document.querySelector('.shopping-title');
 const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
 
+function getPagination(totalItems, itemsPerPage) {
+  const options = {
+    totalItems: totalItems,
+    itemsPerPage: itemsPerPage,
+    visiblePages: visiblePages,
+    centerAlign: true,
+    firstItemClassName: 'pagination__first-item',
+    lastItemClassName: 'pagination__last-item',
+    prevButtonClassName: 'pagination__prev-btn',
+    nextButtonClassName: 'pagination__next-btn',
+    pageLinkClassName: 'pagination__page-link',
+    activePageLinkClassName: 'pagination__page-link--active',
+  };
+
+  return new Pagination(paginationEl, options);
+}
+
+let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
+// let currentPage = 1;
+
+// let itemsPerPage = 3;
+// let bookCount = bookList.length;
+// let pagination = getPagination(bookCount, itemsPerPage);
+// pagination.on('beforeMove', event => {
+//   currentPage = event.page;
+//   // renderList(bookList, event.page);
+// });
+// console.log(arrForBacket);
 generatePage();
 
 //вимальовує пустий або повний шопінг ліст
 function generatePage() {
+  bookList.innerHTML = '';
   let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 
   if (!arrForBacket.length) {
     emptyShopList.style.display = 'block';
   } else {
     emptyShopList.style.display = 'none';
+    titleShoopingList.classList.replace(
+      'empty-title-margin',
+      'full-title-margin'
+    );
+
+    bookList.insertAdjacentHTML('beforeend', createMarkupBook(arrForBacket));
   }
 }
-
-bookList.insertAdjacentHTML('beforeend', createMarkupBook(arrForBacket));
 
 function createMarkupBook(arr) {
   return arr
@@ -45,7 +77,6 @@ function createMarkupBook(arr) {
     <div class="shopping-card-bin-wrap">
      <div>
         <h4 class="shopping-card-tittle">${title}</h4>
-
         <p class="shopping-card-genre">${list_name}</p>
      </div>
      <button type="button" class="shopping-card-bin-link">
@@ -54,39 +85,39 @@ function createMarkupBook(arr) {
           </svg>
       </button>
     </div>
-
     <p class="shopping-card-description">${description}
     </p>
     <div class="botton-wrap">
         <p class="shopping-card-author">${author}</p>
-
-
-              <ul class="markets-list-modal-window">
+              <ul class="markets-list-shopping">
               <li>
-                <a href="${amazon.url}" class="icon-amazon">
-                  <img src="/img/amazon.png" alt="${list_name}">
+                <a href="${amazon.url}">
+                  <img src="../../img/amazon.png" alt="${list_name}" class="icon-amazon">
                 </a>
               </li>
               <li>
-                <a href="${Bookshop.url}" class="icon-apple-book">
-                  <img src="/img/book-market.png" alt="${list_name}">
+                <a href="${Bookshop.url}">
+                  <img src="../../img/book-market.png" alt="${list_name}" class="icon-apple-book">
                 </a>
               </li>
               <li>
-                <a href="${Apple.url}"  class="icon-book-shop">
-                <img src="/img/book-shelf.png" alt="${list_name}">
+                <a href="${Apple.url}">
+                <img src="/img/book-shelf.png" alt="${list_name}" class="icon-book-shop">
                 </a>
     </div>
   </div>
-</li> `
+</li>`
     )
-    .join(' ');
+    .join('');
 }
 
-const shoppingBinBtns = document.querySelectorAll('.shopping-card-bin-link');
-
-shoppingBinBtns.forEach(function (shoppingBinBtn) {
-  shoppingBinBtn.addEventListener('click', onButtonDeleteClick);
+bookList.addEventListener('click', e => {
+  if (
+    e.target.classList.contains('shopping-card-bin-link') ||
+    e.target.classList.contains('img-bin-icon')
+  ) {
+    onButtonDeleteClick(e);
+  }
 });
 
 function onButtonDeleteClick(event) {
@@ -97,6 +128,7 @@ function onButtonDeleteClick(event) {
 
   arrForBacket.splice(removeIndexFromLocalStorage, 1);
   localStorage.setItem('KEY', JSON.stringify(arrForBacket));
+  // const liEl = event.target.closest('.shopping-list-item');
+  // liEl.remove();
   generatePage();
 }
-

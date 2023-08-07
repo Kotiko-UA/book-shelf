@@ -11,6 +11,7 @@
 @import url('./styles_paganation.css');
 @import url('./header.css');
 @import url("./modal-window.css");
+@import url('./authorization.css');
 
 :root {
   --black: #111111;
@@ -18,4 +19,5 @@
   --violet: #4f2ee8;
   --yellow: #eac645;
   --white: #ffffff;
+  --cubic-bezier: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
