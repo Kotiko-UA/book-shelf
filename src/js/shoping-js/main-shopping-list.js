@@ -39,21 +39,21 @@ generatePage();
 
 //вимальовує пустий або повний шопінг ліст
 function generatePage() {
+  bookList.innerHTML = '';
   let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 
   if (!arrForBacket.length) {
-    if (emptyShopList) emptyShopList.style.display = 'block';
+    emptyShopList.style.display = 'block';
   } else {
-    if (emptyShopList) emptyShopList.style.display = 'none';
+    emptyShopList.style.display = 'none';
     titleShoopingList.classList.replace(
       'empty-title-margin',
       'full-title-margin'
     );
+
+    bookList.insertAdjacentHTML('beforeend', createMarkupBook(arrForBacket));
   }
 }
-
-if (bookList)
-  bookList.insertAdjacentHTML('beforeend', createMarkupBook(arrForBacket));
 
 function createMarkupBook(arr) {
   return arr
@@ -77,7 +77,6 @@ function createMarkupBook(arr) {
     <div class="shopping-card-bin-wrap">
      <div>
         <h4 class="shopping-card-tittle">${title}</h4>
-
         <p class="shopping-card-genre">${list_name}</p>
      </div>
      <button type="button" class="shopping-card-bin-link">
@@ -86,13 +85,10 @@ function createMarkupBook(arr) {
           </svg>
       </button>
     </div>
-
     <p class="shopping-card-description">${description}
     </p>
     <div class="botton-wrap">
         <p class="shopping-card-author">${author}</p>
-
-
               <ul class="markets-list-shopping">
               <li>
                 <a href="${amazon.url}">
@@ -110,15 +106,18 @@ function createMarkupBook(arr) {
                 </a>
     </div>
   </div>
-</li> `
+</li>`
     )
-    .join(' ');
+    .join('');
 }
 
-const shoppingBinBtns = document.querySelectorAll('.shopping-card-bin-link');
-
-shoppingBinBtns.forEach(function (shoppingBinBtn) {
-  shoppingBinBtn.addEventListener('click', onButtonDeleteClick);
+bookList.addEventListener('click', e => {
+  if (
+    e.target.classList.contains('shopping-card-bin-link') ||
+    e.target.classList.contains('img-bin-icon')
+  ) {
+    onButtonDeleteClick(e);
+  }
 });
 
 function onButtonDeleteClick(event) {
@@ -129,7 +128,7 @@ function onButtonDeleteClick(event) {
 
   arrForBacket.splice(removeIndexFromLocalStorage, 1);
   localStorage.setItem('KEY', JSON.stringify(arrForBacket));
-  const liEl = event.target.closest('.shopping-list-item');
-  liEl.remove();
+  // const liEl = event.target.closest('.shopping-list-item');
+  // liEl.remove();
   generatePage();
 }
