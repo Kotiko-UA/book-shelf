@@ -75,7 +75,7 @@ function createMarkupBook(arr) {
      </div>
      <button type="button" class="shopping-card-bin-link">
           <svg class="img-bin-icon">
-            <use href="../img/spryte.svg#icon-trash"></use>
+            <use class="img-bin-use" href="../img/spryte.svg#icon-trash"></use>
           </svg>
       </button>
     </div>
@@ -108,7 +108,8 @@ function createMarkupBook(arr) {
 bookList.addEventListener('click', e => {
   if (
     e.target.classList.contains('shopping-card-bin-link') ||
-    e.target.classList.contains('img-bin-icon')
+    e.target.classList.contains('img-bin-icon') ||
+    e.target.classList.contains('img-bin-use')
   ) {
     onButtonDeleteClick(e);
   }
