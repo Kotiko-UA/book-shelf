@@ -197,8 +197,10 @@ input:checked + .slider:before {
 }
 
 .home-page {
+  display: block;
   padding: 8px 16px;
-
+  width: 72px;
+  margin-bottom: 11px;
   background-color: var(--yellow);
   border-radius: 36px;
   font-family: DM Sans;
@@ -505,8 +507,6 @@ input:checked + .slider:before {
 }
 /* ____________________CLASS________________ */
 .log-out-wrap {
-  display: block;
 }
 .sing-wrap {
-  display: flex;
 }
