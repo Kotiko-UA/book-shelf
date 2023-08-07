@@ -98,3 +98,7 @@
 .basicLightbox__placeholder {
   width: auto;
 }
+
+.list-team {
+  cursor: pointer;
+}
