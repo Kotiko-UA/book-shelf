@@ -85,7 +85,7 @@ input:checked + .slider:before {
 }
 /* _______________________MOB MENU____________________________ */
 .burger-open-mob {
-  display: none;
+  display: block;
   width: 28px;
   height: 28px;
   padding: 0;
@@ -93,10 +93,12 @@ input:checked + .slider:before {
   border: none;
   background-color: initial;
 }
+.oupenBur {
+  display: none;
+}
 .mob-menus {
   position: fixed;
-  display: block;
-  align-items: center;
+  /* display: none; */
   width: 100%;
   height: 100%;
   background: radial-gradient(
@@ -104,6 +106,16 @@ input:checked + .slider:before {
     #4f2ee8 18.03%,
     #fff 100%
   );
+  transform-origin: top center;
+  transform: scaleY(1) translateY(-10%);
+  opacity: 0;
+  transition: 1s;
+}
+.burgActiv {
+  /* display: block; */
+  transform: scaleY(1) translateY(0%);
+  opacity: 1;
+  transition: 1s;
 }
 .but-sing-mob {
   display: none;
@@ -125,17 +137,18 @@ input:checked + .slider:before {
   width: 20px;
   height: 20px;
 }
-/* .cloce {     клас на боді
-  overflow-y: clip;
-} */
+
 .burger-close-mob {
-  display: block;
+  display: none;
   width: 28px;
   height: 28px;
   padding: 0;
   margin: 0;
   border: none;
   background-color: initial;
+}
+.closeBur {
+  display: block;
 }
 .menu-dagraund {
   position: absolute;
@@ -179,8 +192,8 @@ input:checked + .slider:before {
 .nav-list-mob {
   position: relative;
   margin-top: 130px;
-  margin-left: 129px;
-  margin-right: 129px;
+  margin-left: 110px;
+  margin-right: 110px;
 }
 
 .home-page {
@@ -210,19 +223,49 @@ input:checked + .slider:before {
   line-height: 18px;
   letter-spacing: -0.56px;
   text-transform: uppercase;
-  color: #111;
+  color: #fff;
+  fill: #fff;
 }
 .header-shop .shop-page {
   padding: 8px 16px;
   font-weight: 700;
   background-color: var(--yellow);
   border-radius: 36px;
+  color: #111;
+  fill: #111;
 }
 .header-shop .home-page {
   background-color: inherit;
   font-weight: 500;
+  color: #fff;
 }
-
+.tupe-out-mob {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform-origin: top center;
+  bottom: 20px;
+  left: 20px;
+  height: 48px;
+  gap: 4px;
+  border-radius: 18px;
+  border: 1.5px solid #111;
+  background: #fff;
+  padding-left: 14px;
+  padding-right: 14px;
+  margin: 0px;
+}
+.text-out {
+  color: #111;
+  font-family: DM Sans;
+  width: 46px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
+}
 /* ______________________HIDEN ELEMENT________________________ */
 .nav-list {
   display: none;
@@ -236,6 +279,14 @@ input:checked + .slider:before {
 
 /* ________________________DESKTOP____________________________ */
 @media screen and (min-width: 376px) {
+  .home-page {
+    color: #111;
+  }
+  .shop-page {
+    fill: #111;
+    color: #111;
+  }
+
   .header {
     height: 72px;
   }
@@ -245,8 +296,32 @@ input:checked + .slider:before {
   .burger-close-mob {
     display: none;
   }
+  .home-page {
+    color: #111;
+  }
+  .shop-page {
+    color: #111;
+    fill: #111;
+  }
+  .header-shop .shop-page {
+    color: #111;
+    fill: #111;
+  }
+  .header-shop .home-page {
+    color: #111;
+  }
+  .dark-theme .shop-page {
+    color: #fff;
+    fill: #fff;
+  }
+  .dark-theme .home-page {
+    color: #fff;
+  }
 
   /* /----------------------USER BUT ---------------/ */
+  .user-text {
+    margin-left: 9px;
+  }
   .but-sing {
     display: flex;
 
@@ -272,10 +347,8 @@ input:checked + .slider:before {
   }
   .menu-btn {
     display: flex;
-
     /* max-width: 184px; */
     height: 45px;
-
     border-radius: 36px;
     background: #4f2ee8;
     position: relative;
@@ -283,16 +356,29 @@ input:checked + .slider:before {
     padding-left: 12px;
     padding-right: 12px;
   }
+  .tupe-out {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform-origin: top center;
+    transition: 0.5s;
+    transform: translateY(-10%);
+    opacity: 0;
+    height: 48px;
+    gap: 90px;
+    border-radius: 18px;
+    border: 1.5px solid #111;
+    background: #fff;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin: 0px;
+  }
 
-  /* .user-icon-hed {
-    display: block;
-    background-color: #fff;
-    width: 37px;
-    height: 37px;
-    margin-right: 9px;
-    padding: 9px 9px 9px 9px;
-    border-radius: 50%;
-  } */
+  .tupe-out_active {
+    transform: scaleY(1) translateY(0%);
+    opacity: 1;
+  }
 
   .daun-wrap {
     width: 23px;
@@ -313,38 +399,6 @@ input:checked + .slider:before {
   }
 
   /*-------------------*/
-  .tupe-out {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transform-origin: top center;
-    transition: 0.5s;
-    transform: translateY(-10%);
-    opacity: 0;
-    height: 48px;
-    gap: 90px;
-    border-radius: 18px;
-    border: 1.5px solid #111;
-    background: #fff;
-    padding-left: 14px;
-    padding-right: 14px;
-    margin: 0px;
-  }
-  .text-out {
-    color: #111;
-    font-family: DM Sans;
-    width: 46px;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px; /* 128.571% */
-    letter-spacing: -0.56px;
-  }
-  .tupe-out_active {
-    transform: scaleY(1) translateY(0%);
-    opacity: 1;
-  }
 }
 
 @media screen and (min-width: 376px) and (max-width: 769px) {
@@ -409,9 +463,17 @@ input:checked + .slider:before {
   border: 1.5px solid #fff;
   background: #111;
 }
-.dark-theme .shop-page {
-  color: #fff;
+
+.dark-theme .slider.round {
+  border-radius: 34px;
+  background-image: linear-gradient(180deg, #4f2ee8, #686868);
 }
-.dark-theme .home-page {
-  color: #fff;
+.dark-theme .burger-open-mob {
+  fill: #fff;
+}
+.dark-theme .burger-close-mob {
+  fill: #fff;
+}
+.no-scroll {
+  overflow-y: clip;
 }
