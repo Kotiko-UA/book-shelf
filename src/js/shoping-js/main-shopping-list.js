@@ -1,5 +1,7 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
+import '../authorization-js/main_js_authorization';
+import '../heder-js/theme';
 
 const bookList = document.querySelector('.shopping-list');
 const titleShoopingList = document.querySelector('.shopping-title');
@@ -136,5 +138,3 @@ function onButtonDeleteClick(event) {
   curData = arrForBacket.slice(startIdx, endIdx);
   generatePage(curData);
 }
-import '../authorization-js/main_js_authorization';
-import '../heder-js/theme';
