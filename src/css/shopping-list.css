@@ -3,29 +3,27 @@
 }
 
 /* тимчасова дарк тема, поки не працює дарк тема боді */
-.dark-theme .shopping-list-section{
-  background-color: black;
+.dark-theme .shopping-list-section {
+  background-color: var(--black);
 }
 
-.dark-theme  .empty-shopping-text{
-  color: rgba(255, 255, 255, 0.60);
-  }
-  
+.dark-theme .empty-shopping-text {
+  color: rgba(255, 255, 255, 0.6);
+}
 
 .dark-theme .shopping-title-span,
 .dark-theme .shopping-card-tittle,
-.dark-theme .shopping-card-description{
+.dark-theme .shopping-card-description {
   color: var(--white);
 }
 
-.dark-theme .light-theme-amazon{
+.dark-theme .light-theme-amazon {
   display: none;
 }
 
-.dark-theme .dark-theme-amazon{
+.dark-theme .dark-theme-amazon {
   display: block;
 }
-
 
 .shopping-list-section {
   padding-top: 40px;
@@ -67,13 +65,12 @@
   letter-spacing: -0.64px;
 }
 
-.empty-title-margin{
+.empty-title-margin {
   margin-bottom: 120px;
 }
 
-.full-title-margin{
+.full-title-margin {
   margin-bottom: 40px;
-
 }
 
 .shopping-title-span {
@@ -102,6 +99,7 @@
   width: 265px;
   height: 198px;
 }
+
 .shopping-card-img {
   width: 100px;
   height: 142px;
@@ -113,7 +111,6 @@
   font-weight: 700;
   line-height: 1.1;
 
-
   width: 115px;
 
   overflow: hidden;
@@ -122,6 +119,7 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+
 .shopping-card-genre {
   letter-spacing: 0.36px;
   font-size: 12px;
@@ -214,20 +212,18 @@
   gap: 8px;
 }
 
-.markets-list-shopping{
+.markets-list-shopping {
   display: flex;
   height: 36px;
   align-items: center;
   gap: 8px;
 }
 
-
- .light-theme-amazon{
- 
+.light-theme-amazon {
   display: block;
 }
 
- .dark-theme-amazon{
+.dark-theme-amazon {
   display: none;
 }
 
@@ -235,11 +231,13 @@
   width: 32px;
   height: 11px;
 }
+
 .icon-apple-book {
   display: block;
   width: 16px;
   height: 16px;
 }
+
 .icon-book-shop {
   display: block;
   width: 16px;
@@ -274,7 +272,7 @@
     line-height: 1.083;
   }
 
-  .empty-title-margin{
+  .empty-title-margin {
     margin-bottom: 140px;
   }
 
@@ -336,10 +334,12 @@
     width: 48px;
     height: 15px;
   }
+
   .icon-apple-book {
     width: 28px;
     height: 27px;
   }
+
   .icon-book-shop {
     width: 32px;
     height: 30px;
@@ -380,6 +380,7 @@
     display: flex;
     gap: 40;
   }
+
   .content {
     margin-left: 40px;
     width: 100%;
@@ -394,7 +395,6 @@
     /* отрисовать сапорт при  загрузке и скрыть */
   }
 }
-
 
 /* @media screen and (min-width: 375px) {
   .container {

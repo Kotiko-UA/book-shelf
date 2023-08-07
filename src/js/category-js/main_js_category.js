@@ -1,4 +1,6 @@
 import axios from 'axios';
+import '../authorization-js/main_js_authorization';
+import '../heder-js/theme';
 import Notiflix from 'notiflix';
 
 const elements = {
@@ -118,6 +120,7 @@ function getCategoryMarkup(arr, categoryName) {
     createBooksMarkup(arr) +
     `</ul>
 </div>`
+
   );
 }
 
