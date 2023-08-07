@@ -86,17 +86,17 @@ function createMarkupBook(arr) {
               <ul class="markets-list-shopping">
               <li>
                 <a href="${amazon.url}">
-                  <img src="../../img/amazon.png" alt="${list_name}" class="icon-amazon">
+                  <img src="./img/amazon.png" alt="${list_name}" class="icon-amazon">
                 </a>
               </li>
               <li>
                 <a href="${Bookshop.url}">
-                  <img src="../../img/book-market.png" alt="${list_name}" class="icon-apple-book">
+                  <img src="./img/book-market.png" alt="${list_name}" class="icon-apple-book">
                 </a>
               </li>
               <li>
                 <a href="${Apple.url}">
-                <img src="/img/book-shelf.png" alt="${list_name}" class="icon-book-shop">
+                <img src="./img/book-shelf.png" alt="${list_name}" class="icon-book-shop">
                 </a>
     </div>
   </div>
