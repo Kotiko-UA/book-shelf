@@ -400,8 +400,11 @@ input:checked + .slider:before {
 
   /*-------------------*/
 }
-
-@media screen and (min-width: 376px) and (max-width: 769px) {
+.body-burger {
+  display: none;
+}
+/* ---------------------------------------------------------------------------- */
+@media screen and (min-width: 376px) and (max-width: 768px) {
   .header {
     width: 768px;
     padding-left: 32px;
@@ -417,6 +420,14 @@ input:checked + .slider:before {
   .burger-open-mob {
     display: none;
   }
+  .burger-close-mob {
+    display: none;
+  }
+  .body-burger {
+    display: none;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 769px) {
   .nav-list {
     display: flex;
     align-items: center;
@@ -456,6 +467,21 @@ input:checked + .slider:before {
   .arrow-right-wrap {
     width: 20px;
     height: 20px;
+  }
+  .burger-close-mob {
+    display: none;
+  }
+  .body-burger {
+    display: none;
+    position: absolute;
+    width: 375px;
+    height: 100%;
+
+    background: radial-gradient(
+      189.32% 190.93% at 59.76% -23.42%,
+      #4f2ee8 18.03%,
+      #fff 100%
+    );
   }
 }
 
