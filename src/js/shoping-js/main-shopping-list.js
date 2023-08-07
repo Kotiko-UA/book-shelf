@@ -1,5 +1,7 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
+import '../authorization-js/main_js_authorization';
+import '../heder-js/theme';
 
 const bookList = document.querySelector('.shopping-list');
 const titleShoopingList = document.querySelector('.shopping-title');
@@ -32,11 +34,14 @@ function generatePage(curData) {
 
   if (!arrForBacket.length) {
     emptyShopList.style.display = 'block';
+    paginationContainer.style.display = 'none';
     titleShoopingList.classList.replace(
-      'full-title-margin', 'empty-title-margin'
+      'full-title-margin',
+      'empty-title-margin'
     );
   } else {
     emptyShopList.style.display = 'none';
+    paginationContainer.style.display = 'block';
     titleShoopingList.classList.replace(
       'empty-title-margin',
       'full-title-margin'
@@ -133,5 +138,3 @@ function onButtonDeleteClick(event) {
   curData = arrForBacket.slice(startIdx, endIdx);
   generatePage(curData);
 }
-import '../authorization-js/main_js_authorization';
-import '../heder-js/theme';

@@ -1,4 +1,6 @@
 import axios from 'axios';
+import '../authorization-js/main_js_authorization';
+import '../heder-js/theme';
 import Notiflix from 'notiflix';
 
 const elements = {
@@ -23,9 +25,17 @@ function fetchCategories() {
 }
 
 function createCategoriesListMarkup(arr) {
-    return  `<li class="js-category-item category-hover" name="allCategories" >All categories</li>`+arr.map(({list_name}) => `
+  return (
+    `<li class="js-category-item category-hover" name="allCategories" >All categories</li>` +
+    arr
+      .map(
+        ({ list_name }) => `
     <li class="js-category-item">${list_name}</li>
-    `).sort((a, b) => a.localeCompare(b)).join("");
+    `
+      )
+      .sort((a, b) => a.localeCompare(b))
+      .join('')
+  );
 }
 
 function getCategoryList() {
@@ -53,29 +63,38 @@ function createBooksMarkup(arr) {
         <p class="catalogue-book-author">${author}</p>
    </div>     
    
-      </li>`)
-        .join('')
+      </li>`
+    )
+    .join('');
 }
 
 function createBestSellersMarkup(arr) {
-   return getMarkupForCategoryHeader("Best Sellers Books") + arr.map(({ list_name, books }) => `
+  return (
+    getMarkupForCategoryHeader('Best Sellers Books') +
+    arr
+      .map(
+        ({ list_name, books }) =>
+          `
      <h2 class="categoryName">${list_name}</h2>
      <div class="wrapper-for-catList">
-     <ul class="category-list">`+ createBooksMarkup(books)+ 
-    `</ul>
+     <ul class="category-list">` +
+          createBooksMarkup(books) +
+          `</ul>
     </div>
     <button type="button" class="btnSeeMore">See more</button>`
-     ).join('')
+      )
+      .join('')
+  );
 }
 
 function getMarkupForCategoryHeader(categoryName) {
-    let categoryNameSplited = categoryName.split(" ");
-    let originalColor = categoryNameSplited.slice(0, categoryNameSplited.length - 1).join(" ");
-    let violetColor = categoryNameSplited[categoryNameSplited.length-1]
-    return `<h2 class="titleCategory">${originalColor} <span class="last-word-in-catName">${violetColor}</span></h2>`
+  let categoryNameSplited = categoryName.split(' ');
+  let originalColor = categoryNameSplited
+    .slice(0, categoryNameSplited.length - 1)
+    .join(' ');
+  let violetColor = categoryNameSplited[categoryNameSplited.length - 1];
+  return `<h2 class="titleCategory">${originalColor} <span class="last-word-in-catName">${violetColor}</span></h2>`;
 }
-
-
 
 function getBestSellersList() {
   fetchBestSellers()
@@ -108,11 +127,12 @@ function fetchCategoryBooks(categoryName) {
 }
 
 function getCategoryMarkup(arr, categoryName) {
-    return getMarkupForCategoryHeader(categoryName) + 
-`<div class="category-book-wrapper">
-    <ul class="category-book-list">`+ createBooksMarkup(arr)+ `</ul>
-
-</div>`
+  return (
+    getMarkupForCategoryHeader(categoryName) +
+    `<div class="category-book-wrapper">
+    <ul class="category-book-list">` +
+    createBooksMarkup(arr) +
+    `</ul></div>`
   );
 }
 
@@ -120,14 +140,12 @@ if (elements && elements.categoryList)
   elements.categoryList.addEventListener('click', clickOnCategoryList);
 
 function clickOnCategoryList(event) {
-    event.preventDefault();
-    event.currentTarget.firstChild.classList.remove('category-hover');
-    
-    if (event.target.getAttribute("name") === "allCategories") {
-        getBestSellersList()
-    } else {
-        getCategoryBooks(event.target.textContent);
-    }
-    
+  event.preventDefault();
+  event.currentTarget.firstChild.classList.remove('category-hover');
 
+  if (event.target.getAttribute('name') === 'allCategories') {
+    getBestSellersList();
+  } else {
+    getCategoryBooks(event.target.textContent);
+  }
 }
