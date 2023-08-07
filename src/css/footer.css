@@ -1,0 +1,104 @@
+.bg-color-footer {
+  background-color: #c8c6c7;
+}
+
+.footer-section {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.gallery {
+  max-width: 335px;
+}
+
+@media screen and (min-width: 768px) {
+  .gallery {
+    max-width: 460px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .gallery {
+    max-width: 1410px;
+  }
+}
+
+.titel-footer {
+  font-family: DM Sans;
+  width: 100%;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+
+  margin-bottom: 20px;
+}
+
+.list-teams {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.list-team {
+  width: 70px;
+}
+
+.list-team img {
+  width: 100%;
+}
+
+.list-team h3 {
+  font-family: DM Sans;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 8px;
+}
+
+.list-team p {
+  font-family: DM Sans;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* modal */
+.teamName {
+  color: #fff;
+  font-family: DM Sans;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.developer-class {
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.mail-team {
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.basicLightbox__placeholder {
+  width: auto;
+}
+
+.list-team {
+  cursor: pointer;
+}

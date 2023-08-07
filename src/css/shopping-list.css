@@ -2,6 +2,29 @@
   background: #f6f6f6;
 }
 
+/* тимчасова дарк тема, поки не працює дарк тема боді */
+.dark-theme .shopping-list-section {
+  background-color: var(--black);
+}
+
+.dark-theme .empty-shopping-text {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-theme .shopping-title-span,
+.dark-theme .shopping-card-tittle,
+.dark-theme .shopping-card-description {
+  color: var(--white);
+}
+
+.dark-theme .light-theme-amazon {
+  display: none;
+}
+
+.dark-theme .dark-theme-amazon {
+  display: block;
+}
+
 .shopping-list-section {
   padding-top: 40px;
   padding-bottom: 302px;
@@ -35,7 +58,7 @@
 }
 
 .shopping-title {
-  color: var(--black);
+  color: var(--violet);
   font-size: 32px;
   font-weight: 700;
   line-height: 1.18;
@@ -52,7 +75,7 @@
 
 .shopping-title-span {
   /* margin-bottom: 40px; */
-  color: var(--violet);
+  color: var(--black);
   font-size: 32px;
   font-weight: 700;
   line-height: 1.18;
@@ -76,6 +99,7 @@
   width: 265px;
   height: 198px;
 }
+
 .shopping-card-img {
   width: 100px;
   height: 142px;
@@ -95,6 +119,7 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+
 .shopping-card-genre {
   letter-spacing: 0.36px;
   font-size: 12px;
@@ -194,16 +219,25 @@
   gap: 8px;
 }
 
-.icon-amazon {
+.light-theme-amazon {
   display: block;
+}
+
+.dark-theme-amazon {
+  display: none;
+}
+
+.icon-amazon {
   width: 32px;
   height: 11px;
 }
+
 .icon-apple-book {
   display: block;
   width: 16px;
   height: 16px;
 }
+
 .icon-book-shop {
   display: block;
   width: 16px;
@@ -300,10 +334,12 @@
     width: 48px;
     height: 15px;
   }
+
   .icon-apple-book {
     width: 28px;
     height: 27px;
   }
+
   .icon-book-shop {
     width: 32px;
     height: 30px;
@@ -344,6 +380,7 @@
     display: flex;
     gap: 40;
   }
+
   .content {
     margin-left: 40px;
     width: 100%;

@@ -8,9 +8,9 @@ logo.innerHTML = `<svg class="logo">
       </svg>`;
 
 const body = document.querySelector('body');
-let theme = document.getElementById('theme');
+ 
 if (localStorage.getItem('theme') == 'true') {
-  if (theme) theme.setAttribute('href', './css/dark-mode.css');
+   
   body.classList.add('dark-theme');
   switchMode.checked = true;
 
@@ -21,23 +21,23 @@ if (localStorage.getItem('theme') == 'true') {
 switchMode.onchange = function () {
   if (this.checked) {
     localStorage.setItem('theme', true);
-    if (theme) theme.setAttribute('href', './css/dark-mode.css');
+     
     body.classList.add('dark-theme');
 
     logo.innerHTML = `<svg class="logo">
-        <use href="/img/spryte.svg#icon-logo-dark" height="28px"></use>
-      </svg>`;
+        <use href="./img/spryte.svg#icon-logo-dark" height="28px"></use>
+      </svg>`
+
   } else {
     localStorage.setItem('theme', false);
-    if (theme) theme.setAttribute('href', './css/light-mode.css');
+    
     body.classList.remove('dark-theme');
 
     logo.innerHTML = `<svg class="logo">
-        <use href="/img/spryte.svg#icon-logo-light" height="28px"></use>
-      </svg>`;
+        <use href="./img/spryte.svg#icon-logo-light" height="28px"></use>
+      </svg>`
   }
 };
-
 /*----------------------------OPEN LOG OUT----------------------------- */
 let out = document.querySelector('.menu-btn');
 let open = document.querySelector('.tupe-out');
@@ -45,4 +45,29 @@ out.addEventListener('click', outKlick);
 
 function outKlick() {
   open.classList.toggle('tupe-out_active');
+} 
+
+
+
+// _______________________BURGER_____________________________
+let oupenBurger = document.querySelector('.burger-open-mob')
+let closeBurger = document.querySelector('.burger-close-mob')
+let burger = document.querySelector('.mob-menus ')
+
+oupenBurger.addEventListener('click', oupenBur)
+closeBurger.addEventListener('click', closeBur)
+
+function oupenBur() {
+  document.body.classList.toggle('no-scroll')
+  oupenBurger.classList.toggle('oupenBur')
+  burger.classList.toggle('burgActiv')
+  closeBurger.classList.toggle('closeBur')
 }
+function closeBur() {
+  document.body.classList.toggle('no-scroll')
+  oupenBurger.classList.toggle('oupenBur')
+  burger.classList.toggle('burgActiv')
+closeBurger.classList.toggle('closeBur')
+
+}
+ 
