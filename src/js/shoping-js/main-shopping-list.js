@@ -31,7 +31,6 @@ let bookCount = bookList.length;
 //   currentPage = event.page;
 //   // renderList(bookList, event.page);
 // });
-
 console.log(arrForBacket);
 const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
 
@@ -42,13 +41,14 @@ function generatePage() {
   let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 
   if (!arrForBacket.length) {
-    emptyShopList.style.display = 'block';
+    if (emptyShopList) emptyShopList.style.display = 'block';
   } else {
-    emptyShopList.style.display = 'none';
+    if (emptyShopList) emptyShopList.style.display = 'none';
   }
 }
 
-bookList.insertAdjacentHTML('beforeend', createMarkupBook(arrForBacket));
+if (bookList)
+  bookList.insertAdjacentHTML('beforeend', createMarkupBook(arrForBacket));
 
 function createMarkupBook(arr) {
   return arr
