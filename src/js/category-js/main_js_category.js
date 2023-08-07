@@ -116,8 +116,8 @@ function fetchCategoryBooks(categoryName) {
 
 function getCategoryMarkup(arr, categoryName) {
     return getMarkupForCategoryHeader(categoryName) + 
-`<div>
-    <ul>`+ createBooksMarkup(arr)+ `</ul>
+`<div class="category-book-wrapper">
+    <ul class="category-book-list">`+ createBooksMarkup(arr)+ `</ul>
 </div>`
 }
 
