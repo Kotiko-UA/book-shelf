@@ -42,7 +42,8 @@
     letter-spacing: -0.02em;
     font-family: inherit;
     display: block;
-    height: 24px
+    height: 24px;
+    cursor: pointer;
 }
 
 .js-category-item:last-child{
@@ -57,6 +58,7 @@
     font-size: 16px;
     line-height: 1.12;
     letter-spacing: -0.02em;
+    cursor: pointer;
 }
 
 

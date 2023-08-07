@@ -67,7 +67,7 @@ function createBestSellersMarkup(arr) {
 }
 
 
--function getMarkupForCategoryHeader(categoryName) {
+function getMarkupForCategoryHeader(categoryName) {
     let categoryNameSplited = categoryName.split(" ");
     let originalColor = categoryNameSplited.slice(0, categoryNameSplited.length - 1).join(" ");
     let violetColor = categoryNameSplited[categoryNameSplited.length - 1]
@@ -127,4 +127,10 @@ function clickOnCategoryList(event) {
     } else {
         getCategoryBooks(event.target.textContent);
     }
+}
+
+elements.btnSeeMore.addEventListener("click", clickOnBtnSeeMore)
+
+function clickOnBtnSeeMore() {
+  
 }
