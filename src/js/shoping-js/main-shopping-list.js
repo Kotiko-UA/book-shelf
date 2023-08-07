@@ -32,6 +32,9 @@ function generatePage(curData) {
 
   if (!arrForBacket.length) {
     emptyShopList.style.display = 'block';
+    titleShoopingList.classList.replace(
+      'full-title-margin', 'empty-title-margin'
+    );
   } else {
     emptyShopList.style.display = 'none';
     titleShoopingList.classList.replace(
@@ -86,7 +89,9 @@ function createMarkupBook(arr) {
               <ul class="markets-list-shopping">
               <li>
                 <a href="${amazon.url}">
-                  <img src="./img/amazon.png" alt="${list_name}" class="icon-amazon">
+                  <img src="./img/amazon.png" alt="${list_name}" class="icon-amazon light-theme-amazon">
+                  <img src="./img/amazon-black-theme.png" alt="${list_name}" class="icon-amazon dark-theme-amazon">
+
                 </a>
               </li>
               <li>
