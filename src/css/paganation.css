@@ -116,16 +116,44 @@
 /*    темная тема стили */
 
 .dark-theme .tui-pagination .tui-is-selected .tui-pagination strong {
-  background-color: #ffffff;
-  color: #111111;
-  border: 1.5px solid #ffffff;
+  background: #ffffff !important;
+
+  color: #111111 !important;
+
+  border: 1.5px solid #ffffff !important;
 }
 
 .dark-theme .tui-pagination .tui-page-btn {
-  color: #ffffff;
-  border: 1.5px solid #ffffff;
+  color: #ffffff !important;
+}
+
+.dark-theme .tui-pagination .tui-is-selected {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+.dark-theme .tui-pagination .tui-page-btn {
+  border: 2px solid #ffffff !important;
+  font-weight: bolt;
 }
 
 .dark-theme .tui-pagination {
-  background-color: #111111;
+  background: #111111 !important;
+}
+
+.dark-theme .tui-pagination .tui-first,
+.dark-theme .tui-pagination .tui-prev,
+.dark-theme .tui-pagination .tui-prev-is-ellip,
+.dark-theme .tui-pagination .tui-next-is-ellip {
+  border: 2px solid black !important;
+  background: #111111 !important;
+}
+
+.dark-theme .tui-pagination .tui-next,
+.dark-theme .tui-pagination .tui-last {
+  border: 2px solid black !important;
+}
+
+.dark-theme .tui-pagination .tui-next {
+  background: #eac645 !important;
 }
