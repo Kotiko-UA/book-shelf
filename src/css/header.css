@@ -517,6 +517,7 @@ input:checked + .slider:before {
 }
 /* ____________________CLASS________________ */
 .log-out-wrap {
+  width: 100%;
 }
 .sing-wrap {
 }
