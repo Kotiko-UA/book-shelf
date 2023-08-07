@@ -25,14 +25,17 @@ function fetchCategories() {
 }
 
 function createCategoriesListMarkup(arr) {
-  return arr
-    .map(
-      ({ list_name }) => `
-    <li>${list_name}</li>
+  return (
+    `<li class="js-category-item category-hover" name="allCategories" >All categories</li>` +
+    arr
+      .map(
+        ({ list_name }) => `
+    <li class="js-category-item">${list_name}</li>
     `
-    )
-    .sort((a, b) => a.localeCompare(b))
-    .join('');
+      )
+      .sort((a, b) => a.localeCompare(b))
+      .join('')
+  );
 }
 
 function getCategoryList() {
@@ -52,9 +55,14 @@ function createBooksMarkup(arr) {
     .map(
       ({ _id, book_image, title, author }) => `
    <li data-id = '${_id}' class = 'js-book-item'>
-        <img src="${book_image}" alt="" />
-        <p>${title}</p>
-        <p>${author}</p>
+   <div class="wrapper">
+   <div class="thumb-category">
+        <img src="${book_image}" alt="${title}" class="img-category"/>
+        </div>     
+        <p class="catalogue-book-title">${title}</p>
+        <p class="catalogue-book-author">${author}</p>
+   </div>     
+   
       </li>`
     )
     .join('');
@@ -62,22 +70,30 @@ function createBooksMarkup(arr) {
 
 function createBestSellersMarkup(arr) {
   return (
-    `<h1>Best Sellers Books</h1>` +
+    getMarkupForCategoryHeader('Best Sellers Books') +
     arr
       .map(
         ({ list_name, books }) =>
           `
-    <h2>${list_name}</h2> 
-<div>
-    <ul>` +
+     <h2 class="categoryName">${list_name}</h2>
+     <div class="wrapper-for-catList">
+     <ul class="category-list">` +
           createBooksMarkup(books) +
-          `
-    </ul>
-    <button type="button" class="btnSeeMore">See more</button>
-</div>`
+          `</ul>
+    </div>
+    <button type="button" class="btnSeeMore">See more</button>`
       )
       .join('')
   );
+}
+
+function getMarkupForCategoryHeader(categoryName) {
+  let categoryNameSplited = categoryName.split(' ');
+  let originalColor = categoryNameSplited
+    .slice(0, categoryNameSplited.length - 1)
+    .join(' ');
+  let violetColor = categoryNameSplited[categoryNameSplited.length - 1];
+  return `<h2 class="titleCategory">${originalColor} <span class="last-word-in-catName">${violetColor}</span></h2>`;
 }
 
 function getBestSellersList() {
@@ -106,21 +122,17 @@ function getCategoryBooks(categoryName) {
     });
 }
 
-//getCategoryBooks("Hardcover Nonfiction")
-
 function fetchCategoryBooks(categoryName) {
   return fetchData(`/category?category=${categoryName}`);
 }
 
 function getCategoryMarkup(arr, categoryName) {
   return (
-    `<h1>${categoryName}</h1>` +
-    `<div>
-    <ul>` +
+    getMarkupForCategoryHeader(categoryName) +
+    `<div class="category-book-wrapper">
+    <ul class="category-book-list">` +
     createBooksMarkup(arr) +
-    `</ul>
-</div>`
-
+    `</ul></div>`
   );
 }
 
@@ -129,5 +141,11 @@ if (elements && elements.categoryList)
 
 function clickOnCategoryList(event) {
   event.preventDefault();
-  getCategoryBooks(event.target.textContent);
+  event.currentTarget.firstChild.classList.remove('category-hover');
+
+  if (event.target.getAttribute('name') === 'allCategories') {
+    getBestSellersList();
+  } else {
+    getCategoryBooks(event.target.textContent);
+  }
 }
