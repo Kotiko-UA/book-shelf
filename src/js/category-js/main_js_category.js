@@ -41,9 +41,7 @@ function getCategoryList() {
 getCategoryList();
 
 function createBooksMarkup(arr) {
-  return arr
-    .map(
-      ({ _id, book_image, title, author }) => `
+  return arr.map(({ _id, book_image, title, author }) => `
    <li data-id = '${_id}' class = 'js-book-item'>
  <div class="wrapper">
    <div class="thumb-category">

@@ -40,6 +40,7 @@
     font-size: 16px;
     line-height: 1.12;
     letter-spacing: -0.02em;
+    font-family: 'DM Sans';
 }
 
 .js-category-item:last-child{
@@ -159,7 +160,7 @@ color:var(--violet);
     padding: 14px 28px;
     border-radius: 40%;
     border: 2px solid var(--violet);
-    font-family: DM Sans;
+    font-family: 'DM Sans';
     color: var(--black);
     text-transform: uppercase;
     font-size: 18px;
