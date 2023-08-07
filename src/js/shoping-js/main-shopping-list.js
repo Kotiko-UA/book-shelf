@@ -33,7 +33,8 @@ function generatePage(curData) {
   if (!arrForBacket.length) {
     emptyShopList.style.display = 'block';
     titleShoopingList.classList.replace(
-      'full-title-margin', 'empty-title-margin'
+      'full-title-margin',
+      'empty-title-margin'
     );
   } else {
     emptyShopList.style.display = 'none';
