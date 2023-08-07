@@ -95,7 +95,7 @@ input:checked + .slider:before {
 .menu-btn {
   display: flex;
 
-  max-width: 184px;
+  /* max-width: 184px; */
   height: 45px;
 
   border-radius: 36px;
@@ -115,7 +115,7 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 .user-text {
-  width: 87px;
+  min-width: 87px;
   color: #fff;
   font-family: DM Sans;
   font-size: 22px;
@@ -161,16 +161,17 @@ input:checked + .slider:before {
 }
 /*------------HIDEN--------*/
 .log-out-wrap {
-  position: absolute;
+  position: relative;
   display: block;
   right: 24px;
-  width: 184px;
-  opacity: 0;
-  pointer-events: none;
+  /* width: 184px; */
+  /* opacity: 0; */
+  /* pointer-events: none; */
 }
 
 /*-------------------*/
 .tupe-out {
+  width: 100%;
   position: absolute;
   display: flex;
   align-items: center;
@@ -197,6 +198,7 @@ input:checked + .slider:before {
   font-weight: 500;
   line-height: 18px; /* 128.571% */
   letter-spacing: -0.56px;
+  white-space: nowrap;
 }
 .tupe-out_active {
   transform: scaleY(1) translateY(0%);
