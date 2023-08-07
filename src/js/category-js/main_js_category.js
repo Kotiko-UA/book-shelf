@@ -63,14 +63,13 @@ function createBooksMarkup(arr) {
 
 function createBestSellersMarkup(arr) {
    return getMarkupForCategoryHeader("Best Sellers Books") + arr.map(({ list_name, books }) => `
-     
-<div class="best-sellers-wrapper">
-    <h2 class="categoryName">${list_name}</h2> 
-    <ul class="category-list">`+ createBooksMarkup(books)+ `
-    </ul>
-    <button type="button" class="btnSeeMore">See more</button>
-</div>`)
-        .join('')
+     <h2 class="categoryName">${list_name}</h2>
+     <div class="wrapper-for-catList">
+     <ul class="category-list">`+ createBooksMarkup(books)+ 
+    `</ul>
+    </div>
+    <button type="button" class="btnSeeMore">See more</button>`
+     ).join('')
 }
 
 function getMarkupForCategoryHeader(categoryName) {

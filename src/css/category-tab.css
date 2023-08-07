@@ -1,0 +1,108 @@
+/*-------tab-------*/
+@media screen and (min-width: 768px) {
+    .category-container {
+        width: 768px;   
+    }
+
+.wrapper-for-categoryList-support{
+    display:flex;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+.books-showcase{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.wrapper-for-catList{
+display:flex;
+/*flex-direction: row;
+/*flex-wrap: wrap;*/
+/*justify-content: center;*/
+}
+
+.category-list {
+    display: flex;
+    gap: 25px;
+}
+
+ .wrapper {
+     width: 218px;
+     /*margin-right: 25px;*/
+ }
+
+/*calc((100%-2*25px)/3-25px);*/
+
+.btnSeeMore {
+align-self: flex-start;
+}
+
+    .books-category {
+        width: 337px;
+        height: 472px;
+        margin-right: 32px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+.js-category-item {
+    margin-bottom: 32px;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.02em;
+}
+
+
+
+
+    .support-ukr {
+        background-color: var(--violet);
+        width: 335px;
+        height: 474px;
+        border-radius: 16%;
+        text-align: center;
+    }
+
+    .titleCategory {
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 1.18;
+        letter-spacing: -0.04em;
+        margin-top: 0;
+    }
+
+    .thumb-category {
+        display: flex;
+        margin-right: 0;
+    }
+
+    .img-category {
+        display: block;
+        /*max-width: 100%;*/
+        height: 316px;
+        width: 218px;
+    }
+
+    .js-book-item {
+        /*gap:25px;*/
+    }
+
+    .best-sellers-wrapper {
+        /*width: 704px;*/
+    }
+   
+
+/*flex-basis: calc((100%-2*24px)/3);*/
+
+}
+
+/*--------desktop-------*/
+
+@media screen and (min-width: 1440px) {
+    .category-container {
+        width: 1440px;
+
+    }
+}

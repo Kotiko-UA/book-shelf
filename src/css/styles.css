@@ -11,6 +11,7 @@
 @import url('./reset.css');
 @import url('./shopping-list.css');
 @import url('./category.css');
+@import url('./category-tab.css');
 
 :root {
   --black: #111111;
