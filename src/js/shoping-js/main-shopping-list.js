@@ -1,46 +1,34 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-// import { KEY } from '../js-modal-window/js-mod-w-main';
-// console.log(KEY);
 
 const bookList = document.querySelector('.shopping-list');
 const titleShoopingList = document.querySelector('.shopping-title');
 const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
-
-function getPagination(totalItems, itemsPerPage) {
-  const options = {
-    totalItems: totalItems,
-    itemsPerPage: itemsPerPage,
-    visiblePages: visiblePages,
-    centerAlign: true,
-    firstItemClassName: 'pagination__first-item',
-    lastItemClassName: 'pagination__last-item',
-    prevButtonClassName: 'pagination__prev-btn',
-    nextButtonClassName: 'pagination__next-btn',
-    pageLinkClassName: 'pagination__page-link',
-    activePageLinkClassName: 'pagination__page-link--active',
-  };
-
-  return new Pagination(paginationEl, options);
-}
+const paginationContainer = document.querySelector('#tui-pagination-container');
 
 let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
-// let currentPage = 1;
+let itemsPerPage = 3;
+let currentPage = 1;
+let startIdx = (currentPage - 1) * itemsPerPage;
+let endIdx = startIdx + itemsPerPage;
+let curData = arrForBacket.slice(startIdx, endIdx);
 
-// let itemsPerPage = 3;
-// let bookCount = bookList.length;
-// let pagination = getPagination(bookCount, itemsPerPage);
-// pagination.on('beforeMove', event => {
-//   currentPage = event.page;
-//   // renderList(bookList, event.page);
-// });
-// console.log(arrForBacket);
-generatePage();
+const options = {
+  totalItems: arrForBacket.length,
+  itemsPerPage: itemsPerPage,
+  visiblePages: 3,
+  page: currentPage,
+  centerAlign: false,
+  firstItemClassName: 'tui-first-child',
+  lastItemClassName: 'tui-last-child',
+};
 
-//вимальовує пустий або повний шопінг ліст
-function generatePage() {
+const pagination = new Pagination(paginationContainer, options);
+
+generatePage(curData);
+
+function generatePage(curData) {
   bookList.innerHTML = '';
-  let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 
   if (!arrForBacket.length) {
     emptyShopList.style.display = 'block';
@@ -53,10 +41,16 @@ function generatePage() {
       'empty-title-margin',
       'full-title-margin'
     );
-
-    bookList.insertAdjacentHTML('beforeend', createMarkupBook(arrForBacket));
+    bookList.insertAdjacentHTML('beforeend', createMarkupBook(curData));
   }
 }
+pagination.on('beforeMove', e => {
+  currentPage = e.page;
+  startIdx = (currentPage - 1) * itemsPerPage;
+  endIdx = startIdx + itemsPerPage;
+  const curData = arrForBacket.slice(startIdx, endIdx);
+  generatePage(curData);
+});
 
 function createMarkupBook(arr) {
   return arr
@@ -84,7 +78,7 @@ function createMarkupBook(arr) {
      </div>
      <button type="button" class="shopping-card-bin-link">
           <svg class="img-bin-icon">
-            <use href="../img/spryte.svg#icon-trash"></use>
+            <use class="img-bin-use" href="../img/spryte.svg#icon-trash"></use>
           </svg>
       </button>
     </div>
@@ -97,6 +91,7 @@ function createMarkupBook(arr) {
                 <a href="${amazon.url}">
                   <img src="./img/amazon.png" alt="${list_name}" class="icon-amazon light-theme-amazon">
                   <img src="./img/amazon-black-theme.png" alt="${list_name}" class="icon-amazon dark-theme-amazon">
+
                 </a>
               </li>
               <li>
@@ -118,7 +113,8 @@ function createMarkupBook(arr) {
 bookList.addEventListener('click', e => {
   if (
     e.target.classList.contains('shopping-card-bin-link') ||
-    e.target.classList.contains('img-bin-icon')
+    e.target.classList.contains('img-bin-icon') ||
+    e.target.classList.contains('img-bin-use')
   ) {
     onButtonDeleteClick(e);
   }
@@ -129,12 +125,13 @@ function onButtonDeleteClick(event) {
   const removeIndexFromLocalStorage = arrForBacket.findIndex(
     item => item._id === id
   );
-
   arrForBacket.splice(removeIndexFromLocalStorage, 1);
   localStorage.setItem('KEY', JSON.stringify(arrForBacket));
-  // const liEl = event.target.closest('.shopping-list-item');
-  // liEl.remove();
-  generatePage();
+
+  // curData.splice(removeIndexFromLocalStorage, 1);
+
+  curData = arrForBacket.slice(startIdx, endIdx);
+  generatePage(curData);
 }
 import '../authorization-js/main_js_authorization';
 import '../heder-js/theme';

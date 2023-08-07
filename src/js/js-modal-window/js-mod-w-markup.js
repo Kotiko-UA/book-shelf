@@ -18,17 +18,17 @@ export function bookModalMarkup({ _id, book_image, title, author, description, b
           <ul class="markets-list-modal-window">
             <li>
               <a href="${amazon.url}">
-                <img class = "img-market"src="/img/amazon.png" alt="${title}">
+                <img class = "img-market"src="./img/amazon.png" alt="${title}">
               </a>
             </li>
             <li>
               <a href="${Bookshop.url}">
-                <img class = "img-market" src="/img/book-market.png" alt="${title}">
+                <img class = "img-market" src="./img/book-market.png" alt="${title}">
               </a>
             </li>
             <li>
               <a href="${Apple.url}">
-                <img class = "img-market" src="/img/book-shelf.png" alt="${title}">
+                <img class = "img-market" src="./img/book-shelf.png" alt="${title}">
               </a>
             </li>
           </ul>
