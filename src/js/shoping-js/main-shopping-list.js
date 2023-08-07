@@ -132,3 +132,5 @@ function onButtonDeleteClick(event) {
   // liEl.remove();
   generatePage();
 }
+import '../authorization-js/main_js_authorization';
+import '../heder-js/theme';
