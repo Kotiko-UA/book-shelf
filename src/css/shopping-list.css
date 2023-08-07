@@ -1,6 +1,4 @@
-.body {
-  background: #f6f6f6;
-}
+
 
 /* тимчасова дарк тема, поки не працює дарк тема боді */
 .dark-theme .shopping-list-section {
@@ -27,9 +25,13 @@
 
 .shopping-list-section {
   padding-top: 40px;
-  padding-bottom: 302px;
+  /* padding-bottom: 302px; */
+  background: #F6F6F6;
 }
 
+.support-ukr-shopping-list{
+  display: none;
+}
 .container {
   padding: 0 20px;
   width: 100%;
@@ -80,6 +82,10 @@
   font-weight: 700;
   line-height: 1.18;
   letter-spacing: -0.64px;
+}
+
+.empty-shopping-list-wrap{
+  padding-bottom: 302px;
 }
 
 .empty-shopping-text {
@@ -254,9 +260,13 @@
 /* tablet */
 
 @media screen and (min-width: 768px) {
-  .shopping-list-section {
-    padding-bottom: 394px;
+  .support-ukr-shopping-list{
+    display: none;
   }
+
+  /* .shopping-list-section {
+    padding-bottom: 394px;
+  } */
 
   .container {
     width: 768px;
@@ -268,6 +278,9 @@
     line-height: 1.083;
   }
 
+  .empty-shopping-list-wrap{
+    padding-bottom: 394px;
+  }
   .empty-title-margin {
     margin-bottom: 140px;
   }
@@ -342,16 +355,26 @@
 
 /* desctop */
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
+
+  .support-ukr-shopping-list{
+    width: 356px;
+    height: 474px;
+    display: block;
+    background-color: blue;
+  }
   .container {
-    width: 1216px;
+    width: 100%;
     padding: 0 24px;
   }
 
-  .shopping-list-section {
+  /* .shopping-list-section {
     padding-bottom: 157px;
-  }
+  } */
 
+  .shopping-list-wraper {
+    display: block;
+  }
   .shopping-list-item {
     gap: 24px;
     padding: 24px;
@@ -362,6 +385,9 @@
     width: 808px;
   }
 
+  .empty-shopping-list-wrap{
+    padding-bottom: 157px;
+  }
   /* показать сапорт */
 
   .support {
