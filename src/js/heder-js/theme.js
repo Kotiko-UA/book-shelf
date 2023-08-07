@@ -24,7 +24,7 @@ switchMode.onchange = function () {
     theme.setAttribute('href', './css/dark-mode.css')
 
     logo.innerHTML = `<svg class="logo">
-        <use href="/img/spryte.svg#icon-logo-dark" height="28px"></use>
+        <use href="./img/spryte.svg#icon-logo-dark" height="28px"></use>
       </svg>`
 
   } else {
@@ -32,7 +32,7 @@ switchMode.onchange = function () {
     theme.setAttribute('href', './css/light-mode.css')
 
     logo.innerHTML = `<svg class="logo">
-        <use href="/img/spryte.svg#icon-logo-light" height="28px"></use>
+        <use href="./img/spryte.svg#icon-logo-light" height="28px"></use>
       </svg>`
   }
 }
