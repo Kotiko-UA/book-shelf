@@ -2,6 +2,31 @@
   background: #f6f6f6;
 }
 
+/* тимчасова дарк тема, поки не працює дарк тема боді */
+.dark-theme .shopping-list-section{
+  background-color: black;
+}
+
+.dark-theme  .empty-shopping-text{
+  color: rgba(255, 255, 255, 0.60);
+  }
+  
+
+.dark-theme .shopping-title-span,
+.dark-theme .shopping-card-tittle,
+.dark-theme .shopping-card-description{
+  color: var(--white);
+}
+
+.dark-theme .light-theme-amazon{
+  display: none;
+}
+
+.dark-theme .dark-theme-amazon{
+  display: block;
+}
+
+
 .shopping-list-section {
   padding-top: 40px;
   padding-bottom: 302px;
@@ -35,7 +60,7 @@
 }
 
 .shopping-title {
-  color: var(--black);
+  color: var(--violet);
   font-size: 32px;
   font-weight: 700;
   line-height: 1.18;
@@ -48,11 +73,12 @@
 
 .full-title-margin{
   margin-bottom: 40px;
+
 }
 
 .shopping-title-span {
   /* margin-bottom: 40px; */
-  color: var(--violet);
+  color: var(--black);
   font-size: 32px;
   font-weight: 700;
   line-height: 1.18;
@@ -195,8 +221,17 @@
   gap: 8px;
 }
 
-.icon-amazon {
+
+ .light-theme-amazon{
+ 
   display: block;
+}
+
+ .dark-theme-amazon{
+  display: none;
+}
+
+.icon-amazon {
   width: 32px;
   height: 11px;
 }
