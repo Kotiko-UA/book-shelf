@@ -49,6 +49,7 @@ function generatePage() {
       'empty-title-margin',
       'full-title-margin'
     );
+
   }
 }
 
