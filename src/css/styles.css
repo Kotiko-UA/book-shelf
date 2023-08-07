@@ -9,6 +9,7 @@
 
 @import url('./reset.css');
 @import url('./shopping-list.css');
+@import url('./paganation.css');
 @import url('./category.css');
 @import url('./category-tab.css');
 @import url('./styles_paganation.css');
@@ -25,5 +26,3 @@
 
   --cubic-bezier: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-
