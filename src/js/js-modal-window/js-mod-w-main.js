@@ -9,10 +9,9 @@ let isModalOpen = false;
 let modal = null;
 
 const elements = {
-  books_showcase: document.querySelector('.books-showcase'),
+  books_showcase: document.querySelector(".books-showcase"),
 };
-if (elements && elements.books_showcase)
-  elements.books_showcase.addEventListener('click', handlerClickOpenModal);
+elements.books_showcase.addEventListener('click', handlerClickOpenModal);
 
 async function handlerClickOpenModal(evt) {
   const bookItem = evt.target.closest('.js-book-item');
@@ -24,7 +23,7 @@ async function handlerClickOpenModal(evt) {
       const bookData = await serviceBooks(id);
       const modalMarkup = bookModalMarkup(bookData);
       openModalWithContent(modalMarkup);
-
+      
       const modalWindow = document.querySelector('.modal-window-conteiner');
       modalWindow.dataset.book = JSON.stringify(bookData);
 
@@ -35,11 +34,11 @@ async function handlerClickOpenModal(evt) {
       const bookId = bookData._id;
       if (checkIfBookIsAdded(bookId, arrForBAcket)) {
         text.classList.remove('after');
-        btn.classList.add('small');
+        btn.classList.add('small')
         btn.textContent = 'remove from the shopping list';
       } else {
         text.classList.add('after');
-        btn.classList.remove('small');
+        btn.classList.remove('small')
         btn.textContent = 'Add to shopping list';
       }
 
@@ -92,7 +91,7 @@ function handleBackdropClick(event) {
 }
 
 function checkIfBookIsAdded(bookId, shoppingList) {
-  return shoppingList.some(item => item._id === bookId);
+  return shoppingList.some((item) => item._id === bookId);
 }
 
 function handlerAddToBascet(event) {
@@ -101,21 +100,20 @@ function handlerAddToBascet(event) {
   }
   const bookId = event.target.closest('.modal-window-conteiner').dataset.id;
   const arrForBAcket = JSON.parse(localStorage.getItem('KEY')) ?? [];
-  const bookData = JSON.parse(
-    event.target.closest('.modal-window-conteiner').dataset.book
-  );
+  const bookData = JSON.parse(event.target.closest('.modal-window-conteiner').dataset.book);
 
   if (checkIfBookIsAdded(bookId, arrForBAcket)) {
-    const updatedList = arrForBAcket.filter(item => item._id !== bookId);
+    const updatedList = arrForBAcket.filter((item) => item._id !== bookId);
     localStorage.setItem('KEY', JSON.stringify(updatedList));
     text.classList.add('after');
-    btn.classList.remove('small');
+    btn.classList.remove('small')
     btn.textContent = 'Add to shopping list';
   } else {
     arrForBAcket.push(bookData);
     localStorage.setItem('KEY', JSON.stringify(arrForBAcket));
     text.classList.remove('after');
-    btn.classList.add('small');
+    btn.classList.add('small')
     btn.textContent = 'remove from the shopping list';
   }
 }
+

@@ -39,8 +39,7 @@ export function bookModalMarkup({ _id, book_image, title, author, description, b
       </div>
       <div class = "text-conteiner">
       <p class="added-modal-window after">
-        Сongratulations! You have added the book to the shopping list. To delete,
-        press the button “Remove from the shopping list”.
+        Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.
       </p></div>
     </div>
   `;

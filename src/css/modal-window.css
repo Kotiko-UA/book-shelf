@@ -76,8 +76,9 @@
 
 }
 
-.dark-theme .add-btn-modal-window {
+.dark-theme .add-delete-book-btn {
     color: var(--white);
+    background: var(--gray);
 }
 
 .add-delete-book-btn:hover {
@@ -142,6 +143,7 @@
     border: none;
     right: 12px;
     top: 12px;
+    fill: var(--black);
 }
 
 .btn-close:is(:hover, :focus) .icon-close {
@@ -149,6 +151,7 @@
 }
 
 .dark-theme .btn-close {
+    background-color: var(--gray);
     fill: var(--white)
 }
 
@@ -158,6 +161,7 @@
 
 .small {
     font-size: 13px;
+    padding: 14px 23px;
 }
 
 @media screen and (min-width: 428px) {
@@ -189,7 +193,7 @@
         letter-spacing: -0.56px;
     }
 
-    .add-btn-modal-window {
+    .add-delete-book-btn {
         display: flex;
         width: 499px;
         padding: 20px 143px;
@@ -202,11 +206,19 @@
         margin-right: auto;
     }
 
+    .small {
+        font-size: 17px;
+        padding: 20px 100px;
+    }
+
     .mw-data-conteiner {
         max-width: 279px;
     }
 
     .added-modal-window {
+        font-size: 12px;
         width: 324px;
+        line-height: 1.16;
+        letter-spacing: -0.48px;
     }
 }
