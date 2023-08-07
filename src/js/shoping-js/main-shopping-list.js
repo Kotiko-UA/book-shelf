@@ -44,9 +44,9 @@ function generatePage() {
   let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 
   if (!arrForBacket.length) {
-    emptyShopList.style.display = 'block';
+    if (emptyShopList) emptyShopList.style.display = 'block';
   } else {
-    emptyShopList.style.display = 'none';
+    if (emptyShopList) emptyShopList.style.display = 'none';
     titleShoopingList.classList.replace(
       'empty-title-margin',
       'full-title-margin'
