@@ -2,6 +2,10 @@
     background-color: #F6F6F6;
 }
 
+.dark-theme .category-container{
+background-color: var(--gray);
+}
+
 .category-container {
     width: 100%;
     padding-left: 20px;
@@ -50,10 +54,13 @@
         cursor: pointer;
     }
 
-    /*.dark-theme .category-hover {
+    .dark-theme .category-hover {
     color: #EAC645;
-    background-color: ;
-}*/
+}
+
+
+
+
     /* div 'support-ukr' for correct css drawing---*/
     .support-ukr {
         background-color: var(--violet);

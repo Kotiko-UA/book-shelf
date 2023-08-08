@@ -1,4 +1,9 @@
 :root {
+    --black: #111111;
+    --gray: #202024;
+    --violet: #4f2ee8;
+    --yellow: #eac645;
+    --white: #ffffff;
     --card-set-gap: 25px;
 }
 
