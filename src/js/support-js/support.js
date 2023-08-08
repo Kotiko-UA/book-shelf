@@ -28,7 +28,7 @@ function scrollUp() {
     refs.btnUp.style.display = 'none'
 }
 
-const websites = [{
+const charityFunds = [{
         title: 'Save the Children',
         url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
         img: null,
@@ -75,10 +75,21 @@ const websites = [{
     },
 ]
 
-const links = document.querySelectorAll('#links a');
+const supportItems = document.querySelectorAll('.support-item');
 
-for (var i = 0; i < websites.length; i++) {
-    links[i].setAttribute('href', websites[i].url);
-    links[i].setAttribute('title', websites[i].title);
-    links[i].setAttribute('target', '_blank');
-}
+supportItems.forEach(item => {
+    const link = item.querySelector('.support-a');
+    const title = link.getAttribute('title').trim();
+
+    const fund = charityFunds.find(fund => fund.title === title);
+
+    if (fund) {
+        const url = fund.url;
+
+        link.addEventListener('click', event => {
+            event.preventDefault();
+
+            window.open(url, '_blank');
+        });
+    }
+});
