@@ -10,7 +10,6 @@ function openModalTeam(e) {
     return;
   }
   const id = e.currentTarget.id;
-  console.dir(id);
   markapModal(teams[`${id}`]);
 }
 
