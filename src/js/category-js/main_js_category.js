@@ -1,10 +1,9 @@
 import axios from 'axios';
-import Notiflix from 'notiflix';
+/*import Notiflix from 'notiflix';*/
 
 const elements = {
   categoryList: document.querySelector('.js-category-list'),
   books_showcase: document.querySelector('.books-showcase'),
-  btnSeeMore: document.querySelector('.btnSeeMore'),
 };
 
 axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
@@ -62,7 +61,7 @@ function createBestSellersMarkup(arr) {
      <ul class="category-list">`+ createBooksMarkup(books)+ 
     `</ul>
     </div>
-    <button type="button" class="btnSeeMore">See more</button>`
+    <button type="button" class="btnSeeMore" id="${list_name}">See more</button>`
      ).join('')
 }
 
@@ -79,6 +78,10 @@ function getBestSellersList() {
   fetchBestSellers()
     .then(data => {
       elements.books_showcase.innerHTML = createBestSellersMarkup(data);
+      let buttons = elements.books_showcase.querySelectorAll('.btnSeeMore');
+      for (let button of buttons) {
+        button.addEventListener("click", clickOnBtnSeeMore)
+      }
     })
     .catch(err => {
       console.log(err);
@@ -112,25 +115,29 @@ function getCategoryMarkup(arr, categoryName) {
 `<div class="category-book-wrapper">
     <ul class="category-book-list">`+ createBooksMarkup(arr)+ `</ul>
 </div>`
-
 }
-
 if (elements && elements.categoryList)
   elements.categoryList.addEventListener('click', clickOnCategoryList);
 
+
 function clickOnCategoryList(event) {
-    event.preventDefault();
-    event.currentTarget.firstChild.classList.remove('category-hover');
+  event.preventDefault();
+  for (let element of event.currentTarget.children) {
+    element.classList.remove('category-hover')
+  }
+  event.target.classList.add('category-hover');
+  
+
     
     if (event.target.getAttribute("name") === "allCategories") {
         getBestSellersList()
     } else {
         getCategoryBooks(event.target.textContent);
-    }
+  }
 }
 
-elements.btnSeeMore.addEventListener("click", clickOnBtnSeeMore)
 
-function clickOnBtnSeeMore() {
-  
-}
+function clickOnBtnSeeMore(evt) {
+  evt.preventDefault();
+    getCategoryBooks(evt.target.getAttribute("id"))
+  } 

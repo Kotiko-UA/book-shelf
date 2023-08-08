@@ -50,7 +50,6 @@
     margin-bottom: 0;
 }
 
-.js-category-item:hover,
 .category-hover{
     color:var(--violet);
     text-transform: uppercase;
