@@ -1,15 +1,5 @@
-/*:root {
-    --black: #111111;
-    --gray: #202024;
-    --violet: #4f2ee8;
-    --yellow: #eac645;
-    --white: #ffffff;
-}*/
-
-/*-------mob---------*/
-
 .body {
-    background-color: #f6f6f6;
+    background-color: #F6F6F6;
 }
 
 .category-container {
@@ -36,18 +26,20 @@
     }
 
     .js-category-item {
-        display: block;
         margin-bottom: 24px;
         font-size: 16px;
         line-height: 1.12;
         letter-spacing: -0.02em;
+        font-family: inherit;
+        display: block;
+        height: 24px;
+        cursor: pointer;
     }
 
     .js-category-item:last-child {
         margin-bottom: 0;
     }
 
-    .js-category-item:hover,
     .category-hover {
         color: var(--violet);
         text-transform: uppercase;
@@ -55,9 +47,13 @@
         font-size: 16px;
         line-height: 1.12;
         letter-spacing: -0.02em;
+        cursor: pointer;
     }
 
-
+    /*.dark-theme .category-hover {
+    color: #EAC645;
+    background-color: ;
+}*/
     /* div 'support-ukr' for correct css drawing---*/
     .support-ukr {
         background-color: var(--violet);
@@ -68,7 +64,6 @@
     }
 
     /*-------------------------------*/
-
     .titleCategory {
         font-weight: bold;
         font-size: 32px;
@@ -88,7 +83,7 @@
         line-height: 18px;
         letter-spacing: 0.03em;
         text-transform: uppercase;
-        color: #b4afaf;
+        color: #B4AFAF;
         margin-bottom: 18px;
     }
 
@@ -128,7 +123,6 @@
         object-fit: fill;
     }
 
-
     .catalogue-book-title {
         font-weight: bold;
         font-size: 16px;
@@ -148,12 +142,11 @@
         font-size: 12px;
         line-height: 1.16;
         letter-spacing: -0.04em;
-        color: #b4afaf;
+        color: #B4AFAF;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
     }
-
 
     .btnSeeMore {
         margin-top: 8px;
@@ -161,7 +154,7 @@
         padding: 14px 28px;
         border-radius: 40%;
         border: 2px solid var(--violet);
-        font-family: DM Sans;
+        font-family: inherit;
         color: var(--black);
         text-transform: uppercase;
         font-size: 18px;
@@ -176,6 +169,4 @@
         flex-direction: column;
         gap: 40px;
     }
-
-
 }
