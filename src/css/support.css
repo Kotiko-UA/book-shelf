@@ -20,22 +20,23 @@
     display: block;
 }
 
-@media screen and (min-width: 320px) {
-    .support-list {
-        overflow-y: scroll;
-        display: flex;
-        flex-direction: column;
-        height: 188px;
-        /* pointer-events: none; */
-        scrollbar-width: none;
-    }
-    .support-ukr {
-        margin-top: 40px;
-        margin-left: auto;
-        margin-right: auto;
-        height: 352px;
-    }
+
+.support-list {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    height: 188px;
+    /* pointer-events: none; */
+    scrollbar-width: none;
 }
+
+.support-ukr {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 352px;
+}
+
 
 @media screen and (min-width: 768px) {
     .support-list {
@@ -47,6 +48,7 @@
         /* pointer-events: none; */
         scrollbar-width: none;
     }
+
     .support-ukr {
         height: 474px;
         margin-top: 0;
@@ -56,7 +58,6 @@
 
 @media screen and (min-width: 1440px) {
     .support-ukr {
-        /* margin-top: 86px; */
         margin-left: 0;
     }
 }
@@ -68,7 +69,8 @@
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 24px;
-    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%)/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
     ;
     left: 20px;
     border-radius: 16px;
