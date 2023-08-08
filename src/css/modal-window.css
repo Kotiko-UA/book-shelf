@@ -1,7 +1,7 @@
 .modal-window-conteiner {
     position: relative;
     width: 335px;
-    height: 100%;
+    /* height: 100%; */
     border-radius: 18px;
     border: 2px solid #111;
     background: var(--white);
@@ -73,11 +73,12 @@
     letter-spacing: -0.14px;
     text-transform: uppercase;
     margin-top: 40px;
-
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.dark-theme .add-btn-modal-window {
+.dark-theme .add-delete-book-btn {
     color: var(--white);
+    background: var(--gray);
 }
 
 .add-delete-book-btn:hover {
@@ -104,9 +105,29 @@
     align-items: center;
 }
 
+.img-market {
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .img-market:hover {
     mix-blend-mode: luminosity;
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
+}
+
+.light-amazon {
+    display: block;
+}
+
+.dark-amazon {
+    display: none;
+}
+
+.dark-theme .light-amazon {
+    display: none;
+}
+
+.dark-theme .dark-amazon {
+    display: block;
 }
 
 .text-conteiner {
@@ -142,6 +163,8 @@
     border: none;
     right: 12px;
     top: 12px;
+    fill: var(--black);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-close:is(:hover, :focus) .icon-close {
@@ -149,6 +172,7 @@
 }
 
 .dark-theme .btn-close {
+    background-color: var(--gray);
     fill: var(--white)
 }
 
@@ -158,6 +182,7 @@
 
 .small {
     font-size: 13px;
+    padding: 14px 23px;
 }
 
 @media screen and (min-width: 428px) {
@@ -169,7 +194,6 @@
     .mw-content-conteiner {
         display: flex;
         gap: 24px;
-
     }
 
     .book-img-modal-window {
@@ -189,7 +213,7 @@
         letter-spacing: -0.56px;
     }
 
-    .add-btn-modal-window {
+    .add-delete-book-btn {
         display: flex;
         width: 499px;
         padding: 20px 143px;
@@ -202,11 +226,19 @@
         margin-right: auto;
     }
 
+    .small {
+        font-size: 17px;
+        padding: 20px 100px;
+    }
+
     .mw-data-conteiner {
         max-width: 279px;
     }
 
     .added-modal-window {
+        font-size: 12px;
         width: 324px;
+        line-height: 1.16;
+        letter-spacing: -0.48px;
     }
 }
