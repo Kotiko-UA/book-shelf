@@ -54,8 +54,12 @@ let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 onAuthStateChanged(auth, user => {
   if (user) {
     const uid = user.uid;
+    console.log(uid, user);
     showUserBar(user);
-    syncShopingList(user).then(() => {});
+    //generatePage([]);
+    syncShopingList(user).then(() => {
+      //console.log(arrForBacket);
+    });
   } else {
     hiteUserBar();
     hiteShopingList();
@@ -72,6 +76,7 @@ async function getBook(id) {
     console.log('Error API book');
   }
   const book = await resp.json();
+  //   console.log(book);
   return book;
 }
 
@@ -108,7 +113,7 @@ function showUserBar(user) {
   const userName = document.querySelector('.user-text');
   userName.textContent = user.displayName;
   document.querySelector('.user-image img').src =
-    user.photoURL ?? './img/noimage.png';
+    user.photoURL ?? '/img/noimage.png';
   document.querySelector('.user-image img').alt = user.displayName;
 
   document.querySelector('.log-out-wrap').style.display = '';
