@@ -1,7 +1,7 @@
 .tui-pagination {
   height: auto !important;
   /* margin: 20px !important; */
-  /* margin: 0 !important; */
+  margin: 0 !important;
   background: #f6f6f6;
 }
 
@@ -96,7 +96,7 @@
 
 @media screen and (min-width: 768px) {
   .tui-pagination {
-    margin-top:20px;
+    margin-top:20px !important;
 
   }
 
@@ -104,6 +104,20 @@
     margin-left: 10px !important;
   }
 }
+
+
+@media screen and (min-width: 1440px) {
+  .tui-pagination {
+    margin-left: 300px !important;
+    /* height: auto !important;
+    /* margin: 20px !important; */
+    /* margin: 0 !important;
+    background: #f6f6f6;  */
+  }
+  
+  
+  }
+
 
 .tui-pagination .tui-prev {
   margin-right: 24px;
