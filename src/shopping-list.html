@@ -15,37 +15,44 @@
     </header>
     <main>
       <section class="shopping-list-section">
-        <div class="container container-shoplist">
-          <div class="support-ukr">
-            <load ="partials/support.html" />
-          </div>
-          <div class="content">
-            <h1 class="shopping-title empty-title-margin">
-              <span class="shopping-title-span">Shopping</span>List
-            </h1>
-            <div class="empty-shopping-list-wrap">
-              <p class="empty-shopping-text">
-                This page is empty, add some books and proceed to order.
-              </p>
-              <img
-                class="empty-img"
-                src="./img/books.png"
-                alt="books"
-                width="265"
-                height="198"
-              />
+        <div class="container support-empty-container">
+          <div class="container-shoplist">
+            <div class="support-ukr support-ukr-shopping-list">
+              <load ="partials/support.html" />
             </div>
-            <div class="content-shopping">
-              <div class="shopping-list-wraper">
-                <ul class="shopping-list list">
-                  <!-- сюди будуть вставлятись лішки книг -->
-                </ul>
+
+            <div class="content">
+              <h1 class="shopping-title empty-title-margin">
+                <span class="shopping-title-span">Shopping</span>List
+              </h1>
+              <div class="empty-shopping-list-wrap">
+                <p class="empty-shopping-text">
+                  This page is empty, add some books and proceed to order.
+                </p>
+                <img
+                  class="empty-img"
+                  src="./img/books.png"
+                  alt="books"
+                  width="265"
+                  height="198"
+                />
+              </div>
+
+              <div class="content-shopping">
+                <div class="shopping-list-wraper">
+                  <ul class="shopping-list list"></ul>
+                </div>
               </div>
             </div>
           </div>
+
+          <div id="tui-pagination-container" class="tui-pagination"></div>
+
+
+
+
         </div>
       </section>
-      <div id="tui-pagination-container" class="tui-pagination"></div>
     </main>
     <footer>
       <load ="partials/footer.html" />

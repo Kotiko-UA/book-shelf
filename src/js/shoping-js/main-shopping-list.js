@@ -4,11 +4,13 @@ import '../authorization-js/main_js_authorization';
 import '../heder-js/theme';
 import '../footer/footerTeam';
 import '../support-js/support';
+import { doc } from 'firebase/firestore/lite';
 
 const bookList = document.querySelector('.shopping-list');
 const titleShoopingList = document.querySelector('.shopping-title');
 const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
 const paginationContainer = document.querySelector('#tui-pagination-container');
+const supportEl = document.querySelector('.support-ukr-shopping-list')
 
 let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 let itemsPerPage = 3;
@@ -37,6 +39,7 @@ function generatePage(curData) {
   if (!arrForBacket.length) {
     emptyShopList.style.display = 'block';
     paginationContainer.style.display = 'none';
+    supportEl.style.marginBottom = "184px";
     titleShoopingList.classList.replace(
       'full-title-margin',
       'empty-title-margin'
@@ -44,6 +47,7 @@ function generatePage(curData) {
   } else {
     emptyShopList.style.display = 'none';
     paginationContainer.style.display = 'block';
+    supportEl.style.marginBottom = "337px";
     titleShoopingList.classList.replace(
       'empty-title-margin',
       'full-title-margin'

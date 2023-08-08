@@ -30,6 +30,7 @@
         scrollbar-width: none;
     }
     .support-ukr {
+        width: 335px;
         margin-top: 40px;
         margin-left: auto;
         margin-right: auto;
@@ -49,6 +50,7 @@
     }
     .support-ukr {
         height: 474px;
+        width: 335px;
         margin-top: 0;
         margin-right: 0;
     }
@@ -56,14 +58,16 @@
 
 @media screen and (min-width: 1440px) {
     .support-ukr {
+        height: 474px; 
+        width: 356px;
         /* margin-top: 86px; */
         margin-left: 0;
     }
 }
 
 .support-ukr {
-    width: 335px;
-    height: auto;
+    /* width: 335px; */
+    /* height: auto; */
     padding-top: 24px;
     padding-left: 40px;
     padding-right: 40px;

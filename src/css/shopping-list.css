@@ -26,6 +26,7 @@
 
 .shopping-list-section {
   padding-top: 40px;
+  padding-bottom: 40px;
   background: #F6F6F6;
     /* padding-bottom: 302px; */
 }
@@ -41,10 +42,10 @@
   box-sizing: border-box;
 }
 
-.content {
+/* .content {
   margin-left: auto;
   margin-right: auto;
-}
+} */
 
 .shopping-list-item {
   display: flex;
@@ -88,6 +89,7 @@
 .empty-shopping-list-wrap{
   padding-bottom: 302px;
 }
+
 
 .empty-shopping-text {
   width: 244px;
@@ -363,21 +365,21 @@
 /* desctop */
 
 @media screen and (min-width: 1440px) {
-
   .support-ukr-shopping-list{
-    width: 356px;
-    height: 474px;
     display: block;
-    background-color: blue;
+    width: 356px;
+    height: 475px;
+    background-color: #4f2ee8;
+    /* margin-bottom: 337px; */
   }
   .container {
-    width: 100%;
+    width: 1440px;
     padding: 0 24px;
   }
 
-  /* .shopping-list-section {
-    padding-bottom: 157px;
-  } */
+  .shopping-list-section {
+    padding-bottom: 40px;
+  }
 
   .shopping-list-wraper {
     display: block;
@@ -395,25 +397,36 @@
   .empty-shopping-list-wrap{
     padding-bottom: 157px;
   }
+  .empty-shopping-list-wrap{
+    margin-left: 315px;
+    /* padding-bottom: 302px; */
+  }
+
   /* показать сапорт */
 
-  .support {
+  /* .support {
     width: 356px;
     height: 474px;
     background-color: #4f2ee8;
-  }
+  } */
 
   .container-shoplist {
     display: flex;
-    gap: 40;
+    gap: 40px;
   }
 
-  .content {
-    margin-left: 40px;
-    width: 100%;
-  }
 }
 
+.support-empty-container{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.support-empty-wrap{
+  display: flex;
+  flex-direction: row;
+}
 /* ................... */
 
 @media screen and (max-width: 1280px) {
