@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Shelf</title>
     
-    <script type="module" crossorigin src="/team-13-we-can-do-it-JS/assets/shopping-list-5e3e5c2b.js"></script>
-    <link rel="modulepreload" crossorigin href="/team-13-we-can-do-it-JS/assets/auth_firebase-3869f2e7.js">
-    <link rel="stylesheet" href="/team-13-we-can-do-it-JS/assets/auth_firebase-22005330.css">
+    <script type="module" crossorigin src="/team-13-we-can-do-it-JS/assets/shopping-list-0a6b8608.js"></script>
+    <link rel="modulepreload" crossorigin href="/team-13-we-can-do-it-JS/assets/auth_firebase-c3282916.js">
+    <link rel="stylesheet" href="/team-13-we-can-do-it-JS/assets/auth_firebase-55ed88b0.css">
     <link rel="stylesheet" href="/team-13-we-can-do-it-JS/assets/shopping-list-88da730b.css">
   </head>
 
@@ -179,9 +179,10 @@
     </header>
     <main>
       <section class="shopping-list-section">
-        <div class="container container-shoplist">
-          <div class="support-ukr">
-            <div class="support-wrapper">
+        <div class="container support-empty-container">
+          <div class="container-shoplist">
+            <div class="support-ukr support-ukr-shopping-list">
+              <div class="support-wrapper">
     <span class="support-name">
     <h2 class="support-title">Support Ukraine</h2>
     <svg class="support-symb" width="20" height="32">
@@ -293,34 +294,40 @@
     </svg>
   </button>
 </div>
-          </div>
-          <div class="content">
-            <h1 class="shopping-title empty-title-margin">
-              <span class="shopping-title-span">Shopping</span>List
-            </h1>
-            <div class="empty-shopping-list-wrap">
-              <p class="empty-shopping-text">
-                This page is empty, add some books and proceed to order.
-              </p>
-              <img
-                class="empty-img"
-                src="/team-13-we-can-do-it-JS/assets/books-04422700.png"
-                alt="books"
-                width="265"
-                height="198"
-              />
             </div>
-            <div class="content-shopping">
-              <div class="shopping-list-wraper">
-                <ul class="shopping-list list">
-                  <!-- сюди будуть вставлятись лішки книг -->
-                </ul>
+
+            <div class="content">
+              <h1 class="shopping-title empty-title-margin">
+                <span class="shopping-title-span">Shopping</span>List
+              </h1>
+              <div class="empty-shopping-list-wrap">
+                <p class="empty-shopping-text">
+                  This page is empty, add some books and proceed to order.
+                </p>
+                <img
+                  class="empty-img"
+                  src="/team-13-we-can-do-it-JS/assets/books-04422700.png"
+                  alt="books"
+                  width="265"
+                  height="198"
+                />
+              </div>
+
+              <div class="content-shopping">
+                <div class="shopping-list-wraper">
+                  <ul class="shopping-list list"></ul>
+                </div>
               </div>
             </div>
           </div>
+
+          <div id="tui-pagination-container" class="tui-pagination"></div>
+
+
+
+
         </div>
       </section>
-      <div id="tui-pagination-container" class="tui-pagination"></div>
     </main>
     <footer>
       <div class="section bg-color-footer">
