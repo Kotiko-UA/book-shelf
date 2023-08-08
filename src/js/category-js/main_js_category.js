@@ -1,7 +1,6 @@
 import axios from 'axios';
 import '../heder-js/theme';
 import Notiflix from 'notiflix';
-
 const elements = {
   categoryList: document.querySelector('.js-category-list'),
   books_showcase: document.querySelector('.books-showcase'),
@@ -139,5 +138,12 @@ function clickOnCategoryList(event) {
 }
 function clickOnBtnSeeMore(evt) {
   evt.preventDefault();
+  for (let element of elements.categoryList.children) {
+    if (element.textContent == evt.target.getAttribute('id')) {
+      element.classList.add('category-hover');
+    } else {
+      element.classList.remove('category-hover');
+    }
+  }
   getCategoryBooks(evt.target.getAttribute('id'));
 }
