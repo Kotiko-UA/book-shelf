@@ -18,7 +18,7 @@ import{f as at,s as G,a as X,l as ot,d as lt,e as ut,r as ct,u as ft,g as pt,o a
      </div>
      <button type="button" class="shopping-card-bin-link">
           <svg class="img-bin-icon">
-            <use class="img-bin-use" href="../img/spryte.svg#icon-trash"></use>
+            <use class="img-bin-use" href="./img/spryte.svg#icon-trash"></use>
           </svg>
       </button>
     </div>
