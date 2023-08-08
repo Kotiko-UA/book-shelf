@@ -2,11 +2,19 @@ import axios from 'axios';
 import '../heder-js/theme';
 import Notiflix from 'notiflix';
 
+/*  if (0===images.length) {        
+    return Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.") 
+  }
+  */
+
+
 const elements = {
   categoryList: document.querySelector('.js-category-list'),
   books_showcase: document.querySelector('.books-showcase'),
 };
+
 axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
+
 async function fetchData(URL) {
   return axios.get(URL).then(response => {
     if (response.status !== 200) {
@@ -15,9 +23,11 @@ async function fetchData(URL) {
     return response.data;
   });
 }
+
 function fetchCategories() {
   return fetchData('/category-list ');
 }
+
 function createCategoriesListMarkup(arr) {
   return (
     `<li class="js-category-item category-hover dark-theme" name="allCategories" >All categories</li>` +
@@ -31,6 +41,7 @@ function createCategoriesListMarkup(arr) {
       .join('')
   );
 }
+
 function getCategoryList() {
   fetchCategories()
     .then(data => {
@@ -40,11 +51,13 @@ function getCategoryList() {
       console.log(err);
     });
 }
+
 getCategoryList();
+
+
 function createBooksMarkup(arr) {
   return arr
-    .map(
-      ({ _id, book_image, title, author }) => `
+    .map(({ _id, book_image, title, author }) => `
    <li data-id = '${_id}' class = 'js-book-item'>
  <div class="wrapper">
    <div class="thumb-category">
@@ -59,11 +72,8 @@ function createBooksMarkup(arr) {
 }
 
 function createBestSellersMarkup(arr) {
-  return (
-    getMarkupForCategoryHeader('Best Sellers Books') +
-    arr
-      .map(
-        ({ list_name, books }) =>
+  return (getMarkupForCategoryHeader('Best Sellers Books') +
+    arr.map(({ list_name, books }) =>
           `
      <h2 class="categoryName">${list_name}</h2>
      <div class="wrapper-for-catList">
@@ -74,8 +84,10 @@ function createBestSellersMarkup(arr) {
     <button type="button" class="btnSeeMore" id="${list_name}">See more</button>`
       )
       .join('')
-  );
+  )
 }
+
+
 function getMarkupForCategoryHeader(categoryName) {
   let categoryNameSplited = categoryName.split(' ');
   let originalColor = categoryNameSplited
@@ -84,6 +96,8 @@ function getMarkupForCategoryHeader(categoryName) {
   let violetColor = categoryNameSplited[categoryNameSplited.length - 1];
   return `<h2 class="titleCategory">${originalColor} <span class="last-word-in-catName">${violetColor}</span></h2>`;
 }
+
+
 function getBestSellersList() {
   fetchBestSellers()
     .then(data => {
@@ -95,12 +109,19 @@ function getBestSellersList() {
     })
     .catch(err => {
       console.log(err);
+      if (createBooksMarkup = [ ]) {        
+    return Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.") 
+  }
+
     });
 }
+
 getBestSellersList();
 function fetchBestSellers() {
   return fetchData('/top-books');
 }
+
+
 function getCategoryBooks(categoryName) {
   fetchCategoryBooks(categoryName)
     .then(data => {
@@ -110,10 +131,12 @@ function getCategoryBooks(categoryName) {
       console.log(err);
     });
 }
-//getCategoryBooks("Hardcover Nonfiction")
+
+
 function fetchCategoryBooks(categoryName) {
   return fetchData(`/category?category=${categoryName}`);
 }
+
 function getCategoryMarkup(arr, categoryName) {
   return (
     getMarkupForCategoryHeader(categoryName) +
