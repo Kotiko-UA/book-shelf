@@ -241,3 +241,19 @@
         letter-spacing: -0.48px;
     }
 }
+
+.dark-theme .light-theme-amazon {
+    display: none;
+}
+
+.dark-theme .dark-theme-amazon {
+    display: block;
+}
+
+.light-theme-amazon {
+    display: block;
+}
+
+.dark-theme-amazon {
+    display: none;
+}
