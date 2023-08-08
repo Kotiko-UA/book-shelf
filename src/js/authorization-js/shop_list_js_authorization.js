@@ -56,10 +56,7 @@ onAuthStateChanged(auth, user => {
     const uid = user.uid;
     console.log(uid, user);
     showUserBar(user);
-    //generatePage([]);
-    syncShopingList(user).then(() => {
-      //console.log(arrForBacket);
-    });
+    syncShopingList(user).then(() => {});
   } else {
     hiteUserBar();
     hiteShopingList();
@@ -76,7 +73,6 @@ async function getBook(id) {
     console.log('Error API book');
   }
   const book = await resp.json();
-  //   console.log(book);
   return book;
 }
 

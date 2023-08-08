@@ -8,33 +8,39 @@
   .category-container {
     width: 768px;
   }
+
   .wrapper-for-categoryList-support {
     display: flex;
     margin-top: 40px;
     margin-bottom: 100px;
   }
+
   .books-showcase {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
   }
+
   .wrapper-for-catList {
     display: flex;
     width: 704px;
     overflow: hidden;
     object-fit: fill;
   }
+
   .category-list {
     display: flex;
     gap: var(--card-set-gap);
-    /*flex-basis: calc((100%-2*var(--card-set-gap)/3)-25px);*/
   }
+
   .wrapper {
     width: 218px;
   }
+
   .btnSeeMore {
     margin-right: 25px;
   }
+
   .books-category {
     width: 337px;
     height: 472px;
@@ -42,12 +48,14 @@
     margin-top: 0;
     margin-bottom: 0;
   }
+
   .js-category-item {
     margin-bottom: 32px;
     font-size: 18px;
     line-height: 1.33;
     letter-spacing: -0.02em;
   }
+
   .js-category-item:hover {
     color: #4f2ee8;
     font-family: DM Sans;
@@ -57,17 +65,11 @@
     line-height: 1.12;
     text-transform: uppercase;
   }
+
   .dark-theme .js-category-item:hover {
     color: #eac645;
   }
 
-  /* .support-ukr {
-        background-color: var(--violet);
-        width: 335px;
-        height: 474px;
-        border-radius: 16%;
-        text-align: center;
-    } */
   .titleCategory {
     font-weight: bold;
     font-size: 32px;
@@ -75,19 +77,23 @@
     letter-spacing: -0.04em;
     margin-top: 0;
   }
+
   .thumb-category {
     display: flex;
     margin-right: 0;
   }
+
   .img-category {
     display: block;
     height: 316px;
     width: 218px;
   }
+
   .category-book-wrapper {
     display: flex;
     gap: var(--card-set-gap);
   }
+
   .category-book-list {
     display: flex;
     flex-direction: row;
@@ -104,12 +110,14 @@
     display: flex;
     width: 1440px;
   }
+
   .wrapper-for-categoryList-support {
     display: flex;
     flex-direction: column;
     margin-top: 40px;
     margin-bottom: 100px;
   }
+
   .books-showcase {
     display: flex;
     flex-direction: column;
@@ -117,24 +125,28 @@
     margin-top: 40px;
     margin-left: 40px;
   }
+
   .wrapper-for-catList {
     display: flex;
     width: 996px;
     overflow: hidden;
     object-fit: fill;
   }
+
   .category-list {
     display: flex;
     gap: 24px;
-    /*flex-basis: calc((100%-2*var(--card-set-gap)/3)-25px);*/
   }
+
   .wrapper {
     width: 180px;
   }
+
   .btnSeeMore {
     margin-top: 32px;
     margin-right: 0;
   }
+
   .books-category {
     width: 356px;
     height: 472px;
@@ -142,20 +154,14 @@
     margin-bottom: 86px;
     margin-right: 0;
   }
+
   .js-category-item {
     margin-bottom: 32px;
     font-size: 18px;
     line-height: 1.33;
     letter-spacing: -0.02em;
   }
-  /* .support-ukr {
-        background-color: var(--violet);
-        width: 335px;
-        height: 474px;
-        border-radius: 16%;
-        text-align: center;
-        align-self: center;
-    } */
+
   .titleCategory {
     font-weight: bold;
     font-size: 32px;
@@ -163,18 +169,22 @@
     letter-spacing: -0.04em;
     margin-top: 0;
   }
+
   .thumb-category {
     display: flex;
     margin-right: 0;
   }
+
   .img-category {
     display: block;
     height: 256px;
     width: 180px;
   }
+
   .category-book-wrapper {
     display: flex;
   }
+
   .category-book-list {
     display: flex;
     flex-direction: row;

@@ -16,7 +16,6 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-//console.log(app);
 
 import {
   getFirestore,
@@ -30,8 +29,6 @@ const db = getFirestore(app);
 
 async function updateUserShopList(bookId) {
   const user = auth.currentUser;
-  //console.log(user);
-  //console.log(bookId);
   getUserShopList(user.uid).then(async list => {
     const id = list.indexOf(bookId);
     if (id === -1) {
@@ -55,10 +52,8 @@ async function getUserShopList(uid) {
 
   if (docSnap.exists()) {
     const data = docSnap.data();
-    //console.log('Document data:', data);
     return data && data.shopList ? data.shopList : [];
   } else {
-    // docSnap.data() will be undefined in this case
     console.log('No such document!');
     return [];
   }
@@ -75,7 +70,6 @@ import {
 } from 'firebase/auth';
 
 const auth = getAuth();
-//console.log(auth);
 
 function registrateUser() {
   if (!validateUserName(signUpForm.name)) {
@@ -111,10 +105,6 @@ function registrateUser() {
 function saveUserPhoto(file = null) {
   return null;
 }
-//registrateUser('hjkj@gmail.com', 'password1');
-// newUserName
-// user@gmail.com
-// new_user*pass
 
 function signIn() {
   console.dir(signInForm);
@@ -190,11 +180,9 @@ function updateUserProfile(name = null, photoUrl = null) {
       console.log(auth.currentUser);
     })
     .catch(error => {
-      // An error occurred
-      // ...
+      console.log(error);
     });
 }
-//signIn('hjkj@gmail.com', 'password1');
 export {
   logOutUser,
   signIn,

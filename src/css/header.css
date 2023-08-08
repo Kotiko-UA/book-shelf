@@ -13,11 +13,9 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    189.32% 190.93% at 59.76% -23.42%,
-    #4f2ee8 18.03%,
-    #fff 100%
-  );
+  background: radial-gradient(189.32% 190.93% at 59.76% -23.42%,
+      #4f2ee8 18.03%,
+      #fff 100%);
   padding-bottom: 20px;
   transform: scaleY(1) translateY(-10%);
   display: none;
@@ -98,7 +96,7 @@
   transition: 0.4s;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
   transform: translateX(20px);
@@ -188,9 +186,7 @@ input:checked + .slider:before {
 
 .menu-btn-user {
   display: flex;
-  /* position: absolute; */
   gap: 9px;
-  /* max-width: 184px; */
   height: 45px;
   margin-left: 20px;
   top: 0;
@@ -229,7 +225,6 @@ input:checked + .slider:before {
   display: block;
   padding: 8px 16px;
   width: 72px;
-  /* margin-bottom: 11px; */
   background-color: var(--yellow);
   border-radius: 36px;
   font-family: DM Sans;
@@ -299,7 +294,6 @@ input:checked + .slider:before {
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
-  /* 128.571% */
   letter-spacing: -0.56px;
 }
 
@@ -329,10 +323,6 @@ input:checked + .slider:before {
     display: none;
   }
 
-  /* .home-page {
-    color: #111;
-  } */
-
   .shop-page {
     fill: #111;
     color: #111;
@@ -345,11 +335,6 @@ input:checked + .slider:before {
   .burger-close-mob {
     display: none;
   }
-
-  /* .home-page {
-    color: #111;
-    margin: 0;
-  } */
 
   .shop-page {
     color: #111;
@@ -405,7 +390,6 @@ input:checked + .slider:before {
 
   .menu-btn {
     display: flex;
-    /* max-width: 184px; */
     height: 45px;
     border-radius: 36px;
     background: #4f2ee8;
@@ -451,12 +435,7 @@ input:checked + .slider:before {
 
   /*------------HIDEN--------*/
   .wrap-out {
-    /* position: absolute; */
     display: block;
-    /* right: 24px;
-    width: 184px;
-    opacity: 0;
-    pointer-events: none; */
   }
 
   /*-------------------*/
@@ -476,10 +455,6 @@ input:checked + .slider:before {
 
   .nav {
     gap: 40px;
-  }
-
-  .wrap-out {
-    /* right: 32px; */
   }
 
   .burger-open-mob {
@@ -549,11 +524,9 @@ input:checked + .slider:before {
     position: absolute;
     width: 375px;
     height: 100%;
-    background: radial-gradient(
-      189.32% 190.93% at 59.76% -23.42%,
-      #4f2ee8 18.03%,
-      #fff 100%
-    );
+    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%,
+        #4f2ee8 18.03%,
+        #fff 100%);
   }
 }
 
@@ -608,5 +581,4 @@ input:checked + .slider:before {
   position: relative;
 }
 
-.sing-wrap {
-}
+.sing-wrap {}

@@ -1,5 +1,3 @@
-//import '../authorization-js/main_js_authorization';
-
 /*----------------------DARCK MOD-------------------------*/
 
 let switchMode = document.getElementById('switchMode');

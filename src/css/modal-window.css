@@ -1,7 +1,6 @@
 .modal-window-conteiner {
     position: relative;
     width: 335px;
-    /* height: 100%; */
     border-radius: 18px;
     border: 2px solid #111;
     background: var(--white);

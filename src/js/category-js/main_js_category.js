@@ -108,7 +108,6 @@ function getCategoryBooks(categoryName) {
       console.log(err);
     });
 }
-//getCategoryBooks("Hardcover Nonfiction")
 function fetchCategoryBooks(categoryName) {
   return fetchData(`/category?category=${categoryName}`);
 }

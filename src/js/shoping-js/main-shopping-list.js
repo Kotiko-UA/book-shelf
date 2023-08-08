@@ -10,7 +10,7 @@ const bookList = document.querySelector('.shopping-list');
 const titleShoopingList = document.querySelector('.shopping-title');
 const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
 const paginationContainer = document.querySelector('#tui-pagination-container');
-const supportEl = document.querySelector('.support-ukr-shopping-list')
+const supportEl = document.querySelector('.support-ukr-shopping-list');
 
 let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 let itemsPerPage = 3;
@@ -39,7 +39,7 @@ function generatePage(curData) {
   if (!arrForBacket.length) {
     emptyShopList.style.display = 'block';
     paginationContainer.style.display = 'none';
-    supportEl.style.marginBottom = "184px";
+    supportEl.style.marginBottom = '184px';
     titleShoopingList.classList.replace(
       'full-title-margin',
       'empty-title-margin'
@@ -47,7 +47,7 @@ function generatePage(curData) {
   } else {
     emptyShopList.style.display = 'none';
     paginationContainer.style.display = 'block';
-    supportEl.style.marginBottom = "337px";
+    supportEl.style.marginBottom = '337px';
     titleShoopingList.classList.replace(
       'empty-title-margin',
       'full-title-margin'
@@ -139,8 +139,6 @@ function onButtonDeleteClick(event) {
   );
   arrForBacket.splice(removeIndexFromLocalStorage, 1);
   localStorage.setItem('KEY', JSON.stringify(arrForBacket));
-
-  // curData.splice(removeIndexFromLocalStorage, 1);
 
   curData = arrForBacket.slice(startIdx, endIdx);
   generatePage(curData);
