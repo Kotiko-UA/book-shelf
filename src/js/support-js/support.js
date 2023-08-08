@@ -1,6 +1,7 @@
 const refs = {
   list: document.querySelector('.support-list'),
   btnDown: document.querySelector('.support-btn-down'),
+  btnUp: document.querySelector('.support-btn-up'),
   bottomQuard: document.querySelector('.bottom-quard'),
 };
 
