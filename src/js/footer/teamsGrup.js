@@ -1,4 +1,13 @@
 import axe from '../../img/footer_img/yevhen-aksonov.jpg';
+import iva from '../../img/footer_img/oleksandr-ivashchenko.jpg';
+import kur from '../../img/footer_img/ania-kurtiak.jpg';
+import zah from '../../img/footer_img/kate-zaharova.jpg';
+import khu from '../../img/footer_img/artem-khudokonenko.jpg';
+import kra from '../../img/footer_img/lusya-kras.jpg';
+import vol from '../../img/footer_img/igor-volk.jpg';
+import suk from '../../img/footer_img/viktoriia-sukhara.jpg';
+import sha from '../../img/footer_img/oleksander-sharyak.jpg';
+import tro from '../../img/footer_img/svitlana-trotsenko.jpg';
 
 export const teams = [
   {
@@ -10,14 +19,14 @@ export const teams = [
   },
   {
     id: '1',
-    img: 'src/img/footer_img/oleksandr-ivashchenko.jpg',
+    img: iva,
     h: 'Ivashchenko Oleksandr',
     p: 'Scrum master',
     aTeam: 'flypyfl@gmail.com',
   },
   {
     id: '2',
-    img: 'src/img/footer_img/ania-kurtiak.jpg',
+    img: kur,
     h: 'Ania Kurtiak',
     p: 'Team developer',
     aTeam: 'ania.kiseliuk@gmail.com',
@@ -25,7 +34,7 @@ export const teams = [
 
   {
     id: '3',
-    img: 'src/img/footer_img/kate-zaharova.jpg',
+    img: zah,
     h: 'Kate Zaharova',
     p: 'Team developer',
     aTeam: '15071981ktz@gmail.com',
@@ -33,7 +42,7 @@ export const teams = [
 
   {
     id: '4',
-    img: 'src/img/footer_img/artem-khudokonenko.jpg',
+    img: khu,
     h: 'Artem Khudokonenko',
     p: 'Team developer',
     aTeam: 'aftinid94@gmail.com',
@@ -41,7 +50,7 @@ export const teams = [
 
   {
     id: '5',
-    img: 'src/img/footer_img/lusya-kras.jpg',
+    img: kra,
     h: 'Lusya Kras',
     p: 'Team developer',
     aTeam: 'lusya0409@gmail.com',
@@ -49,7 +58,7 @@ export const teams = [
 
   {
     id: '6',
-    img: 'src/img/footer_img/igor-volk.jpg',
+    img: vol,
     h: 'Igor Volk',
     p: 'Team developer',
     aTeam: 'volkigor286@gmail.com',
@@ -57,7 +66,7 @@ export const teams = [
 
   {
     id: '7',
-    img: 'src/img/footer_img/viktoriia-sukhara.jpg',
+    img: suk,
     h: 'Viktoriia Sukhara',
     p: 'Team developer',
     aTeam: 'sukhara.nika13@gmail.com',
@@ -65,7 +74,7 @@ export const teams = [
 
   {
     id: '8',
-    img: 'src/img/footer_img/oleksander-sharyak.jpg',
+    img: sha,
     h: 'Oleksander Sharyak',
     p: 'Team developer',
     aTeam: 'aleksandrsaryk2001@gmail.com',
@@ -73,7 +82,7 @@ export const teams = [
 
   {
     id: '9',
-    img: 'src/img/footer_img/svitlana-trotsenko.jpg',
+    img: tro,
     h: 'Svitlana Trotsenko',
     p: 'Team developer',
     aTeam: 'trots.svit@gmail.com',
