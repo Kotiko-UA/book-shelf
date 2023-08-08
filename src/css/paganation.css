@@ -137,7 +137,7 @@
 }
 
 .dark-theme .tui-pagination {
-  background: #111111 !important;
+  background: var(--gray) !important;
 }
 .dark-theme .tui-pagination .tui-first,
 .dark-theme .tui-pagination .tui-prev,

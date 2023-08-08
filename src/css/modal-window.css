@@ -114,6 +114,22 @@
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
 }
 
+.light-amazon {
+    display: block;
+}
+
+.dark-amazon {
+    display: none;
+}
+
+.dark-theme .light-amazon {
+    display: none;
+}
+
+.dark-theme .dark-amazon {
+    display: block;
+}
+
 .text-conteiner {
     display: flex;
     justify-content: center;

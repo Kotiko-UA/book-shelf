@@ -1,3 +1,5 @@
+import '../authorization-js/main_js_authorization';
+
 /*----------------------DARCK MOD-------------------------*/
 
 let switchMode = document.getElementById('switchMode');
@@ -8,9 +10,8 @@ logo.innerHTML = `<svg class="logo">
       </svg>`;
 
 const body = document.querySelector('body');
- 
+
 if (localStorage.getItem('theme') == 'true') {
-   
   body.classList.add('dark-theme');
   switchMode.checked = true;
 
@@ -21,21 +22,20 @@ if (localStorage.getItem('theme') == 'true') {
 switchMode.onchange = function () {
   if (this.checked) {
     localStorage.setItem('theme', true);
-     
+
     body.classList.add('dark-theme');
 
     logo.innerHTML = `<svg class="logo">
         <use href="./img/spryte.svg#icon-logo-dark" height="28px"></use>
-      </svg>`
-
+      </svg>`;
   } else {
     localStorage.setItem('theme', false);
-    
+
     body.classList.remove('dark-theme');
 
     logo.innerHTML = `<svg class="logo">
         <use href="./img/spryte.svg#icon-logo-light" height="28px"></use>
-      </svg>`
+      </svg>`;
   }
 };
 /*----------------------------OPEN LOG OUT----------------------------- */
@@ -45,29 +45,23 @@ out.addEventListener('click', outKlick);
 
 function outKlick() {
   open.classList.toggle('tupe-out_active');
-} 
-
-
+}
 
 // _______________________BURGER_____________________________
-let oupenBurger = document.querySelector('.burger-open-mob')
-let closeBurger = document.querySelector('.burger-close-mob')
-let burger = document.querySelector('.mob-menus ')
-
-oupenBurger.addEventListener('click', oupenBur)
-closeBurger.addEventListener('click', closeBur)
-
+let oupenBurger = document.querySelector('.burger-open-mob');
+let closeBurger = document.querySelector('.burger-close-mob');
+let burger = document.querySelector('.burger-section');
+oupenBurger.addEventListener('click', oupenBur);
+closeBurger.addEventListener('click', closeBur);
 function oupenBur() {
-  document.body.classList.toggle('no-scroll')
-  oupenBurger.classList.toggle('oupenBur')
-  burger.classList.toggle('burgActiv')
-  closeBurger.classList.toggle('closeBur')
+  document.body.classList.toggle('no-scroll');
+  oupenBurger.classList.toggle('oupenBur');
+  burger.classList.toggle('burgActiv');
+  closeBurger.classList.toggle('closeBur');
 }
 function closeBur() {
-  document.body.classList.toggle('no-scroll')
-  oupenBurger.classList.toggle('oupenBur')
-  burger.classList.toggle('burgActiv')
-closeBurger.classList.toggle('closeBur')
-
+  document.body.classList.toggle('no-scroll');
+  oupenBurger.classList.toggle('oupenBur');
+  burger.classList.toggle('burgActiv');
+  closeBurger.classList.toggle('closeBur');
 }
- 
