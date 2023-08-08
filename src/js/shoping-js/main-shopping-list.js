@@ -104,7 +104,7 @@ function createMarkupBook(arr) {
      </div>
      <button type="button" class="shopping-card-bin-link">
           <svg class="img-bin-icon">
-            <use class="img-bin-use" href="../img/spryte.svg#icon-trash"></use>
+            <use class="img-bin-use" href="./img/spryte.svg#icon-trash"></use>
           </svg>
       </button>
     </div>
