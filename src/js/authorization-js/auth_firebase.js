@@ -30,12 +30,10 @@ const db = getFirestore(app);
 
 async function updateUserShopList(bookId) {
   const user = auth.currentUser;
-  console.log(user);
-  console.log(bookId);
+  //console.log(user);
+  //console.log(bookId);
   getUserShopList(user.uid).then(async list => {
-    console.log(list);
     const id = list.indexOf(bookId);
-    console.log(id);
     if (id === -1) {
       list.push(bookId);
     } else {
@@ -46,11 +44,9 @@ async function updateUserShopList(bookId) {
       const docRef = await setDoc(doc(usersRef, user.uid), {
         shopList: list,
       });
-      console.log(docRef);
     } catch (e) {
       console.error('Error adding document: ', e);
     }
-    console.log(list);
   });
 }
 async function getUserShopList(uid) {

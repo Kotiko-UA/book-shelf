@@ -1,10 +1,14 @@
 import * as basicLightbox from 'basiclightbox';
 
+const spriteImg = document.querySelector('.arrow-right-wrap use').href.baseVal;
+const spriteImgPath = spriteImg.replace('#icon-arrow-right', '');
+console.log('spryte', spriteImgPath);
+
 const signUpModal = basicLightbox.create(
   `<div class="modal">
     <button type="button" class="modal-close-btn">
       <svg class="icon-close" width="28" height="28">
-        <use href="img/spryte.svg#icon-close"></use>
+        <use href="${spriteImgPath}#icon-close"></use>
       </svg>
     </button>
 
@@ -38,7 +42,7 @@ const signUpModal = basicLightbox.create(
 
           <label for="email" class="form-label">Email* </label>
           <svg class="icon" width="28" height="28">
-            <use href="./img/spryte.svg#icon-mail"></use>
+            <use href="${spriteImgPath}#icon-mail"></use>
           </svg>
 
         </div>
@@ -55,7 +59,7 @@ const signUpModal = basicLightbox.create(
 
           <label for="password" class="form-label">Password* </label>
           <svg class="icon" width="28" height="28">
-            <use href="./img/spryte.svg#icon-lock"></use>
+            <use href="${spriteImgPath}#icon-lock"></use>
           </svg>
 
         </div>
@@ -68,7 +72,7 @@ const signUpModal = basicLightbox.create(
       </div>
        <button class="sign-min-btn sign-google-btn" type="button" data-g-sign-in>
             <svg class="icon-google"" width="28" height="28">
-                <use href="./img/spryte.svg#icon-google"></use>
+                <use href="${spriteImgPath}#icon-google"></use>
             </svg>
         Sign in with Google
        </button>
@@ -89,7 +93,7 @@ const signInModal = basicLightbox.create(
   `<div class="modal">
     <button type="button" class="modal-close-btn">
       <svg class="icon-close" width="28" height="28">
-        <use href="./img/spryte.svg#icon-close"></use>
+        <use href="${spriteImgPath}#icon-close"></use>
       </svg>
     </button>
 
@@ -108,7 +112,7 @@ const signInModal = basicLightbox.create(
 
           <label for="email" class="form-label">Email* </label>
           <svg class="icon" width="28" height="28">
-            <use href="./img/spryte.svg#icon-mail"></use>
+            <use href="${spriteImgPath}#icon-mail"></use>
           </svg>
 
         </div>
@@ -125,7 +129,7 @@ const signInModal = basicLightbox.create(
 
           <label for="password" class="form-label">Password* </label>
           <svg class="icon" width="28" height="28">
-            <use href="./img/spryte.svg#icon-lock"></use>
+            <use href="${spriteImgPath}#icon-lock"></use>
           </svg>
 
         </div>
@@ -138,7 +142,7 @@ const signInModal = basicLightbox.create(
       </div>
       <button class="sign-min-btn sign-google-btn" type="button" data-g-sign-in>
             <svg class="icon-google" width="28" height="28">
-                <use href="./img/spryte.svg#icon-google"></use>
+                <use href="${spriteImgPath}#icon-google"></use>
             </svg>
          Sign in with Google
        </button>
