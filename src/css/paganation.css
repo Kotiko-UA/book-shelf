@@ -1,6 +1,9 @@
 .tui-pagination {
   height: auto !important;
-  margin-bottom: 40px !important;
+  padding-bottom: 40px !important;
+  padding-top: 20px !important;
+  margin: 0 !important;
+  background: #f6f6f6;
 }
 
 .tui-pagination .tui-page-btn {
@@ -37,8 +40,8 @@
 }
 
 .tui-pagination .tui-next-is-ellip,
-.tui-pagination .tui-first+.tui-prev,
-.tui-pagination .tui-next+.tui-last,
+.tui-pagination .tui-first + .tui-prev,
+.tui-pagination .tui-next + .tui-last,
 .tui-pagination .tui-next {
   height: 38px !important;
 }
@@ -85,7 +88,12 @@
   transform: scale(1.2);
 }
 
-.tui-pagination .tui-ico-last {}
+.tui-pagination .tui-next + .tui-last,
+.tui-pagination .tui-next,
+.tui-pagination .tui-first + .tui-prev,
+.tui-pagination .tui-first {
+  padding-top: 6px !important;
+}
 
 @media screen and(min-width: 768px) {
   .tui-pagination .tui-page-btn {
@@ -103,4 +111,45 @@
 
 .tui-pagination .tui-page-btn {
   width: 44px !important;
+}
+
+/*    темная тема стили */
+
+.dark-theme .tui-pagination .tui-is-selected .tui-pagination strong {
+  background: #ffffff !important;
+
+  color: #111111 !important;
+
+  border: 1.5px solid #ffffff !important;
+}
+
+.dark-theme .tui-pagination .tui-page-btn {
+  color: #ffffff !important;
+}
+.dark-theme .tui-pagination .tui-is-selected {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+.dark-theme .tui-pagination .tui-page-btn {
+  border: 2px solid #ffffff !important;
+  font-weight: bolt;
+}
+
+.dark-theme .tui-pagination {
+  background: #111111 !important;
+}
+.dark-theme .tui-pagination .tui-first,
+.dark-theme .tui-pagination .tui-prev,
+.dark-theme .tui-pagination .tui-prev-is-ellip,
+.dark-theme .tui-pagination .tui-next-is-ellip {
+  border: 2px solid black !important;
+  background: #111111 !important;
+}
+.dark-theme .tui-pagination .tui-next,
+.dark-theme .tui-pagination .tui-last {
+  border: 2px solid black !important;
+}
+.dark-theme .tui-pagination .tui-next {
+  background: #eac645 !important;
 }

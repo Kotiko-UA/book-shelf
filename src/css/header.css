@@ -225,7 +225,7 @@ input:checked + .slider:before {
   display: block;
   padding: 8px 16px;
   width: 72px;
-  margin-bottom: 11px;
+  /* margin-bottom: 11px; */
   background-color: var(--yellow);
   border-radius: 36px;
   font-family: DM Sans;

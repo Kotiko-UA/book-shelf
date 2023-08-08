@@ -1,10 +1,5 @@
-.body {
-  background: #f6f6f6;
-}
-
-/* тимчасова дарк тема, поки не працює дарк тема боді */
 .dark-theme .shopping-list-section {
-  background-color: black;
+  background-color: var(--black);
 }
 
 .dark-theme .empty-shopping-text {
@@ -27,9 +22,13 @@
 
 .shopping-list-section {
   padding-top: 40px;
-  padding-bottom: 302px;
+  background: #F6F6F6;
+    /* padding-bottom: 302px; */
 }
 
+.support-ukr-shopping-list{
+  display: none;
+}
 .container {
   padding: 0 20px;
   width: 100%;
@@ -82,6 +81,10 @@
   letter-spacing: -0.64px;
 }
 
+.empty-shopping-list-wrap{
+  padding-bottom: 302px;
+}
+
 .empty-shopping-text {
   width: 244px;
   text-align: center;
@@ -99,6 +102,7 @@
   width: 265px;
   height: 198px;
 }
+
 .shopping-card-img {
   width: 100px;
   height: 142px;
@@ -118,6 +122,7 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+
 .shopping-card-genre {
   letter-spacing: 0.36px;
   font-size: 12px;
@@ -229,11 +234,13 @@
   width: 32px;
   height: 11px;
 }
+
 .icon-apple-book {
   display: block;
   width: 16px;
   height: 16px;
 }
+
 .icon-book-shop {
   display: block;
   width: 16px;
@@ -254,9 +261,13 @@
 /* tablet */
 
 @media screen and (min-width: 768px) {
-  .shopping-list-section {
-    padding-bottom: 394px;
+  .support-ukr-shopping-list{
+    display: none;
   }
+
+  /* .shopping-list-section {
+    padding-bottom: 394px;
+  } */
 
   .container {
     width: 768px;
@@ -268,6 +279,9 @@
     line-height: 1.083;
   }
 
+  .empty-shopping-list-wrap{
+    padding-bottom: 394px;
+  }
   .empty-title-margin {
     margin-bottom: 140px;
   }
@@ -330,10 +344,12 @@
     width: 48px;
     height: 15px;
   }
+
   .icon-apple-book {
     width: 28px;
     height: 27px;
   }
+
   .icon-book-shop {
     width: 32px;
     height: 30px;
@@ -342,16 +358,26 @@
 
 /* desctop */
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
+
+  .support-ukr-shopping-list{
+    width: 356px;
+    height: 474px;
+    display: block;
+    background-color: blue;
+  }
   .container {
-    width: 1216px;
+    width: 100%;
     padding: 0 24px;
   }
 
-  .shopping-list-section {
+  /* .shopping-list-section {
     padding-bottom: 157px;
-  }
+  } */
 
+  .shopping-list-wraper {
+    display: block;
+  }
   .shopping-list-item {
     gap: 24px;
     padding: 24px;
@@ -362,6 +388,9 @@
     width: 808px;
   }
 
+  .empty-shopping-list-wrap{
+    padding-bottom: 157px;
+  }
   /* показать сапорт */
 
   .support {
@@ -374,6 +403,7 @@
     display: flex;
     gap: 40;
   }
+
   .content {
     margin-left: 40px;
     width: 100%;
