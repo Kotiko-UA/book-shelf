@@ -1,7 +1,9 @@
+import axe from '../../img/footer_img/yevhen-aksonov.jpg';
+
 export const teams = [
   {
     id: '0',
-    img: 'src/img/footer_img/yevhen-aksonov.jpg',
+    img: axe,
     h: 'Yevhen Aksonov',
     p: 'Team lead',
     aTeam: 'kotiko.ea@gmail.com',
