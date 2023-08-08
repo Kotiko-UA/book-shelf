@@ -8,11 +8,11 @@
   width: 375px;
   margin: auto;
 }
+
 .burger-section {
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0;
   background: radial-gradient(
     189.32% 190.93% at 59.76% -23.42%,
     #4f2ee8 18.03%,
@@ -90,14 +90,6 @@
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
-input:checked + .slider {
-  background-color: #2196f3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
 input:checked + .slider:before {
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
@@ -123,7 +115,7 @@ input:checked + .slider:before {
 .mob-menus {
   margin: auto;
 
-  position: absolute;
+  position: relative;
   width: 375px;
   padding-bottom: 20px;
   padding-top: 20px;
