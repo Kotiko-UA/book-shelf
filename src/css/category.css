@@ -61,6 +61,11 @@
 }
 
 
+.dark-theme .category-hover {
+    color: #EAC645;
+    background-color: ;
+}
+
 /* div 'support-ukr' for correct css drawing---*/
 .support-ukr{
     background-color: var(--violet);
