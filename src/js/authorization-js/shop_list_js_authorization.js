@@ -8,6 +8,8 @@ import {
   getUserShopList,
 } from './auth_firebase';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { generatePage } from '../shoping-js/main-shopping-list';
+
 //===========================================================
 
 document.addEventListener('click', clickHandlerAuth);
@@ -16,7 +18,8 @@ function clickHandlerAuth(e) {
   const inputs = document.querySelectorAll('.form-input');
   inputs.forEach(input => input.classList.remove('invalid'));
   if (e.target.closest('.modal-close-btn')) {
-    modalsClose();
+    signUpModal.close();
+    signInModal.close();
   }
   if (e.target.closest('[data-sign-up]')) {
     signUpModal.show();
@@ -44,26 +47,25 @@ function clickHandlerAuth(e) {
     updateUserShopList(bookId);
   }
 }
-function modalsClose() {
-  signUpModal.close();
-  signInModal.close();
-}
 //onAuthStateChanged слідкує за авторизацією (входом-виходом користовуча)
 const auth = getAuth();
-hideShopingList();
+//отримуемо з локал сторадж список книг
+let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 onAuthStateChanged(auth, user => {
   if (user) {
     const uid = user.uid;
     console.log(uid, user);
     showUserBar(user);
-    showShopingList();
+    //generatePage([]);
+    syncShopingList(user).then(() => {
+      //console.log(arrForBacket);
+    });
   } else {
-    hideUserBar();
-    hideShopingList();
+    hiteUserBar();
+    hiteShopingList();
   }
-  modalsClose();
 });
-function hideUserBar() {
+function hiteUserBar() {
   document.querySelector('.sing-wrap').style.display = '';
   document.querySelector('.log-out-wrap').style.display = 'none';
 }
@@ -78,12 +80,34 @@ async function getBook(id) {
   return book;
 }
 
-function showShopingList() {
-  document.querySelector('.shop-page').style.display = '';
+async function syncShopingList(user) {
+  getUserShopList(user.uid)
+    .then(list => {
+      // видаляємо книги що немає в списку з БД
+      arrForBacket = arrForBacket.filter(book => {
+        return list.includes(book._id);
+      });
+
+      // додаємо книги що є в БД, але немає в списку локал сторадж
+      list.forEach(id => {
+        const inList = arrForBacket.find(({ _id }) => _id == id);
+        if (!inList) {
+          getBook(id)
+            .then(book => {
+              arrForBacket.push(book);
+
+              localStorage.setItem('KEY', JSON.stringify(arrForBacket));
+              generatePage(arrForBacket);
+            })
+            .catch(error => console.log(error.message));
+        }
+      });
+    })
+    .catch(error => {
+      console.dir(error);
+    });
 }
-function hideShopingList() {
-  document.querySelector('.shop-page').style.display = 'none';
-}
+function hiteShopingList(user) {}
 
 function showUserBar(user) {
   const userName = document.querySelector('.user-text');

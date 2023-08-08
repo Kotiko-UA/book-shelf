@@ -1,4 +1,4 @@
-import '../authorization-js/main_js_authorization';
+//import '../authorization-js/main_js_authorization';
 
 /*----------------------DARCK MOD-------------------------*/
 
