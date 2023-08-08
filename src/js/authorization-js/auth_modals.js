@@ -76,8 +76,12 @@ const signUpModal = basicLightbox.create(
   </div>
 `,
   {
-    onShow: () => document.addEventListener('keydown', onEscKeyPress),
-    onClose: () => document.removeEventListener('keydown', onEscKeyPress),
+    onShow: () => {
+      modalOnShow();
+    },
+    onClose: () => {
+      modalOnClose();
+    },
   }
 );
 
@@ -143,10 +147,25 @@ const signInModal = basicLightbox.create(
   </div>
 `,
   {
-    onShow: () => document.addEventListener('keydown', onEscKeyPress),
-    onClose: () => document.removeEventListener('keydown', onEscKeyPress),
+    onShow: () => {
+      modalOnShow();
+    },
+    onClose: () => {
+      modalOnClose();
+    },
   }
 );
+function modalOnShow() {
+  setTimeout(() => {
+    document.querySelector('body').classList.add('no-scroll');
+    document.addEventListener('keydown', onEscKeyPress);
+  }, 10);
+}
+
+function modalOnClose() {
+  document.removeEventListener('keydown', onEscKeyPress);
+  document.body.classList.remove('no-scroll');
+}
 
 function onEscKeyPress(evt) {
   console.log(evt.code);

@@ -75,6 +75,11 @@
   border: 2px solid #f6f6f6;
   background: var(--gray);
 }
+@media screen and (min-width: 768px) {
+  .modal {
+    min-width: 579px;
+  }
+}
 .form {
   width: 100%;
 }
