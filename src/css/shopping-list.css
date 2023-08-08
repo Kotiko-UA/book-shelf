@@ -1,9 +1,13 @@
 .dark-theme .shopping-list-section {
-  background-color: var(--black);
+  background-color: var(--gray);
 }
 
 .dark-theme .empty-shopping-text {
   color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-theme .shopping-list-item{
+  background-color: #111;
 }
 
 .dark-theme .shopping-title-span,

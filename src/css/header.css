@@ -326,9 +326,9 @@ input:checked+.slider:before {
     display: none;
   }
 
-  .home-page {
+  /* .home-page {
     color: #111;
-  }
+  } */
 
   .shop-page {
     fill: #111;
@@ -343,10 +343,10 @@ input:checked+.slider:before {
     display: none;
   }
 
-  .home-page {
+  /* .home-page {
     color: #111;
     margin: 0;
-  }
+  } */
 
   .shop-page {
     color: #111;
@@ -368,7 +368,7 @@ input:checked+.slider:before {
   }
 
   .dark-theme .home-page {
-    color: #fff;
+    color: #000;
   }
 
   /* /----------------------USER BUT ---------------/ */
@@ -579,6 +579,18 @@ input:checked+.slider:before {
 .dark-theme .burger-close-mob {
   fill: #fff;
 }
+
+.dark-theme .header-shop .shop-page{
+  color: rgba(17, 17, 17, 1);
+}
+
+.dark-theme .header-shop .shop-page svg{
+  fill: rgba(17, 17, 17, 1);
+}
+
+.dark-theme .header-shop .home-page{
+  color: var(--white);
+ }
 
 .no-scroll {
   overflow-y: clip;
