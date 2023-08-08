@@ -29,7 +29,7 @@ function fetchCategories() {
 
 function createCategoriesListMarkup(arr) {
   return (
-    `<li class="js-category-item category-hover dark-theme" value="allCategories" >All categories</li>` +
+    `<li class="js-category-item category-hover dark-theme" itemprop="allCategories" >All categories</li>` +
     arr
       .map(
         ({ list_name }) => `
@@ -159,7 +159,7 @@ function clickOnCategoryList(event) {
     element.classList.remove('category-hover');
   }
   event.target.classList.add('category-hover');
-  if (event.target.getAttribute('value') === 'allCategories') {
+  if (event.target.getAttribute('itemprop') === 'allCategories') {
     getBestSellersList();
   } else {
     getCategoryBooks(event.target.textContent);
