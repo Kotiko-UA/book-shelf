@@ -54,7 +54,6 @@ hideShopingList();
 onAuthStateChanged(auth, user => {
   if (user) {
     const uid = user.uid;
-    console.log(uid, user);
     showUserBar(user);
     showShopingList();
   } else {

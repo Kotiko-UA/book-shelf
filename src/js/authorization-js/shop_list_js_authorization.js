@@ -54,7 +54,6 @@ let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 onAuthStateChanged(auth, user => {
   if (user) {
     const uid = user.uid;
-    console.log(uid, user);
     showUserBar(user);
     //generatePage([]);
     syncShopingList(user).then(() => {
