@@ -1,0 +1,244 @@
+.modal-window-conteiner {
+    position: relative;
+    width: 335px;
+    /* height: 100%; */
+    border-radius: 18px;
+    border: 2px solid #111;
+    background: var(--white);
+    padding: 40px 24px;
+    margin: 0 auto;
+}
+
+.dark-theme .modal-window-conteiner {
+    background-color: var(--gray);
+    border: var(--white);
+}
+
+.book-img-modal-window {
+    width: 287px;
+    height: 408px;
+}
+
+.book-title-modal {
+    color: var(--black);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.64px;
+    text-transform: uppercase;
+    margin-top: 14px;
+    margin-bottom: 4px;
+}
+
+.dark-theme .book-title-modal {
+    color: var(--white);
+}
+
+.author-modal-window {
+    color: #B4AFAF;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: -0.48px;
+    margin-bottom: 18px;
+}
+
+.desc-modal-window {
+    color: var(--black);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.28;
+    letter-spacing: -0.56px;
+    margin-bottom: 14px;
+}
+
+.dark-theme .desc-modal-window {
+    color: var(--white);
+}
+
+.add-delete-book-btn {
+    border-radius: 40px;
+    border: 2px solid var(--violet);
+    display: inline-flex;
+    padding: 14px 28px;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--black);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    margin-top: 40px;
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark-theme .add-delete-book-btn {
+    color: var(--white);
+    background: var(--gray);
+}
+
+.add-delete-book-btn:hover {
+    background: var(--violet);
+    color: var(--white);
+}
+
+.add-delete-book-btn:focus {
+    border-radius: 40px;
+    background: var(--violet);
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
+}
+
+.add-shopping {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.markets-list-modal-window {
+    display: flex;
+    gap: 20px;
+    height: 36px;
+    align-items: center;
+}
+
+.img-market {
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-market:hover {
+    mix-blend-mode: luminosity;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
+}
+
+.light-amazon {
+    display: block;
+}
+
+.dark-amazon {
+    display: none;
+}
+
+.dark-theme .light-amazon {
+    display: none;
+}
+
+.dark-theme .dark-amazon {
+    display: block;
+}
+
+.text-conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.added-modal-window {
+    width: 242px;
+    margin-top: 8px;
+    color: rgba(17, 17, 17, 0.50);
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+}
+
+.dark-theme .added-modal-window {
+    color: rgba(255, 255, 255, 0.50);
+}
+
+.icon-close {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-close {
+    background-color: #fff;
+    position: absolute;
+    outline: none;
+    border: none;
+    right: 12px;
+    top: 12px;
+    fill: var(--black);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-close:is(:hover, :focus) .icon-close {
+    fill: var(--violet);
+}
+
+.dark-theme .btn-close {
+    background-color: var(--gray);
+    fill: var(--white)
+}
+
+.after {
+    display: none;
+}
+
+.small {
+    font-size: 13px;
+    padding: 14px 23px;
+}
+
+@media screen and (min-width: 428px) {
+    .modal-window-conteiner {
+        width: 579px;
+        padding: 40px;
+    }
+
+    .mw-content-conteiner {
+        display: flex;
+        gap: 24px;
+    }
+
+    .book-img-modal-window {
+        width: 100%;
+        height: 281px;
+    }
+
+    .book-title-modal {
+        font-size: 24px;
+        line-height: 1.16;
+        letter-spacing: -0.96px;
+    }
+
+    .author-modal-window {
+        font-size: 14px;
+        line-height: 1.28;
+        letter-spacing: -0.56px;
+    }
+
+    .add-delete-book-btn {
+        display: flex;
+        width: 499px;
+        padding: 20px 143px;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        line-height: 1.33;
+        letter-spacing: -0.18px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .small {
+        font-size: 17px;
+        padding: 20px 100px;
+    }
+
+    .mw-data-conteiner {
+        max-width: 279px;
+    }
+
+    .added-modal-window {
+        font-size: 12px;
+        width: 324px;
+        line-height: 1.16;
+        letter-spacing: -0.48px;
+    }
+}

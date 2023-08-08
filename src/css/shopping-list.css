@@ -1,126 +1,34 @@
-@media screen and (max-width: 1280px) {
-  .supportq {
-    display: none;
-    /* отрисовать суппорт при  загрузке и скрыть */
-  }
+.dark-theme .shopping-list-section {
+  background-color: var(--black);
 }
 
-.body {
-  background: #f6f6f6;
-}
-.container {
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
+.dark-theme .empty-shopping-text {
+  color: rgba(255, 255, 255, 0.6);
 }
 
-.section-list {
-  padding-top: 40px;
+.dark-theme .shopping-title-span,
+.dark-theme .shopping-card-tittle,
+.dark-theme .shopping-card-description {
+  color: var(--white);
 }
 
-.list-title {
-  margin: 0;
-  margin-bottom: 120px;
-  color: #111;
-  font-family: DM Sans;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
+.dark-theme .light-theme-amazon {
+  display: none;
 }
-.list-span {
-  color: #4f2ee8;
-  font-family: DM Sans;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 38px;
-}
-.list-text {
-  width: 244px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 14px;
-  color: rgba(0, 0, 0, 0.6);
 
-  font-family: DM Sans;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
-}
-.content {
-  margin-left: auto;
-  margin-right: auto;
-}
-.img {
+.dark-theme .dark-theme-amazon {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 265px;
-  height: 198px;
-}
-@media screen and (min-width: 375px) {
-  .container {
-    width: 375px;
-  }
 }
 
-@media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  .list-title {
-    font-family: DM Sans;
-    font-size: 48px;
-    line-height: 1.083;
-    margin-bottom: 140px;
-  }
-  .list-text {
-    width: 349px;
-    font-size: 18px;
-    line-height: 1.33;
-    margin-bottom: 20px;
-  }
-  .list-span {
-    font-size: 48px;
-    line-height: 1.08;
-  }
-  .img {
-    width: 322px;
-    height: 241px;
-  }
+.shopping-list-section {
+  padding-top: 40px;
+  background: #F6F6F6;
+    /* padding-bottom: 302px; */
 }
 
-@media screen and (min-width: 1280px) {
-  .container {
-    width: 100%;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  /* показать суппорт */
-
-  .supportq {
-    width: 356px;
-    height: 474px;
-    background-color: #4f2ee8;
-  }
-
-  .container-shoplist {
-    display: flex;
-    gap: 40;
-  }
-  .content {
-    margin-left: 40px;
-    width: 100%;
-  }
+.support-ukr-shopping-list{
+  display: none;
 }
-
 .container {
   padding: 0 20px;
   width: 100%;
@@ -129,9 +37,9 @@
   box-sizing: border-box;
 }
 
-.shopping-list-section {
-  padding-top: 40px;
-  padding-bottom: 98px;
+.content {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .shopping-list-item {
@@ -149,7 +57,6 @@
 }
 
 .shopping-title {
-  margin-bottom: 40px;
   color: var(--violet);
   font-size: 32px;
   font-weight: 700;
@@ -157,8 +64,43 @@
   letter-spacing: -0.64px;
 }
 
+.empty-title-margin {
+  margin-bottom: 120px;
+}
+
+.full-title-margin {
+  margin-bottom: 40px;
+}
+
 .shopping-title-span {
+  /* margin-bottom: 40px; */
   color: var(--black);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.64px;
+}
+
+.empty-shopping-list-wrap{
+  padding-bottom: 302px;
+}
+
+.empty-shopping-text {
+  width: 244px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 18px;
+}
+
+.empty-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 265px;
+  height: 198px;
 }
 
 .shopping-card-img {
@@ -171,13 +113,30 @@
   text-transform: uppercase;
   font-weight: 700;
   line-height: 1.1;
+
+  width: 115px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
+
 .shopping-card-genre {
   letter-spacing: 0.36px;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: 0.36px;
+
+  width: 165px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .shopping-card-genre,
@@ -197,12 +156,13 @@
   height: 16px; */
   padding: 6px;
   border-radius: 50%;
-  background: #4f2ee8;
-  stroke: #fff;
+  background: var(--violet);
+  stroke: var(--white);
   fill: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   transition-property: transform;
@@ -255,15 +215,34 @@
   gap: 8px;
 }
 
+.markets-list-shopping {
+  display: flex;
+  height: 36px;
+  align-items: center;
+  gap: 8px;
+}
+
+.light-theme-amazon {
+  display: block;
+}
+
+.dark-theme-amazon {
+  display: none;
+}
+
 .icon-amazon {
   width: 32px;
   height: 11px;
 }
+
 .icon-apple-book {
+  display: block;
   width: 16px;
   height: 16px;
 }
+
 .icon-book-shop {
+  display: block;
   width: 16px;
   height: 16px;
 }
@@ -282,13 +261,47 @@
 /* tablet */
 
 @media screen and (min-width: 768px) {
+  .support-ukr-shopping-list{
+    display: none;
+  }
+
+  /* .shopping-list-section {
+    padding-bottom: 394px;
+  } */
+
   .container {
     width: 768px;
     padding: 0 32px;
   }
 
-  .shopping-list-section {
-    padding-bottom: 124px;
+  .shopping-title {
+    font-size: 48px;
+    line-height: 1.083;
+  }
+
+  .empty-shopping-list-wrap{
+    padding-bottom: 394px;
+  }
+  .empty-title-margin {
+    margin-bottom: 140px;
+  }
+
+  .shopping-title-span {
+    font-size: 48px;
+    line-height: 1.083;
+  }
+
+  .empty-shopping-text {
+    width: 349px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.36px;
+    margin-bottom: 20px;
+  }
+
+  .empty-img {
+    width: 322px;
+    height: 241px;
   }
 
   .shopping-list-item {
@@ -326,15 +339,17 @@
   }
 
   .icon-amazon {
-    fill: none;
-    stroke: #3113b9;
-    width: 45px;
+    /* fill: none;
+    stroke: #3113b9; */
+    width: 48px;
     height: 15px;
   }
+
   .icon-apple-book {
-    width: 27px;
-    height: 28px;
+    width: 28px;
+    height: 27px;
   }
+
   .icon-book-shop {
     width: 32px;
     height: 30px;
@@ -343,12 +358,26 @@
 
 /* desctop */
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
+
+  .support-ukr-shopping-list{
+    width: 356px;
+    height: 474px;
+    display: block;
+    background-color: blue;
+  }
   .container {
-    width: 1216px;
+    width: 100%;
     padding: 0 24px;
   }
 
+  /* .shopping-list-section {
+    padding-bottom: 157px;
+  } */
+
+  .shopping-list-wraper {
+    display: block;
+  }
   .shopping-list-item {
     gap: 24px;
     padding: 24px;
@@ -358,4 +387,45 @@
   .shopping-card-description {
     width: 808px;
   }
+
+  .empty-shopping-list-wrap{
+    padding-bottom: 157px;
+  }
+  /* показать сапорт */
+
+  .support {
+    width: 356px;
+    height: 474px;
+    background-color: #4f2ee8;
+  }
+
+  .container-shoplist {
+    display: flex;
+    gap: 40;
+  }
+
+  .content {
+    margin-left: 40px;
+    width: 100%;
+  }
 }
+
+/* ................... */
+
+@media screen and (max-width: 1280px) {
+  .support {
+    display: none;
+    /* отрисовать сапорт при  загрузке и скрыть */
+  }
+}
+
+/* @media screen and (min-width: 375px) {
+  .container {
+    width: 375px;
+  }
+} */
+
+/* @media screen and (min-width: 1280px) {
+  /* .container {
+    width: 100%;
+  } *} */
