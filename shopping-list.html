@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Shelf</title>
     
-    <script type="module" crossorigin src="/team-13-we-can-do-it-JS/assets/shopping-list-65710175.js"></script>
-    <link rel="modulepreload" crossorigin href="/team-13-we-can-do-it-JS/assets/auth_firebase-76775cc7.js">
-    <link rel="stylesheet" href="/team-13-we-can-do-it-JS/assets/auth_firebase-55ed88b0.css">
+    <script type="module" crossorigin src="/team-13-we-can-do-it-JS/assets/shopping-list-6dae7520.js"></script>
+    <link rel="modulepreload" crossorigin href="/team-13-we-can-do-it-JS/assets/auth_firebase-2c381692.js">
+    <link rel="stylesheet" href="/team-13-we-can-do-it-JS/assets/auth_firebase-da31d5db.css">
     <link rel="stylesheet" href="/team-13-we-can-do-it-JS/assets/shopping-list-88da730b.css">
   </head>
 
@@ -29,7 +29,7 @@
             ><span>SHOPPING LIST</span>
             <svg width="20px" height="20px">
               <use
-                href="/team-13-we-can-do-it-JS/assets/spryte-cefc83e4.svg#icon-cart"
+                href="../img/spryte.svg#icon-cart"
                 width="20px"
                 height="20px"
               ></use>
@@ -51,7 +51,7 @@
           <use
             width="28px"
             height="28px"
-            href="/team-13-we-can-do-it-JS/assets/spryte-cefc83e4.svg#icon-burger"
+            href="../img/spryte.svg#icon-burger"
           ></use>
         </svg>
       </button>
@@ -60,7 +60,7 @@
           <use
             width="28px"
             height="28px"
-            href="/team-13-we-can-do-it-JS/assets/spryte-cefc83e4.svg#icon-close"
+            href="../img/spryte.svg#icon-close"
           ></use>
         </svg>
       </button>
@@ -81,6 +81,14 @@
         <span class="user-image">
           <img src="#" alt="user-image" />
         </span>
+        <!-- <svg class="user-icon-hed">
+          <use
+            fill="#4F2EE8"
+            width="19px"
+            height="19px"
+            href="./img/spryte.svg#icon-user"
+          ></use>
+        </svg>  -->
         <span class="user-text">Stephen</span>
         <svg class="daun-wrap">
           <use
@@ -125,6 +133,14 @@
         <span class="user-image">
           <img src="#" alt="user-image" />
         </span>
+        <svg class="user-icon-hed">
+          <use
+            fill="#4F2EE8"
+            width="19px"
+            height="19px"
+            href="/team-13-we-can-do-it-JS/assets/spryte-cefc83e4.svg#icon-user"
+          ></use>
+        </svg>
         <span class="user-text">Stephen</span>
       </a>
       <ul class="nav-list-mob">
@@ -137,7 +153,7 @@
             ><span>SHOPPING LIST</span>
             <svg>
               <use
-                href="/team-13-we-can-do-it-JS/assets/spryte-cefc83e4.svg#icon-cart"
+                href="../img/spryte.svg#icon-cart"
                 width="20px"
                 height="20px"
               ></use>
@@ -163,6 +179,7 @@
     </header>
     <main>
       <section class="shopping-list-section">
+        <span class="visible"></span>
         <div class="container support-empty-container">
           <div class="container-shoplist">
             <div class="support-ukr support-ukr-shopping-list">
@@ -314,12 +331,7 @@
               </div>
             </div>
           </div>
-
           <div id="tui-pagination-container" class="tui-pagination"></div>
-
-
-
-
         </div>
       </section>
     </main>
@@ -331,7 +343,7 @@
     <div class="gallery">
       <ul class="list-teams">
         <li class="list-team" id="0">
-          <img src="../img/footer_img/yevhen-aksonov.jpg" alt="" />
+          <img src="/team-13-we-can-do-it-JS/assets/yevhen-aksonov-6c4d25a0.jpg" alt="" />
           <h3>
             Yevhen <br />
             Aksonov
