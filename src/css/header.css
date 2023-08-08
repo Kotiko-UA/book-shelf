@@ -456,19 +456,6 @@ input:checked + .slider:before {
 
     gap: 0px;
   }
-  /* .arrow-right-wrap {
-    width: 20px;
-    height: 20px;
-  } */
-  /* .user-sing {
-    color: #fff;
-    font-family: DM Sans;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px;
-    letter-spacing: -0.56px;
-  } */
 }
 @media screen and (max-width: 768px) {
   .header-section {
