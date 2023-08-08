@@ -53,14 +53,6 @@
         letter-spacing: -0.02em;
     }
 
-    .support-ukr {
-        background-color: var(--violet);
-        width: 335px;
-        height: 474px;
-        border-radius: 16%;
-        text-align: center;
-    }
-
     .titleCategory {
         font-weight: bold;
         font-size: 32px;

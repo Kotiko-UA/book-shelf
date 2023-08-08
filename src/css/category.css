@@ -45,7 +45,6 @@ background-color: var(--theme-light);
         cursor: pointer;
     }
 
-    /*----hover------*/
         .js-category-item:hover {
             color: var(--violet);
             font-family: inherit;

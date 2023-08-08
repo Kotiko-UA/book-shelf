@@ -31,9 +31,7 @@ function fetchCategories() {
 function createCategoriesListMarkup(arr) {
   return (
     `<li class="js-category-item category-hover dark-theme" name="allCategories" >All categories</li>` +
-    arr
-      .map(
-        ({ list_name }) => `
+       arr.map(({ list_name }) => `
     <li class="js-category-item">${list_name}</li>
     `
       )
@@ -73,7 +71,7 @@ function createBooksMarkup(arr) {
 
 function createBestSellersMarkup(arr) {
   return (getMarkupForCategoryHeader('Best Sellers Books') +
-    arr.map(({ list_name, books }) =>
+      arr.map(({ list_name, books }) =>
           `
      <h2 class="categoryName">${list_name}</h2>
      <div class="wrapper-for-catList">
@@ -97,7 +95,7 @@ function getMarkupForCategoryHeader(categoryName) {
   return `<h2 class="titleCategory">${originalColor} <span class="last-word-in-catName">${violetColor}</span></h2>`;
 }
 
-
+//-----------------add Notiflix-------------------*/
 function getBestSellersList() {
   fetchBestSellers()
     .then(data => {
@@ -106,15 +104,15 @@ function getBestSellersList() {
       for (let button of buttons) {
         button.addEventListener('click', clickOnBtnSeeMore);
       }
+    if (data.length === 0) {
+        throw "Sorry, this category doesn't contain any book";
+      }
     })
     .catch(err => {
       console.log(err);
-      if (createBooksMarkup = [ ]) {        
-    return Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.") 
-  }
-
+      Notiflix.Notify.failure(err);
     });
-}
+  }
 
 getBestSellersList();
 function fetchBestSellers() {
@@ -126,9 +124,13 @@ function getCategoryBooks(categoryName) {
   fetchCategoryBooks(categoryName)
     .then(data => {
       elements.books_showcase.innerHTML = getCategoryMarkup(data, categoryName);
+      if (data.length === 0) {
+        throw "Sorry, this category doesn't contain any book";
+      }
     })
     .catch(err => {
       console.log(err);
+      Notiflix.Notify.failure(err);
     });
 }
 
