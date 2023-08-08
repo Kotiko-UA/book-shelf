@@ -1,5 +1,5 @@
 import iconClose from '../../img/spryte.svg#icon-close';
-import amazon from '../../img/amazon.png';
+import amazonI from '../../img/amazon.png';
 import bookMarket from '../../img/book-market.png';
 import bookShelf from '../../img/book-shelf.png';
 export function bookModalMarkup({
@@ -28,7 +28,7 @@ export function bookModalMarkup({
           <ul class="markets-list-modal-window">
             <li>
               <a href="${amazon.url}">
-                <img class = "img-market"src="${amazon}" alt="${title}">
+                <img class = "img-market"src="${amazonI}" alt="${title}">
               </a>
             </li>
             <li>

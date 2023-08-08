@@ -5,6 +5,11 @@ import '../heder-js/theme';
 import '../footer/footerTeam';
 import '../support-js/support';
 import { doc } from 'firebase/firestore/lite';
+import iconTrash from '../../img/spryte.svg#icon-trash';
+import amazonI from '../../img/amazon.png';
+import amazonBlack from '../../img/amazon-black-theme.png';
+import bookMarket from '../../img/book-market.png';
+import bookShelf from '../../img/book-shelf.png';
 
 const bookList = document.querySelector('.shopping-list');
 const titleShoopingList = document.querySelector('.shopping-title');
@@ -104,7 +109,7 @@ function createMarkupBook(arr) {
      </div>
      <button type="button" class="shopping-card-bin-link">
           <svg class="img-bin-icon">
-            <use class="img-bin-use" href="./img/spryte.svg#icon-trash"></use>
+            <use class="img-bin-use" href="${iconTrash}"></use>
           </svg>
       </button>
     </div>
@@ -115,19 +120,19 @@ function createMarkupBook(arr) {
               <ul class="markets-list-shopping">
               <li>
                 <a href="${amazon.url}">
-                  <img src="./img/amazon.png" alt="${list_name}" class="icon-amazon light-theme-amazon">
-                  <img src="./img/amazon-black-theme.png" alt="${list_name}" class="icon-amazon dark-theme-amazon">
+                  <img src="${amazonI} alt="${list_name}" class="icon-amazon light-theme-amazon">
+                  <img src="${amazonBlack}" alt="${list_name}" class="icon-amazon dark-theme-amazon">
 
                 </a>
               </li>
               <li>
                 <a href="${Bookshop.url}">
-                  <img src="./img/book-market.png" alt="${list_name}" class="icon-apple-book">
+                  <img src="${bookMarket}" alt="${list_name}" class="icon-apple-book">
                 </a>
               </li>
               <li>
                 <a href="${Apple.url}">
-                <img src="./img/book-shelf.png" alt="${list_name}" class="icon-book-shop">
+                <img src="${bookShelf}" alt="${list_name}" class="icon-book-shop">
                 </a>
     </div>
   </div>
