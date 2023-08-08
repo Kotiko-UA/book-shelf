@@ -1,5 +1,11 @@
 import { signUpModal, signInModal } from './auth_modals';
 import { initializeApp } from 'firebase/app';
+import {
+  validateEmail,
+  validatePassword,
+  validateUserName,
+  isValidF,
+} from './auth_valid_form';
 const firebaseConfig = {
   apiKey: 'AIzaSyCJ7bTyjKvQtJTxa9hFVg3AHb0bG9xVu8w',
   authDomain: 'lets-do-it-bookshelf.firebaseapp.com',
@@ -22,27 +28,39 @@ import {
 
 const db = getFirestore(app);
 
-async function updateUserShopList(uid, list) {
-  const usersRef = collection(db, 'users');
-  try {
-    const docRef = await setDoc(doc(usersRef, uid), {
-      shopList: list,
-    });
-    console.log(docRef);
-  } catch (e) {
-    console.error('Error adding document: ', e);
-  }
+async function updateUserShopList(bookId) {
+  const user = auth.currentUser;
+  //console.log(user);
+  //console.log(bookId);
+  getUserShopList(user.uid).then(async list => {
+    const id = list.indexOf(bookId);
+    if (id === -1) {
+      list.push(bookId);
+    } else {
+      list.splice(id, 1);
+    }
+    const usersRef = collection(db, 'users');
+    try {
+      const docRef = await setDoc(doc(usersRef, user.uid), {
+        shopList: list,
+      });
+    } catch (e) {
+      console.error('Error adding document: ', e);
+    }
+  });
 }
 async function getUserShopList(uid) {
   const docRef = doc(db, 'users', uid);
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    console.log('Document data:', docSnap.data());
-    return docSnap.data();
+    const data = docSnap.data();
+    //console.log('Document data:', data);
+    return data && data.shopList ? data.shopList : [];
   } else {
     // docSnap.data() will be undefined in this case
     console.log('No such document!');
+    return [];
   }
 }
 
@@ -52,7 +70,6 @@ import {
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
-  onAuthStateChanged,
   signInWithPopup,
   GoogleAuthProvider,
 } from 'firebase/auth';
@@ -60,35 +77,14 @@ import {
 const auth = getAuth();
 //console.log(auth);
 
-onAuthStateChanged(auth, user => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/auth.user
-    const uid = user.uid;
-    console.log(uid, user);
-    showUserBar(user);
-    //updateUserShopList(uid, [145, 568]);
-    getUserShopList(uid).then(userData => {
-      //console.log(userData.shopList);
-    });
-  } else {
-    document.querySelector('.sing-wrap').style.display = '';
-    document.querySelector('.log-out-wrap').style.display = 'none';
-  }
-});
-function showUserBar(user) {
-  const userName = document.querySelector('.user-text');
-  userName.textContent = user.displayName;
-  document.querySelector('.user-image img').src =
-    user.photoURL ?? '/img/noimage.png';
-  document.querySelector('.user-image img').alt = user.displayName;
-
-  document.querySelector('.log-out-wrap').style.display = '';
-  document.querySelector('.sing-wrap').style.display = 'none';
-}
-
 function registrateUser() {
-  if (signUpForm.email.value.length < 6) {
+  if (!validateUserName(signUpForm.name)) {
+    return;
+  }
+  if (!validateEmail(signUpForm.email)) {
+    return;
+  }
+  if (!validatePassword(signUpForm.password)) {
     return;
   }
 
@@ -121,7 +117,11 @@ function saveUserPhoto(file = null) {
 // new_user*pass
 
 function signIn() {
-  if (signInForm.email.value.length < 6) {
+  console.dir(signInForm);
+  if (!validateEmail(signInForm.email)) {
+    return;
+  }
+  if (!validatePassword(signInForm.password)) {
     return;
   }
 
@@ -140,7 +140,8 @@ function signIn() {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.dir(error, errorCode, errorMessage);
-      alert(errorMessage);
+
+      isValidF(errorMessage, false);
     });
 }
 function signInWithGoogle() {
@@ -183,7 +184,7 @@ function updateUserProfile(name = null, photoUrl = null) {
     photoURL: photoUrl,
   })
     .then(() => {
-      document.querySelector('.user-name').textContent = name;
+      document.querySelector('.user-text').textContent = name;
       document.querySelector('.user-image img').src =
         photoUrl ?? '/img/noimage.png';
       console.log(auth.currentUser);
@@ -194,4 +195,11 @@ function updateUserProfile(name = null, photoUrl = null) {
     });
 }
 //signIn('hjkj@gmail.com', 'password1');
-export { logOutUser, signIn, signInWithGoogle, registrateUser };
+export {
+  logOutUser,
+  signIn,
+  signInWithGoogle,
+  registrateUser,
+  updateUserShopList,
+  getUserShopList,
+};

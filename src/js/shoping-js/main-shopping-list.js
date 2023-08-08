@@ -1,6 +1,6 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-import '../authorization-js/main_js_authorization';
+import '../authorization-js/shop_list_js_authorization';
 import '../heder-js/theme';
 import '../footer/footerTeam';
 import '../support-js/support';
@@ -132,6 +132,7 @@ bookList.addEventListener('click', e => {
 });
 
 function onButtonDeleteClick(event) {
+  let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
   const { id } = event.target.closest('.shopping-list-item').dataset;
   const removeIndexFromLocalStorage = arrForBacket.findIndex(
     item => item._id === id
@@ -144,3 +145,4 @@ function onButtonDeleteClick(event) {
   curData = arrForBacket.slice(startIdx, endIdx);
   generatePage(curData);
 }
+export { generatePage };

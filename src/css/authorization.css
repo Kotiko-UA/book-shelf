@@ -75,6 +75,11 @@
   border: 2px solid #f6f6f6;
   background: var(--gray);
 }
+@media screen and (min-width: 768px) {
+  .modal {
+    min-width: 579px;
+  }
+}
 .form {
   width: 100%;
 }
@@ -243,10 +248,19 @@
   gap: 10px;
   width: 100%;
 }
+
 .user-image {
   border-radius: 50%;
   overflow: hidden;
   width: 37px;
   height: 37px;
   margin-right: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+input.form-input.invalid {
+  border-color: #900;
 }
