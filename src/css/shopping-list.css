@@ -1,3 +1,7 @@
+.visible {
+  display: none;
+}
+
 .dark-theme .shopping-list-section {
   background-color: var(--gray);
 }

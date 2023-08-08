@@ -19,10 +19,23 @@ let startIdx = (currentPage - 1) * itemsPerPage;
 let endIdx = startIdx + itemsPerPage;
 let curData = arrForBacket.slice(startIdx, endIdx);
 
+///// get значение визибл для пагинации...\\\\
+let span = document.querySelector('.visible');
+let vis = getVisible();
+function getVisible() {
+  const log = window.matchMedia('(min-width: 768px)');
+  if (log.matches) {
+    span.textContent = '3';
+  } else {
+    span.textContent = '2';
+  }
+  return Number(span.textContent);
+}
+
 const options = {
   totalItems: arrForBacket.length,
   itemsPerPage: itemsPerPage,
-  visiblePages: 3,
+  visiblePages: vis,
   page: currentPage,
   centerAlign: false,
   firstItemClassName: 'tui-first-child',
@@ -56,6 +69,7 @@ function generatePage(curData) {
   }
 }
 pagination.on('beforeMove', e => {
+  getVisible();
   currentPage = e.page;
   startIdx = (currentPage - 1) * itemsPerPage;
   endIdx = startIdx + itemsPerPage;
