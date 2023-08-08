@@ -45,6 +45,7 @@ const options = {
 const pagination = new Pagination(paginationContainer, options);
 
 generatePage(curData);
+getVisible();
 
 function generatePage(curData) {
   bookList.innerHTML = '';
@@ -68,8 +69,8 @@ function generatePage(curData) {
     bookList.insertAdjacentHTML('beforeend', createMarkupBook(curData));
   }
 }
+
 pagination.on('beforeMove', e => {
-  getVisible();
   currentPage = e.page;
   startIdx = (currentPage - 1) * itemsPerPage;
   endIdx = startIdx + itemsPerPage;
