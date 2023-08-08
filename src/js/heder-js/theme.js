@@ -52,7 +52,7 @@ function outKlick() {
 // _______________________BURGER_____________________________
 let oupenBurger = document.querySelector('.burger-open-mob')
 let closeBurger = document.querySelector('.burger-close-mob')
-let burger = document.querySelector('.mob-menus ')
+let burger = document.querySelector('.burger-section')
 
 oupenBurger.addEventListener('click', oupenBur)
 closeBurger.addEventListener('click', closeBur)
