@@ -1,9 +1,9 @@
 .body {
-    background-color: #F6F6F6;
+    background-color: var(--theme-light);
 }
 
-.dark-theme .category-container{
-background-color: var(--gray);
+.category-section{
+
 }
 
 .category-container {
@@ -12,6 +12,11 @@ background-color: var(--gray);
     padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
+
+}
+
+.dark-theme .category-container {
+    background-color: var(--gray);
 }
 
 @media screen and (min-width: 375px) {
@@ -44,6 +49,15 @@ background-color: var(--gray);
         margin-bottom: 0;
     }
 
+    .dark-theme .js-category-item{
+        color: var(--light-gray);   
+    }
+
+/*.dark-theme .js-category-item:hover{
+    border: 3px solid var(--yellow);
+    border-radius: 10%;
+}*/
+
     .category-hover {
         color: var(--violet);
         text-transform: uppercase;
@@ -55,10 +69,8 @@ background-color: var(--gray);
     }
 
     .dark-theme .category-hover {
-    color: #EAC645;
+    color: var(--yellow);
 }
-
-
 
 
     /* div 'support-ukr' for correct css drawing---*/
@@ -78,6 +90,10 @@ background-color: var(--gray);
         letter-spacing: -0.04em;
         margin-top: 40px;
         margin-bottom: 40px;
+    }
+
+    .dark-theme .titleCategory{
+        color: var(--white);
     }
 
     .last-word-in-catName {
@@ -144,12 +160,16 @@ background-color: var(--gray);
         overflow: hidden;
     }
 
+    .dark-theme .catalogue-book-title{
+        color: var(--white);
+}
+
     .catalogue-book-author {
         font-style: italic;
         font-size: 12px;
         line-height: 1.16;
         letter-spacing: -0.04em;
-        color: #B4AFAF;
+        color: var(--light-gray);
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;

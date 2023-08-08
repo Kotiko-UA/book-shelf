@@ -57,6 +57,7 @@ function createBooksMarkup(arr) {
     )
     .join('');
 }
+
 function createBestSellersMarkup(arr) {
   return (
     getMarkupForCategoryHeader('Best Sellers Books') +
@@ -125,6 +126,8 @@ function getCategoryMarkup(arr, categoryName) {
 }
 if (elements && elements.categoryList)
   elements.categoryList.addEventListener('click', clickOnCategoryList);
+
+
 function clickOnCategoryList(event) {
   event.preventDefault();
   for (let element of event.currentTarget.children) {
@@ -137,7 +140,17 @@ function clickOnCategoryList(event) {
     getCategoryBooks(event.target.textContent);
   }
 }
+
+
 function clickOnBtnSeeMore(evt) {
   evt.preventDefault();
+
+  for (let element of elements.categoryList.children) {
+    if (element.textContent == evt.target.getAttribute('id')) {
+     element.classList.add('category-hover')
+    } else {
+      element.classList.remove('category-hover');
+   }
+  }
   getCategoryBooks(evt.target.getAttribute('id'));
 }
