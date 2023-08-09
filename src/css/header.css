@@ -126,7 +126,8 @@ input:checked + .slider:before {
 .mob-menus {
   margin: auto;
   position: relative;
-  width: 375px;
+  width: 100%;
+  max-width: 375px;
   padding-bottom: 20px;
   padding-top: 20px;
   text-align: center;
@@ -189,7 +190,7 @@ input:checked + .slider:before {
 .menu-btn-user {
   display: flex;
   /* position: absolute; */
-  gap: 9px;
+  /* gap: 9px; */
   /* max-width: 184px; */
   height: 45px;
   margin-left: 20px;
@@ -207,11 +208,11 @@ input:checked + .slider:before {
 }
 
 .user-text {
-  min-width: 87px;
+  /* min-width: 87px; */
   max-width: 150px;
   color: #fff;
-  font-family: DM Sans;
-  font-size: 18px;
+  /* font-family: DM Sans; */
+  font-size: 22px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -478,9 +479,9 @@ input:checked + .slider:before {
     gap: 40px;
   }
 
-  .wrap-out {
-    /* right: 32px; */
-  }
+  /* .wrap-out {
+    right: 32px; 
+  } */
 
   .burger-open-mob {
     display: none;
@@ -503,7 +504,8 @@ input:checked + .slider:before {
 
 @media screen and (max-width: 768px) {
   .header-section {
-    width: 375px;
+    max-width: 375px;
+    width: 100%;
   }
 }
 
@@ -607,6 +609,14 @@ input:checked + .slider:before {
   opacity: 1;
   position: relative;
 }
-
-.sing-wrap {
+.burger-section .log-out-wrap {
+  height: calc(100% - 20px);
+}
+.burger-section .shop-page {
+  padding: 0;
+  margin-top: 16px;
+}
+.burger-section .shop-page svg {
+  height: 20px;
+  width: 18px;
 }

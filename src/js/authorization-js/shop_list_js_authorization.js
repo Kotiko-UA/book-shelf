@@ -42,8 +42,8 @@ function clickHandlerAuth(e) {
   if (e.target.closest('.sign-up-btn')) {
     registrateUser();
   }
-  if (e.target.closest('.add-delete-book-btn')) {
-    const bookId = e.target.closest('.modal-window-conteiner').dataset.id;
+  if (e.target.closest('.shopping-card-bin-link')) {
+    const bookId = e.target.closest('.shopping-list-item').dataset.id;
     updateUserShopList(bookId);
   }
 }
@@ -54,18 +54,16 @@ let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 onAuthStateChanged(auth, user => {
   if (user) {
     const uid = user.uid;
-    console.log(uid, user);
+
     showUserBar(user);
     //generatePage([]);
-    syncShopingList(user).then(() => {
-      //console.log(arrForBacket);
-    });
+    syncShopingList(user).then(() => {});
   } else {
-    hiteUserBar();
-    hiteShopingList();
+    hideUserBar();
+    hideShopingList();
   }
 });
-function hiteUserBar() {
+function hideUserBar() {
   document.querySelector('.sing-wrap').style.display = '';
   document.querySelector('.log-out-wrap').style.display = 'none';
 }
@@ -76,7 +74,7 @@ async function getBook(id) {
     console.log('Error API book');
   }
   const book = await resp.json();
-  //   console.log(book);
+
   return book;
 }
 
@@ -107,7 +105,22 @@ async function syncShopingList(user) {
       console.dir(error);
     });
 }
-function hiteShopingList(user) {}
+function showShopingList() {
+  document.querySelector('.shop-page').style.display = '';
+}
+console.log(location.pathname);
+let pathArr = location.pathname.split('/');
+
+function hideShopingList() {
+  document.querySelector('.shop-page').style.display = 'none';
+  let pathArr = location.pathname.split('/');
+  console.log(pathArr);
+  if ('shopping-list.html' === pathArr[pathArr.length - 1]) {
+    pathArr[pathArr.length - 1] = 'index.html';
+    console.log(pathArr);
+    location.href = pathArr.join('/');
+  }
+}
 
 function showUserBar(user) {
   const userName = document.querySelector('.user-text');

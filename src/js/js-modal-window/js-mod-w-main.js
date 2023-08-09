@@ -36,6 +36,12 @@ async function handlerClickOpenModal(evt) {
         btn.classList.remove('small');
         btn.textContent = 'Add to shopping list';
       }
+
+      if (!localStorage.getItem('uid')) {
+        btn.textContent = 'Sign up to add to shopping list';
+        btn.classList.add('small');
+        btn.setAttribute('data-sign-up', true);
+      }
       modalWindow.addEventListener('click', handlerAddToBascet);
     } catch (error) {
       console.error(error);
@@ -81,6 +87,10 @@ function checkIfBookIsAdded(bookId, shoppingList) {
 }
 function handlerAddToBascet(event) {
   if (!event.target.classList.contains('add-delete-book-btn')) {
+    return;
+  }
+  if (!localStorage.getItem('uid')) {
+    closeModal();
     return;
   }
   const bookId = event.target.closest('.modal-window-conteiner').dataset.id;
