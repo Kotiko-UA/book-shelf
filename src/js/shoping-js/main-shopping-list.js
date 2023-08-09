@@ -4,18 +4,19 @@ import '../authorization-js/shop_list_js_authorization';
 import '../heder-js/theme';
 import '../footer/footerTeam';
 import '../support-js/support';
-import { doc } from 'firebase/firestore/lite';
 import iconTrash from '../../img/spryte.svg#icon-trash';
 import amazonI from '../../img/amazon.png';
 import amazonBlack from '../../img/amazon-black-theme.png';
 import bookMarket from '../../img/book-market.png';
 import bookShelf from '../../img/book-shelf.png';
 
+export { generatePage };
 const bookList = document.querySelector('.shopping-list');
 const titleShoopingList = document.querySelector('.shopping-title');
 const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
 const paginationContainer = document.querySelector('#tui-pagination-container');
 const supportEl = document.querySelector('.support-ukr-shopping-list');
+const loader = document.querySelector('.loader');
 
 let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 let itemsPerPage = 3;
@@ -37,7 +38,7 @@ function getVisible() {
   return Number(span.textContent);
 }
 
-const options = {
+let options = {
   totalItems: arrForBacket.length,
   itemsPerPage: itemsPerPage,
   visiblePages: vis,
@@ -47,14 +48,17 @@ const options = {
   lastItemClassName: 'tui-last-child',
 };
 
-const pagination = new Pagination(paginationContainer, options);
+let pagination = new Pagination(paginationContainer, options);
 
-generatePage(curData);
 getVisible();
 
 function generatePage(curData) {
+  // не видаляти цю строчку, бо міняється дінамічно arrForBacket !!!!!!
+  let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
+  pagination.reset(arrForBacket.length);
+  // не видаляти!!!!!!
   bookList.innerHTML = '';
-
+  curData = arrForBacket.slice(startIdx, endIdx);
   if (!arrForBacket.length) {
     emptyShopList.style.display = 'block';
     paginationContainer.style.display = 'none';
@@ -76,6 +80,9 @@ function generatePage(curData) {
 }
 
 pagination.on('beforeMove', e => {
+  // не видаляти цю строчку, бо міняється дінамічно arrForBacket !!!!!!
+  let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
+  // не видаляти!!!!!!
   currentPage = e.page;
   startIdx = (currentPage - 1) * itemsPerPage;
   endIdx = startIdx + itemsPerPage;
@@ -163,4 +170,3 @@ function onButtonDeleteClick(event) {
   curData = arrForBacket.slice(startIdx, endIdx);
   generatePage(curData);
 }
-export { generatePage };

@@ -20,7 +20,7 @@ export function bookModalMarkup({
       </button>
       <div class="mw-content-conteiner">
         <div class="mw-image-conteiner">
-          <img class="book-img-modal-window" src="${book_image}" alt="" />
+          <img class="book-img-modal-window" src="${book_image}" alt="${title}" />
         </div>
         <div class="mw-data-conteiner">
           <h2 class="book-title-modal">${title}</h2>
@@ -31,11 +31,13 @@ export function bookModalMarkup({
               <a href="${amazon.url}">
                  <img src="${amazonI} alt="${title}" class="icon-amazon light-theme-amazon hover">
                   <img src="${amazonBlack}" alt="${title}" class="icon-amazon dark-theme-amazon hover">
+
               </a>
             </li>
             <li>
               <a href="${Bookshop.url}">
                 <img class = "img-market hover" src="${bookMarket}" alt="${title}">
+
               </a>
             </li>
             <li>

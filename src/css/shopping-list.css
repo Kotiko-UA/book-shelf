@@ -28,6 +28,10 @@
     display: block;
 }
 
+.tui-pagination {
+    display: none;
+}
+
 .shopping-list-section {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -84,6 +88,7 @@
 }
 
 .empty-shopping-list-wrap {
+    display: none;
     padding-bottom: 302px;
 }
 
@@ -269,24 +274,30 @@
     .support-ukr-shopping-list {
         display: none;
     }
+
     .container {
         width: 768px;
         padding: 0 32px;
     }
+
     .shopping-title {
         font-size: 48px;
         line-height: 1.083;
     }
+
     .empty-shopping-list-wrap {
         padding-bottom: 394px;
     }
+
     .empty-title-margin {
         margin-bottom: 140px;
     }
+
     .shopping-title-span {
         font-size: 48px;
         line-height: 1.083;
     }
+
     .empty-shopping-text {
         width: 349px;
         font-size: 18px;
@@ -294,45 +305,56 @@
         letter-spacing: -0.36px;
         margin-bottom: 20px;
     }
+
     .empty-img {
         width: 322px;
         height: 241px;
     }
+
     .shopping-list-item {
         gap: 24px;
         padding: 24px;
         width: 704px;
         height: 213px;
     }
+
     .shopping-card-img {
         width: 116px;
         height: 165px;
     }
+
     .shopping-card-bin-link {
         padding: 8px;
     }
+
     .img-bin-icon {
         width: 18px;
         height: 18px;
     }
+
     .shopping-card-bin-wrap {
         margin-bottom: 14px;
     }
+
     .shopping-card-description {
         width: 508px;
         margin-bottom: 48px;
     }
+
     .shopping-card-sponsor-icons {
         gap: 16px;
     }
+
     .icon-amazon {
         width: 48px;
         height: 15px;
     }
+
     .icon-apple-book {
         width: 28px;
         height: 27px;
     }
+
     .icon-book-shop {
         width: 32px;
         height: 30px;
@@ -349,30 +371,38 @@
         height: 475px;
         background-color: #4f2ee8;
     }
+
     .container {
         width: 1440px;
         padding: 0 24px;
     }
+
     .shopping-list-section {
         padding-bottom: 40px;
     }
+
     .shopping-list-wraper {
         display: block;
     }
+
     .shopping-list-item {
         gap: 24px;
         padding: 24px;
         width: 996px;
     }
+
     .shopping-card-description {
         width: 808px;
     }
+
     .empty-shopping-list-wrap {
         padding-bottom: 157px;
     }
+
     .empty-shopping-list-wrap {
         margin-left: 315px;
     }
+
     /* показать сапорт */
     .container-shoplist {
         display: flex;
@@ -397,4 +427,31 @@
     .support {
         display: none;
     }
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    animation: rotate 1s linear infinite
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #000;
+    animation: prixClipFix 2s linear infinite;
+}
+
+.loader::after {
+    border-color: #FF3D00;
+    animation: prixClipFix 2s linear infinite, rotate 0.5s linear infinite reverse;
+    inset: 6px;
 }

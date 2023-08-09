@@ -5,9 +5,9 @@ import {
   signInWithGoogle,
   registrateUser,
   updateUserShopList,
-  getUserShopList,
 } from './auth_firebase';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { hideUserBar, showUserBar } from './auth_user_bar';
 //===========================================================
 
 document.addEventListener('click', clickHandlerAuth);
@@ -40,57 +40,37 @@ function clickHandlerAuth(e) {
     registrateUser();
   }
   if (e.target.closest('.add-delete-book-btn')) {
+    if (!localStorage.getItem('uid')) return;
     const bookId = e.target.closest('.modal-window-conteiner').dataset.id;
     updateUserShopList(bookId);
+  }
+  if (e.target.closest('.js-book-item')) {
+    setTimeout(() => {}, 10);
   }
 }
 function modalsClose() {
   signUpModal.close();
   signInModal.close();
 }
-//onAuthStateChanged слідкує за авторизацією (входом-виходом користовуча)
 const auth = getAuth();
 hideShopingList();
 onAuthStateChanged(auth, user => {
   if (user) {
     const uid = user.uid;
+    localStorage.setItem('uid', uid);
     showUserBar(user);
     showShopingList();
   } else {
+    localStorage.removeItem('uid');
     hideUserBar();
     hideShopingList();
   }
   modalsClose();
 });
-function hideUserBar() {
-  document.querySelector('.sing-wrap').style.display = '';
-  document.querySelector('.log-out-wrap').style.display = 'none';
-}
-async function getBook(id) {
-  const url = `https://books-backend.p.goit.global/books/${id}`;
-  const resp = await fetch(url);
-  if (!resp.ok) {
-    console.log('Error API book');
-  }
-  const book = await resp.json();
-  //   console.log(book);
-  return book;
-}
 
 function showShopingList() {
   document.querySelector('.shop-page').style.display = '';
 }
 function hideShopingList() {
   document.querySelector('.shop-page').style.display = 'none';
-}
-
-function showUserBar(user) {
-  const userName = document.querySelector('.user-text');
-  userName.textContent = user.displayName;
-  document.querySelector('.user-image img').src =
-    user.photoURL ?? '/img/noimage.png';
-  document.querySelector('.user-image img').alt = user.displayName;
-
-  document.querySelector('.log-out-wrap').style.display = '';
-  document.querySelector('.sing-wrap').style.display = 'none';
 }

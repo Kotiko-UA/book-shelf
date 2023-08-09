@@ -1,12 +1,11 @@
-import logoLight from '../../img/spryte.svg#icon-logo-light';
-import logoDark from '../../img/spryte.svg#icon-logo-dark';
+import spryteUrl from '../../img/spryte.svg';
 /*----------------------DARCK MOD-------------------------*/
 
 let switchMode = document.getElementById('switchMode');
 let logo = document.querySelector('.logo');
 
 logo.innerHTML = `<svg class="logo">
-        <use href="${logoLight}" height="28px"></use>
+        <use href="${spryteUrl}#icon-logo-light" height="28px"></use>
       </svg>`;
 
 const body = document.querySelector('body');
@@ -16,7 +15,7 @@ if (localStorage.getItem('theme') == 'true') {
   switchMode.checked = true;
 
   logo.innerHTML = `<svg class="logo">
-        <use href="${logoDark}" height="28px"></use>
+        <use href="${spryteUrl}#icon-logo-dark" height="28px"></use>
       </svg>`;
 }
 switchMode.onchange = function () {
@@ -26,7 +25,7 @@ switchMode.onchange = function () {
     body.classList.add('dark-theme');
 
     logo.innerHTML = `<svg class="logo">
-        <use href="${logoDark}" height="28px"></use>
+        <use href="${spryteUrl}#icon-logo-dark" height="28px"></use>
       </svg>`;
   } else {
     localStorage.setItem('theme', false);
@@ -34,7 +33,7 @@ switchMode.onchange = function () {
     body.classList.remove('dark-theme');
 
     logo.innerHTML = `<svg class="logo">
-        <use href="${logoLight}" height="28px"></use>
+        <use href="${spryteUrl}#icon-logo-light" height="28px"></use>
       </svg>`;
   }
 };

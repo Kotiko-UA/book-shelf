@@ -99,7 +99,6 @@ function registrateUser() {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.dir(error);
-      // ..
     });
 }
 function saveUserPhoto(file = null) {
