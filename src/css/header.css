@@ -65,7 +65,7 @@
 }
 
 .logo {
-  background-image: url('../img/spryte.svg#icon-logo-light');
+  background-image: url('./img/spryte.svg#icon-logo-light');
   background-repeat: no-repeat;
   background-size: contain;
   height: 28px;
@@ -346,11 +346,6 @@ input:checked+.slider:before {
 
   .header {
     height: 72px;
-  }
-
-  .shop-page {
-    color: #111;
-    fill: #111;
   }
 
   .header-shop .shop-page {
