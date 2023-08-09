@@ -190,9 +190,6 @@ input:checked + .slider:before {
 
 .menu-btn-user {
   display: flex;
-  /* position: absolute; */
-  /* gap: 9px; */
-  /* max-width: 184px; */
   height: 45px;
   margin-left: 20px;
   top: 0;
@@ -209,10 +206,8 @@ input:checked + .slider:before {
 }
 
 .user-text {
-  /* min-width: 87px; */
   max-width: 150px;
   color: #fff;
-  /* font-family: DM Sans; */
   font-size: 22px;
   font-style: normal;
   font-weight: 700;
@@ -233,8 +228,6 @@ input:checked + .slider:before {
   width: 72px;
   background-color: var(--yellow);
   border-radius: 36px;
-  font-family: DM Sans;
-  font-size: 14px;
   font-style: normal;
   font-weight: 700;
   line-height: 18px;
@@ -249,10 +242,7 @@ input:checked + .slider:before {
   gap: 4px;
   padding: 8px 16px;
   font-weight: 500;
-  font-family: DM Sans;
-  font-size: 14px;
-  font-style: normal;
-  line-height: 18px;
+  line-height: 1.29;
   letter-spacing: -0.56px;
   text-transform: uppercase;
   color: #fff;
@@ -294,12 +284,10 @@ input:checked + .slider:before {
 
 .text-out {
   color: #111;
-  font-family: DM Sans;
   width: 46px;
-  font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 18px;
+  line-height: 1.29;
   letter-spacing: -0.56px;
 }
 
@@ -386,11 +374,8 @@ input:checked + .slider:before {
 
   .user-sing {
     color: #fff;
-    font-family: DM Sans;
-    font-size: 14px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 18px;
+    line-height: 1.29;
     letter-spacing: -0.56px;
   }
 
@@ -451,8 +436,18 @@ input:checked + .slider:before {
   display: none;
 }
 
+@media screen and (min-width: 1440px) {
+  .nav {
+    gap: 76px;
+  }
+  .wrap-sing {
+    margin-right: 24px;
+    margin-left: auto;
+  }
+}
+
 /* ---------------------------------------------------------------------------- */
-@media screen and (min-width: 768px) and (max-width: 1440px) {
+@media screen and (min-width: 769px) and (max-width: 1440px) {
   .header {
     width: 768px;
     padding-left: 32px;
@@ -462,10 +457,6 @@ input:checked + .slider:before {
   .nav {
     gap: 40px;
   }
-
-  /* .wrap-out {
-    right: 32px; 
-  } */
 
   .burger-open-mob {
     display: none;
@@ -505,10 +496,6 @@ input:checked + .slider:before {
   .heder {
     padding-left: 24px;
     padding-right: 24px;
-  }
-
-  .nav {
-    gap: 76px;
   }
 
   .burger-open-mob {
