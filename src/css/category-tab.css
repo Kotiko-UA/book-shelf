@@ -85,12 +85,6 @@
   }
 
   /* Loader */
-
-  .loader {
-    margin-top: 40px;
-    margin-left: 384px;
-  }
-
 }
 
 /*--------desktop-------*/
@@ -181,13 +175,6 @@
     flex-wrap: wrap;
     row-gap: 40px;
     column-gap: 24px;
-  }
-
-  /* Loader */
-
-  .loader {
-    margin-top: 466px;
-    margin-left: 498px;
   }
 
 }
