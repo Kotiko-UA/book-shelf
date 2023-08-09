@@ -1,3 +1,6 @@
+const paginationContainer = document.querySelector('#tui-pagination-container');
+paginationContainer.style.cssText = 'display:none!important';
+
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import '../authorization-js/shop_list_js_authorization';
@@ -14,7 +17,7 @@ export { generatePage };
 const bookList = document.querySelector('.shopping-list');
 const titleShoopingList = document.querySelector('.shopping-title');
 const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
-const paginationContainer = document.querySelector('#tui-pagination-container');
+
 const supportEl = document.querySelector('.support-ukr-shopping-list');
 const loader = document.querySelector('.loader');
 
@@ -55,13 +58,13 @@ getVisible();
 function generatePage(curData) {
   // не видаляти цю строчку, бо міняється дінамічно arrForBacket !!!!!!
   let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
-  pagination.reset(arrForBacket.length);
+  //pagination.reset(arrForBacket.length);
   // не видаляти!!!!!!
   bookList.innerHTML = '';
   curData = arrForBacket.slice(startIdx, endIdx);
   if (!arrForBacket.length) {
     emptyShopList.style.display = 'block';
-    paginationContainer.style.display = 'none';
+    paginationContainer.style.cssText = 'display:none!important';
     supportEl.style.marginBottom = '184px';
     titleShoopingList.classList.replace(
       'full-title-margin',

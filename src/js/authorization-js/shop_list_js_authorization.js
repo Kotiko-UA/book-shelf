@@ -12,6 +12,7 @@ import { generatePage } from '../shoping-js/main-shopping-list';
 import { hideUserBar, showUserBar } from './auth_user_bar';
 
 //===========================================================
+const loader = document.querySelector('.loader');
 
 document.addEventListener('click', clickHandlerAuth);
 
@@ -72,27 +73,34 @@ async function getBook(id) {
 
 let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 async function syncShopingList(user) {
+  loader.style.display = 'inline-block';
   getUserShopList(user.uid)
     .then(list => {
       arrForBacket = arrForBacket.filter(book => {
         return list.includes(book._id);
       });
       localStorage.setItem('KEY', JSON.stringify(arrForBacket));
-      generatePage(arrForBacket.slice(0, 3));
 
-      list.forEach(id => {
+      let loaderOn = true;
+      list.forEach((id, index) => {
         const inList = arrForBacket.find(({ _id }) => _id == id);
-        console.log(!inList);
+
         if (!inList) {
+          loaderOn = false;
           getBook(id)
             .then(book => {
               arrForBacket.push(book);
               localStorage.setItem('KEY', JSON.stringify(arrForBacket));
               generatePage(arrForBacket.slice(0, 3));
+              loader.style.display = 'none';
             })
             .catch(error => console.log(error.message));
         }
       });
+      if (loaderOn) {
+        generatePage(arrForBacket.slice(0, 3));
+        loader.style.display = 'none';
+      }
     })
     .catch(error => {
       console.dir(error);
