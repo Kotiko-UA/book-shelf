@@ -32,7 +32,6 @@ function validateUserName(input) {
 function isValidF(message, isValid, input = null) {
   if (!isValid) {
     if (input) input.classList.add('invalid');
-    //   alert(message);
     Notify.failure(message, {
       timeout: 2000,
     });

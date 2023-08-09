@@ -5,12 +5,17 @@ import '../heder-js/theme';
 import '../footer/footerTeam';
 import '../support-js/support';
 import { doc } from 'firebase/firestore/lite';
+import iconTrash from '../../img/spryte.svg#icon-trash';
+import amazonI from '../../img/amazon.png';
+import amazonBlack from '../../img/amazon-black-theme.png';
+import bookMarket from '../../img/book-market.png';
+import bookShelf from '../../img/book-shelf.png';
 
 const bookList = document.querySelector('.shopping-list');
 const titleShoopingList = document.querySelector('.shopping-title');
 const emptyShopList = document.querySelector('.empty-shopping-list-wrap');
 const paginationContainer = document.querySelector('#tui-pagination-container');
-const supportEl = document.querySelector('.support-ukr-shopping-list')
+const supportEl = document.querySelector('.support-ukr-shopping-list');
 
 let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
 let itemsPerPage = 3;
@@ -19,10 +24,23 @@ let startIdx = (currentPage - 1) * itemsPerPage;
 let endIdx = startIdx + itemsPerPage;
 let curData = arrForBacket.slice(startIdx, endIdx);
 
+///// get значение визибл для пагинации...\\\\
+let span = document.querySelector('.visible');
+let vis = getVisible();
+function getVisible() {
+  const log = window.matchMedia('(min-width: 768px)');
+  if (log.matches) {
+    span.textContent = '3';
+  } else {
+    span.textContent = '2';
+  }
+  return Number(span.textContent);
+}
+
 const options = {
   totalItems: arrForBacket.length,
   itemsPerPage: itemsPerPage,
-  visiblePages: 3,
+  visiblePages: vis,
   page: currentPage,
   centerAlign: false,
   firstItemClassName: 'tui-first-child',
@@ -32,6 +50,7 @@ const options = {
 const pagination = new Pagination(paginationContainer, options);
 
 generatePage(curData);
+getVisible();
 
 function generatePage(curData) {
   bookList.innerHTML = '';
@@ -39,7 +58,7 @@ function generatePage(curData) {
   if (!arrForBacket.length) {
     emptyShopList.style.display = 'block';
     paginationContainer.style.display = 'none';
-    supportEl.style.marginBottom = "184px";
+    supportEl.style.marginBottom = '184px';
     titleShoopingList.classList.replace(
       'full-title-margin',
       'empty-title-margin'
@@ -47,7 +66,7 @@ function generatePage(curData) {
   } else {
     emptyShopList.style.display = 'none';
     paginationContainer.style.display = 'block';
-    supportEl.style.marginBottom = "337px";
+    supportEl.style.marginBottom = '337px';
     titleShoopingList.classList.replace(
       'empty-title-margin',
       'full-title-margin'
@@ -55,6 +74,7 @@ function generatePage(curData) {
     bookList.insertAdjacentHTML('beforeend', createMarkupBook(curData));
   }
 }
+
 pagination.on('beforeMove', e => {
   currentPage = e.page;
   startIdx = (currentPage - 1) * itemsPerPage;
@@ -89,7 +109,7 @@ function createMarkupBook(arr) {
      </div>
      <button type="button" class="shopping-card-bin-link">
           <svg class="img-bin-icon">
-            <use class="img-bin-use" href="../img/spryte.svg#icon-trash"></use>
+            <use class="img-bin-use" href="${iconTrash}"></use>
           </svg>
       </button>
     </div>
@@ -100,19 +120,19 @@ function createMarkupBook(arr) {
               <ul class="markets-list-shopping">
               <li>
                 <a href="${amazon.url}">
-                  <img src="./img/amazon.png" alt="${list_name}" class="icon-amazon light-theme-amazon">
-                  <img src="./img/amazon-black-theme.png" alt="${list_name}" class="icon-amazon dark-theme-amazon">
+                  <img src="${amazonI} alt="${list_name}" class="icon-amazon light-theme-amazon">
+                  <img src="${amazonBlack}" alt="${list_name}" class="icon-amazon dark-theme-amazon">
 
                 </a>
               </li>
               <li>
                 <a href="${Bookshop.url}">
-                  <img src="./img/book-market.png" alt="${list_name}" class="icon-apple-book">
+                  <img src="${bookMarket}" alt="${list_name}" class="icon-apple-book">
                 </a>
               </li>
               <li>
                 <a href="${Apple.url}">
-                <img src="./img/book-shelf.png" alt="${list_name}" class="icon-book-shop">
+                <img src="${bookShelf}" alt="${list_name}" class="icon-book-shop">
                 </a>
     </div>
   </div>
@@ -139,8 +159,6 @@ function onButtonDeleteClick(event) {
   );
   arrForBacket.splice(removeIndexFromLocalStorage, 1);
   localStorage.setItem('KEY', JSON.stringify(arrForBacket));
-
-  // curData.splice(removeIndexFromLocalStorage, 1);
 
   curData = arrForBacket.slice(startIdx, endIdx);
   generatePage(curData);

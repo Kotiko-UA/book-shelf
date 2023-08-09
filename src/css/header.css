@@ -230,7 +230,6 @@ input:checked + .slider:before {
   display: block;
   padding: 8px 16px;
   width: 72px;
-  /* margin-bottom: 11px; */
   background-color: var(--yellow);
   border-radius: 36px;
   font-family: DM Sans;
@@ -300,7 +299,6 @@ input:checked + .slider:before {
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
-  /* 128.571% */
   letter-spacing: -0.56px;
 }
 
@@ -330,10 +328,6 @@ input:checked + .slider:before {
     display: none;
   }
 
-  /* .home-page {
-    color: #111;
-  } */
-
   .shop-page {
     fill: #111;
     color: #111;
@@ -346,11 +340,6 @@ input:checked + .slider:before {
   .burger-close-mob {
     display: none;
   }
-
-  /* .home-page {
-    color: #111;
-    margin: 0;
-  } */
 
   .shop-page {
     color: #111;
@@ -406,7 +395,6 @@ input:checked + .slider:before {
 
   .menu-btn {
     display: flex;
-    /* max-width: 184px; */
     height: 45px;
     border-radius: 36px;
     background: #4f2ee8;
@@ -452,12 +440,7 @@ input:checked + .slider:before {
 
   /*------------HIDEN--------*/
   .wrap-out {
-    /* position: absolute; */
     display: block;
-    /* right: 24px;
-    width: 184px;
-    opacity: 0;
-    pointer-events: none; */
   }
 
   /*-------------------*/

@@ -1,11 +1,19 @@
 import axios from 'axios';
 import '../heder-js/theme';
 import Notiflix from 'notiflix';
+
+/*  if (0===images.length) {        
+    return Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.") 
+  }
+  */
+
 const elements = {
   categoryList: document.querySelector('.js-category-list'),
   books_showcase: document.querySelector('.books-showcase'),
 };
+
 axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
+
 async function fetchData(URL) {
   return axios.get(URL).then(response => {
     if (response.status !== 200) {
@@ -14,12 +22,14 @@ async function fetchData(URL) {
     return response.data;
   });
 }
+
 function fetchCategories() {
   return fetchData('/category-list ');
 }
+
 function createCategoriesListMarkup(arr) {
   return (
-    `<li class="js-category-item category-hover dark-theme" name="allCategories" >All categories</li>` +
+    `<li class="js-category-item category-hover dark-theme" value="allCategories" >All categories</li>` +
     arr
       .map(
         ({ list_name }) => `
@@ -30,6 +40,7 @@ function createCategoriesListMarkup(arr) {
       .join('')
   );
 }
+
 function getCategoryList() {
   fetchCategories()
     .then(data => {
@@ -39,7 +50,9 @@ function getCategoryList() {
       console.log(err);
     });
 }
+
 getCategoryList();
+
 function createBooksMarkup(arr) {
   return arr
     .map(
@@ -56,6 +69,7 @@ function createBooksMarkup(arr) {
     )
     .join('');
 }
+
 function createBestSellersMarkup(arr) {
   return (
     getMarkupForCategoryHeader('Best Sellers Books') +
@@ -74,6 +88,7 @@ function createBestSellersMarkup(arr) {
       .join('')
   );
 }
+
 function getMarkupForCategoryHeader(categoryName) {
   let categoryNameSplited = categoryName.split(' ');
   let originalColor = categoryNameSplited
@@ -82,6 +97,8 @@ function getMarkupForCategoryHeader(categoryName) {
   let violetColor = categoryNameSplited[categoryNameSplited.length - 1];
   return `<h2 class="titleCategory">${originalColor} <span class="last-word-in-catName">${violetColor}</span></h2>`;
 }
+
+//-----------------add Notiflix-------------------*/
 function getBestSellersList() {
   fetchBestSellers()
     .then(data => {
@@ -90,28 +107,39 @@ function getBestSellersList() {
       for (let button of buttons) {
         button.addEventListener('click', clickOnBtnSeeMore);
       }
+      if (data.length === 0) {
+        throw "Sorry, this category doesn't contain any book";
+      }
     })
     .catch(err => {
       console.log(err);
+      Notiflix.Notify.failure(err);
     });
 }
+
 getBestSellersList();
 function fetchBestSellers() {
   return fetchData('/top-books');
 }
+
 function getCategoryBooks(categoryName) {
   fetchCategoryBooks(categoryName)
     .then(data => {
       elements.books_showcase.innerHTML = getCategoryMarkup(data, categoryName);
+      if (data.length === 0) {
+        throw "Sorry, this category doesn't contain any book";
+      }
     })
     .catch(err => {
       console.log(err);
+      Notiflix.Notify.failure(err);
     });
 }
-//getCategoryBooks("Hardcover Nonfiction")
+
 function fetchCategoryBooks(categoryName) {
   return fetchData(`/category?category=${categoryName}`);
 }
+
 function getCategoryMarkup(arr, categoryName) {
   return (
     getMarkupForCategoryHeader(categoryName) +
@@ -124,20 +152,23 @@ function getCategoryMarkup(arr, categoryName) {
 }
 if (elements && elements.categoryList)
   elements.categoryList.addEventListener('click', clickOnCategoryList);
+
 function clickOnCategoryList(event) {
   event.preventDefault();
   for (let element of event.currentTarget.children) {
     element.classList.remove('category-hover');
   }
   event.target.classList.add('category-hover');
-  if (event.target.getAttribute('name') === 'allCategories') {
+  if (event.target.getAttribute('value') === 'allCategories') {
     getBestSellersList();
   } else {
     getCategoryBooks(event.target.textContent);
   }
 }
+
 function clickOnBtnSeeMore(evt) {
   evt.preventDefault();
+
   for (let element of elements.categoryList.children) {
     if (element.textContent == evt.target.getAttribute('id')) {
       element.classList.add('category-hover');

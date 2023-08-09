@@ -2,7 +2,6 @@ import * as basicLightbox from 'basiclightbox';
 
 const spriteImg = document.querySelector('.arrow-right-wrap use').href.baseVal;
 const spriteImgPath = spriteImg.replace('#icon-arrow-right', '');
-console.log('spryte', spriteImgPath);
 
 const signUpModal = basicLightbox.create(
   `<div class="modal">

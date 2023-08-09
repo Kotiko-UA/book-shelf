@@ -1,3 +1,8 @@
+import iconClose from '../../img/spryte.svg#icon-close';
+import amazonI from '../../img/amazon.png';
+import amazonBlack from '../../img/amazon-black-theme.png';
+import bookMarket from '../../img/book-market.png';
+import bookShelf from '../../img/book-shelf.png';
 export function bookModalMarkup({
   _id,
   book_image,
@@ -10,7 +15,7 @@ export function bookModalMarkup({
     <div data-id=${_id} class="modal-window-conteiner">
       <button class = "btn-close">
         <svg class="icon-close">
-          <use href="./img/spryte.svg#icon-close ">
+          <use href="${iconClose}">
         </svg>
       </button>
       <div class="mw-content-conteiner">
@@ -24,17 +29,18 @@ export function bookModalMarkup({
           <ul class="markets-list-modal-window">
             <li>
               <a href="${amazon.url}">
-                <img class = "img-market"src="./img/amazon.png" alt="${title}">
+                 <img src="${amazonI} alt="${title}" class="icon-amazon light-theme-amazon">
+                  <img src="${amazonBlack}" alt="${title}" class="icon-amazon dark-theme-amazon">
               </a>
             </li>
             <li>
               <a href="${Bookshop.url}">
-                <img class = "img-market" src="./img/book-market.png" alt="${title}">
+                <img class = "img-market" src="${bookMarket}" alt="${title}">
               </a>
             </li>
             <li>
               <a href="${Apple.url}">
-                <img class = "img-market" src="./img/book-shelf.png" alt="${title}">
+                <img class = "img-market" src="${bookShelf}" alt="${title}">
               </a>
             </li>
           </ul>

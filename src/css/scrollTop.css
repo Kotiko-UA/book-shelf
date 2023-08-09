@@ -1,0 +1,17 @@
+.scrollTop-arrow {
+    position: fixed;
+    bottom: 70px;
+    right: 50px;
+    font-size: 40px;
+    z-index: 999999999;
+    fill: var(--violet);
+}
+
+.isShowBtn {
+    opacity: 1;
+    transition: 0.4s;
+}
+
+.isShowBtn_hide {
+    opacity: 0;
+}
