@@ -170,10 +170,20 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.hover{
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover:hover,
+.hover:focus{
+  transform: scale(1.1);
+}
+
 .shopping-card-bin-link:hover,
 .shopping-card-bin-link:focus {
     background: #3113b9;
-    transform: scale(1.02);
+    transform: scale(1.1);
 }
 
 .img-bin-icon {

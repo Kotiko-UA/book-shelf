@@ -26,7 +26,7 @@ function fetchCategories() {
 
 function createCategoriesListMarkup(arr) {
   return (
-    `<li class="js-category-item dark-theme" id="allCategories">All categories</li>` +
+    `<li class="js-category-item category-hover dark-theme" id="allCategories" >All categories</li>` +
     arr
       .map(
         ({ list_name }) => `
