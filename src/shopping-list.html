@@ -53,6 +53,18 @@
     <footer>
       <load ="partials/footer.html" />
     </footer>
+    <script>
+      document.querySelector('.loader').style.display = 'inline-block';
+      if (localStorage.getItem('theme') == 'true') {
+        let switchMode = document.getElementById('switchMode');
+        let logo = document.querySelector('.logo');
+        document.querySelector('body').classList.add('dark-theme');
+        switchMode.checked = true;
+        logo.innerHTML = `<svg class="logo">
+        <use href="./img/spryte.svg#icon-logo-dark" height="28px"></use>
+      </svg>`;
+      }
+    </script>
     <script type="module" src="/js/shoping-js/main-shopping-list.js"></script>
   </body>
 </html>
