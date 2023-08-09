@@ -2,11 +2,6 @@ import axios from 'axios';
 import '../heder-js/theme';
 import Notiflix from 'notiflix';
 
-/*  if (0===images.length) {        
-    return Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.") 
-  }
-  */
-
 const elements = {
   categoryList: document.querySelector('.js-category-list'),
   books_showcase: document.querySelector('.books-showcase'),
@@ -53,7 +48,6 @@ function getCategoryList() {
 
 getCategoryList();
 
-
 function createBooksMarkup(arr) {
   return arr
     .map(
@@ -98,7 +92,6 @@ function getMarkupForCategoryHeader(categoryName) {
   let violetColor = categoryNameSplited[categoryNameSplited.length - 1];
   return `<h2 class="titleCategory">${originalColor} <span class="last-word-in-catName">${violetColor}</span></h2>`;
 }
-
 
 function getBestSellersList() {
   fetchBestSellers()
@@ -157,8 +150,8 @@ if (elements && elements.categoryList)
 function clickOnCategoryList(event) {
   event.preventDefault();
   if (event.target === event.currentTarget) {
-  return;
-} 
+    return;
+  }
   for (let element of event.currentTarget.children) {
     element.classList.remove('category-hover');
   }
@@ -168,7 +161,7 @@ function clickOnCategoryList(event) {
   } else {
     getCategoryBooks(event.target.textContent);
   }
-} 
+}
 
 function clickOnBtnSeeMore(evt) {
   evt.preventDefault();
