@@ -156,6 +156,7 @@ input:checked + .slider:before {
   transform: scaleY(1) translateY(0%);
   opacity: 1;
   transition: 1s;
+  z-index: 10;
 }
 
 .arrow-right-wrap {
@@ -595,10 +596,7 @@ input:checked + .slider:before {
 .burger-section .log-out-wrap {
   height: calc(100% - 20px);
 }
-.burger-section .shop-page {
-  padding: 0;
-  margin-top: 16px;
-}
+
 .burger-section .shop-page svg {
   height: 20px;
   width: 18px;

@@ -54,7 +54,6 @@ getVisible();
 
 function generatePage(curData) {
   bookList.innerHTML = '';
-
   if (!arrForBacket.length) {
     emptyShopList.style.display = 'block';
     paginationContainer.style.display = 'none';

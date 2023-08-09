@@ -81,9 +81,13 @@ async function syncShopingList(user) {
   getUserShopList(user.uid)
     .then(list => {
       // видаляємо книги що немає в списку з БД
+      //let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
+
       arrForBacket = arrForBacket.filter(book => {
         return list.includes(book._id);
       });
+      localStorage.setItem('KEY', JSON.stringify(arrForBacket));
+      generatePage(arrForBacket);
 
       // додаємо книги що є в БД, але немає в списку локал сторадж
       list.forEach(id => {
@@ -92,7 +96,6 @@ async function syncShopingList(user) {
           getBook(id)
             .then(book => {
               arrForBacket.push(book);
-
               localStorage.setItem('KEY', JSON.stringify(arrForBacket));
               generatePage(arrForBacket);
             })
