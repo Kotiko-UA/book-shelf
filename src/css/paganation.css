@@ -92,7 +92,7 @@
 @media screen and (min-width: 768px) {
   .tui-pagination {
     margin-top: 20px;
-    margin-top:20px !important;
+    margin-top: 20px !important;
   }
 
   .tui-pagination .tui-page-btn {
@@ -159,4 +159,17 @@
 
 .dark-theme .tui-pagination :hover {
   color: #111111 !important;
+}
+
+.tui-pagination {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center;
+}
+
+@media screen and (min-width: 1168px) {
+  .tui-pagination {
+    justify-content: flex-end !important;
+    margin-right: 295px !important;
+  }
 }
