@@ -65,7 +65,7 @@
 }
 
 .logo {
-  background-image: url('./img/spryte.svg#icon-logo-light');
+  background-image: url('../img/spryte.svg#icon-logo-light');
   background-repeat: no-repeat;
   background-size: contain;
   height: 28px;
@@ -468,10 +468,6 @@ input:checked+.slider:before {
 
   .nav {
     gap: 40px;
-  }
-
-  .burger-open-mob {
-    display: none;
   }
 
   .body-burger {
