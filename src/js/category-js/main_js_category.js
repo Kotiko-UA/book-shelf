@@ -5,6 +5,7 @@ import Notiflix from 'notiflix';
 const elements = {
   categoryList: document.querySelector('.js-category-list'),
   books_showcase: document.querySelector('.books-showcase'),
+  loader: document.querySelector('.loader'),
 };
 
 axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
