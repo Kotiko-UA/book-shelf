@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/team-13-we-can-do-it-JS/assets/logo-e17200a0.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Shelf</title>
     
-  <script type="module" crossorigin src="/team-13-we-can-do-it-JS/assets/index-81872152.js"></script>
-  <link rel="modulepreload" crossorigin href="/team-13-we-can-do-it-JS/assets/auth_user_bar-a434c4f0.js">
-  <link rel="stylesheet" href="/team-13-we-can-do-it-JS/assets/auth_user_bar-e5936e2c.css">
-</head>
+    <script type="module" crossorigin src="/team-13-we-can-do-it-JS/assets/index-81872152.js"></script>
+    <link rel="modulepreload" crossorigin href="/team-13-we-can-do-it-JS/assets/auth_user_bar-a434c4f0.js">
+    <link rel="stylesheet" href="/team-13-we-can-do-it-JS/assets/auth_user_bar-e5936e2c.css">
+  </head>
 
-<body>
+  <body>
     <header>
-
-        <!-- header-------------->
-        <div class="conteiner-header">
+      <!-- header-------------->
+      <div class="conteiner-header">
   <div class="header header-section">
     <nav class="nav">
       <a href="./index.html" class="logo"></a>
@@ -164,8 +162,8 @@
 
     </header>
     <main>
-        <!-- main---------------->
-        <section class="section category-section">
+      <!-- main---------------->
+      <section class="section category-section">
   <div class="container category-container">
     <div class="wrapper-for-categoryList-support">
       <div class="books-category">
@@ -315,7 +313,7 @@
     </main>
     <!-- footer--------------->
     <footer>
-        <div class="section bg-color-footer">
+      <div class="section bg-color-footer">
   <div class="footer-section">
     <h2 class="titel-footer">Worked on this project</h2>
 
@@ -398,7 +396,18 @@
 </div>
 
     </footer>
+    <script>
+      document.querySelector('.loader').style.display = 'inline-block';
+      if (localStorage.getItem('theme') == 'true') {
+        let switchMode = document.getElementById('switchMode');
+        let logo = document.querySelector('.logo');
+        document.querySelector('body').classList.add('dark-theme');
+        switchMode.checked = true;
+        logo.innerHTML = `<svg class="logo">
+        <use href="./img/spryte.svg#icon-logo-dark" height="28px"></use>
+      </svg>`;
+      }
+    </script>
     
-</body>
-
+  </body>
 </html>

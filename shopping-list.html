@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Shelf</title>
     
-    <script type="module" crossorigin src="/team-13-we-can-do-it-JS/assets/shopping-list-50118259.js"></script>
+    <script type="module" crossorigin src="/team-13-we-can-do-it-JS/assets/shopping-list-eeec3930.js"></script>
     <link rel="modulepreload" crossorigin href="/team-13-we-can-do-it-JS/assets/auth_user_bar-a434c4f0.js">
     <link rel="stylesheet" href="/team-13-we-can-do-it-JS/assets/auth_user_bar-e5936e2c.css">
     <link rel="stylesheet" href="/team-13-we-can-do-it-JS/assets/shopping-list-88da730b.css">
@@ -403,6 +403,18 @@
 </div>
 
     </footer>
+    <script>
+      document.querySelector('.loader').style.display = 'inline-block';
+      if (localStorage.getItem('theme') == 'true') {
+        let switchMode = document.getElementById('switchMode');
+        let logo = document.querySelector('.logo');
+        document.querySelector('body').classList.add('dark-theme');
+        switchMode.checked = true;
+        logo.innerHTML = `<svg class="logo">
+        <use href="./img/spryte.svg#icon-logo-dark" height="28px"></use>
+      </svg>`;
+      }
+    </script>
     
   </body>
 </html>
