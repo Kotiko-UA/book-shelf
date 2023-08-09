@@ -72,12 +72,6 @@
   width: 110px;
 }
 
-.wrap-sing {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-
 .switch {
   position: relative;
   display: inline-block;
@@ -311,6 +305,7 @@ input:checked+.slider:before {
   font-weight: 500;
   line-height: 1.29;
   letter-spacing: -0.56px;
+  margin-top: 5px;
 }
 
 .header-shop .nav-list-mob {
@@ -365,6 +360,16 @@ input:checked+.slider:before {
 /* ________________________DESKTOP____________________________ */
 
 @media screen and (min-width: 768px) {
+  .text-out {
+    margin-top: 0;
+  }
+
+  .wrap-sing {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
   .header-section {
     width: 768px;
   }
@@ -544,6 +549,10 @@ input:checked+.slider:before {
 @media screen and (min-width: 1440px) {
   .header-section {
     width: 1440px;
+  }
+
+  .nav {
+    gap: 76px;
   }
 }
 
