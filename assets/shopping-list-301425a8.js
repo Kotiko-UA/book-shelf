@@ -1,4 +1,4 @@
-import{g as ot,s as X,h as J,l as lt,i as ut,j as ct,r as ft,u as pt,k as ht,o as gt,m as dt,n as vt,p as mt,a as xt,b as yt,c as Et,d as Pt}from"./auth_user_bar-368bb4f1.js";var Q={exports:{}};/*!
+import{g as ot,s as X,h as J,l as lt,i as ut,j as ct,r as ft,u as pt,k as ht,o as gt,m as dt,n as vt,p as mt,a as xt,b as yt,c as Et,d as Pt}from"./auth_user_bar-ca782ac8.js";var Q={exports:{}};/*!
  * TOAST UI Pagination
  * @version 3.4.1
  * @author NHN FE Development Team <dl_javascript@nhn.com>
@@ -29,19 +29,19 @@ import{g as ot,s as X,h as J,l as lt,i as ut,j as ct,r as ft,u as pt,k as ht,o a
               <ul class="markets-list-shopping">
               <li>
                 <a href="${f.url}">
-                  <img src="${xt} alt="${e}" class="icon-amazon light-theme-amazon">
-                  <img src="${yt}" alt="${e}" class="icon-amazon dark-theme-amazon">
+                  <img src="${xt} alt="${e}" class="icon-amazon light-theme-amazon hover">
+                  <img src="${yt}" alt="${e}" class="icon-amazon dark-theme-amazon hover">
 
                 </a>
               </li>
               <li>
                 <a href="${p.url}">
-                  <img src="${Et}" alt="${e}" class="icon-apple-book">
+                  <img src="${Et}" alt="${e}" class="icon-apple-book hover">
                 </a>
               </li>
               <li>
                 <a href="${a.url}">
-                <img src="${Pt}" alt="${e}" class="icon-book-shop">
+                <img src="${Pt}" alt="${e}" class="icon-book-shop hover">
                 </a>
     </div>
   </div>
