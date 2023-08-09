@@ -53,6 +53,7 @@ function getCategoryList() {
 
 getCategoryList();
 
+
 function createBooksMarkup(arr) {
   return arr
     .map(
@@ -60,7 +61,7 @@ function createBooksMarkup(arr) {
    <li data-id = '${_id}' class = 'js-book-item'>
  <div class="wrapper">
    <div class="thumb-category">
-        <img src="${book_image}" alt="${title}" class="img-category"/>
+        <img src="${book_image}" alt="${title}" class="img-category" loading="lazy"/>
         </div>
         <p class="catalogue-book-title">${title}</p>
         <p class="catalogue-book-author">${author}</p>
@@ -98,7 +99,7 @@ function getMarkupForCategoryHeader(categoryName) {
   return `<h2 class="titleCategory">${originalColor} <span class="last-word-in-catName">${violetColor}</span></h2>`;
 }
 
-//-----------------add Notiflix-------------------*/
+
 function getBestSellersList() {
   fetchBestSellers()
     .then(data => {
@@ -155,6 +156,9 @@ if (elements && elements.categoryList)
 
 function clickOnCategoryList(event) {
   event.preventDefault();
+  if (event.target === event.currentTarget) {
+  return;
+} 
   for (let element of event.currentTarget.children) {
     element.classList.remove('category-hover');
   }
@@ -164,7 +168,7 @@ function clickOnCategoryList(event) {
   } else {
     getCategoryBooks(event.target.textContent);
   }
-}
+} 
 
 function clickOnBtnSeeMore(evt) {
   evt.preventDefault();
