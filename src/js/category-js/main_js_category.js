@@ -2,19 +2,16 @@ import axios from 'axios';
 import '../heder-js/theme';
 import Notiflix from 'notiflix';
 
-/*  if (0===images.length) {        
-    return Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.") 
-  }
-  */
-
 const elements = {
   categoryList: document.querySelector('.js-category-list'),
   books_showcase: document.querySelector('.books-showcase'),
+  loader: document.querySelector('.loader'),
 };
 
 axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
 
 async function fetchData(URL) {
+  elements.loader.style.display = 'inline-block';
   return axios.get(URL).then(response => {
     if (response.status !== 200) {
       throw new Error(response.Error);
@@ -29,7 +26,7 @@ function fetchCategories() {
 
 function createCategoriesListMarkup(arr) {
   return (
-    `<li class="js-category-item category-hover dark-theme" value="allCategories" >All categories</li>` +
+    `<li class="js-category-item dark-theme" id="allCategories">All categories</li>` +
     arr
       .map(
         ({ list_name }) => `
@@ -60,7 +57,7 @@ function createBooksMarkup(arr) {
    <li data-id = '${_id}' class = 'js-book-item'>
  <div class="wrapper">
    <div class="thumb-category">
-        <img src="${book_image}" alt="${title}" class="img-category"/>
+        <img src="${book_image}" alt="${title}" class="img-category" loading="lazy"/>
         </div>
         <p class="catalogue-book-title">${title}</p>
         <p class="catalogue-book-author">${author}</p>
@@ -90,6 +87,7 @@ function createBestSellersMarkup(arr) {
 }
 
 function getMarkupForCategoryHeader(categoryName) {
+  elements.loader.style.display = 'none';
   let categoryNameSplited = categoryName.split(' ');
   let originalColor = categoryNameSplited
     .slice(0, categoryNameSplited.length - 1)
@@ -98,7 +96,6 @@ function getMarkupForCategoryHeader(categoryName) {
   return `<h2 class="titleCategory">${originalColor} <span class="last-word-in-catName">${violetColor}</span></h2>`;
 }
 
-//-----------------add Notiflix-------------------*/
 function getBestSellersList() {
   fetchBestSellers()
     .then(data => {
@@ -155,11 +152,14 @@ if (elements && elements.categoryList)
 
 function clickOnCategoryList(event) {
   event.preventDefault();
+  if (event.target === event.currentTarget) {
+    return;
+  }
   for (let element of event.currentTarget.children) {
     element.classList.remove('category-hover');
   }
   event.target.classList.add('category-hover');
-  if (event.target.getAttribute('value') === 'allCategories') {
+  if (event.target.getAttribute('id') === 'allCategories') {
     getBestSellersList();
   } else {
     getCategoryBooks(event.target.textContent);
