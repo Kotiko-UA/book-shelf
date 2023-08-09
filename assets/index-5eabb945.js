@@ -18,18 +18,20 @@ import{a as Nn,b as Cn,c as Sn,d as zn,e as An,f as jt,g as En,s as $t,h as Jt,l
           <ul class="markets-list-modal-window">
             <li>
               <a href="${a.url}">
-                 <img src="${Nn} alt="amazon" class="icon-amazon light-theme-amazon">
-                  <img src="${Cn}" alt="amazon" class="icon-amazon dark-theme-amazon">
+                 <img src="${Nn} alt="${n}" class="icon-amazon light-theme-amazon hover">
+                  <img src="${Cn}" alt="${n}" class="icon-amazon dark-theme-amazon hover">
+
               </a>
             </li>
             <li>
               <a href="${s.url}">
-                <img class = "img-market" src="${Sn}" alt="Bookshop">
+                <img class = "img-market hover" src="${Sn}" alt="${n}">
+
               </a>
             </li>
             <li>
               <a href="${p.url}">
-                <img class = "img-market" src="${zn}" alt="Apple">
+                <img class = "img-market hover" src="${zn}" alt="${n}">
               </a>
             </li>
           </ul>
