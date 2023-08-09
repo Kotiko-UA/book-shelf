@@ -12,17 +12,12 @@ axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
 
 async function fetchData(URL) {
   elements.loader.style.display = 'inline-block';
-  return axios
-    .get(URL)
-    .then(response => {
-      if (response.status !== 200) {
-        throw new Error(response.Error);
-      }
-      return response.data;
-    })
-    .finally(() => {
-      elements.loader.style.display = 'none';
-    });
+  return axios.get(URL).then(response => {
+    if (response.status !== 200) {
+      throw new Error(response.Error);
+    }
+    return response.data;
+  });
 }
 
 function fetchCategories() {
@@ -92,6 +87,7 @@ function createBestSellersMarkup(arr) {
 }
 
 function getMarkupForCategoryHeader(categoryName) {
+  elements.loader.style.display = 'none';
   let categoryNameSplited = categoryName.split(' ');
   let originalColor = categoryNameSplited
     .slice(0, categoryNameSplited.length - 1)
