@@ -4,6 +4,12 @@
     width: 768px;
   }
 
+  .category-overlay {
+    padding: 26px 52px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
   .wrapper-for-categoryList-support {
     display: flex;
     padding-top: 40px;

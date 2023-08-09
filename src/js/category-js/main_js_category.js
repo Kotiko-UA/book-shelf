@@ -58,6 +58,7 @@ function createBooksMarkup(arr) {
  <div class="wrapper">
    <div class="thumb-category">
         <img src="${book_image}" alt="${title}" class="img-category" loading="lazy"/>
+        <p class="category-overlay">quick view</p>
         </div>
         <p class="catalogue-book-title">${title}</p>
         <p class="catalogue-book-author">${author}</p>
