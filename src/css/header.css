@@ -348,10 +348,6 @@ input:checked+.slider:before {
     height: 72px;
   }
 
-  .burger-close-mob {
-    display: none;
-  }
-
   .shop-page {
     color: #111;
     fill: #111;
@@ -444,6 +440,8 @@ input:checked+.slider:before {
 
   .wrap-sing {
     gap: 24px;
+    margin-right: 24px;
+    margin-left: auto;
   }
 
   /*------------HIDEN--------*/
@@ -463,10 +461,6 @@ input:checked+.slider:before {
     gap: 76px;
   }
 
-  .wrap-sing {
-    margin-right: 24px;
-    margin-left: auto;
-  }
 }
 
 /* ---------------------------------------------------------------------------- */
@@ -482,10 +476,6 @@ input:checked+.slider:before {
   }
 
   .burger-open-mob {
-    display: none;
-  }
-
-  .burger-close-mob {
     display: none;
   }
 
@@ -529,15 +519,6 @@ input:checked+.slider:before {
     display: flex;
     align-items: center;
     gap: 8px;
-  }
-
-  .arrow-right-wrap {
-    width: 20px;
-    height: 20px;
-  }
-
-  .burger-close-mob {
-    display: none;
   }
 
   .body-burger {
