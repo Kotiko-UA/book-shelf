@@ -4,7 +4,6 @@ import '../authorization-js/shop_list_js_authorization';
 import '../heder-js/theme';
 import '../footer/footerTeam';
 import '../support-js/support';
-import { doc } from 'firebase/firestore/lite';
 import iconTrash from '../../img/spryte.svg#icon-trash';
 import amazonI from '../../img/amazon.png';
 import amazonBlack from '../../img/amazon-black-theme.png';
