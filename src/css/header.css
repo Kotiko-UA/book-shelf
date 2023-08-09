@@ -42,7 +42,6 @@
 
 .header {
   position: relative;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -357,17 +356,17 @@ input:checked+.slider:before {
   overflow-y: clip;
 }
 
+.wrap-sing {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
 /* ________________________DESKTOP____________________________ */
 
 @media screen and (min-width: 768px) {
   .text-out {
     margin-top: 0;
-  }
-
-  .wrap-sing {
-    display: flex;
-    gap: 14px;
-    align-items: center;
   }
 
   .header-section {
