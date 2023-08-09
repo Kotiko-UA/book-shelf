@@ -12,12 +12,17 @@ axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
 
 async function fetchData(URL) {
   elements.loader.style.display = 'inline-block';
-  return axios.get(URL).then(response => {
-    if (response.status !== 200) {
-      throw new Error(response.Error);
-    }
-    return response.data;
-  });
+  return axios
+    .get(URL)
+    .then(response => {
+      if (response.status !== 200) {
+        throw new Error(response.Error);
+      }
+      return response.data;
+    })
+    .finally(() => {
+      elements.loader.style.display = 'none';
+    });
 }
 
 function fetchCategories() {
