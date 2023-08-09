@@ -183,4 +183,11 @@
     column-gap: 24px;
   }
 
+  /* Loader */
+
+  .loader {
+    margin-top: 466px;
+    margin-left: 498px;
+  }
+
 }
