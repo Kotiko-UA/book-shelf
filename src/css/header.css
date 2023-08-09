@@ -3,21 +3,38 @@
   background: #f3f3f3;
 }
 
+.dark-theme .conteiner-header {
+  background: #111;
+}
+
 .header-section {
   position: absolute;
   width: 375px;
   margin: auto;
 }
 
+.burger-section .log-out-wrap {
+  height: calc(100% - 20px);
+}
+
+.burger-section .shop-page svg {
+  height: 20px;
+  width: 18px;
+}
+
+.log-out-wrap {
+  width: auto;
+  opacity: 1;
+  position: relative;
+}
+
 .burger-section {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    189.32% 190.93% at 59.76% -23.42%,
-    #4f2ee8 18.03%,
-    #fff 100%
-  );
+  background: radial-gradient(189.32% 190.93% at 59.76% -23.42%,
+      #4f2ee8 18.03%,
+      #fff 100%);
   padding-bottom: 20px;
   transform: scaleY(1) translateY(-10%);
   display: none;
@@ -35,6 +52,11 @@
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid #111;
   background: #f3f3f3;
+}
+
+.dark-theme .header {
+  border: 1.5px solid #fff;
+  background: #111;
 }
 
 .nav {
@@ -98,7 +120,7 @@
   transition: 0.4s;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
   transform: translateX(20px);
@@ -440,6 +462,7 @@ input:checked + .slider:before {
   .nav {
     gap: 76px;
   }
+
   .wrap-sing {
     margin-right: 24px;
     margin-left: auto;
@@ -522,11 +545,9 @@ input:checked + .slider:before {
     position: absolute;
     width: 375px;
     height: 100%;
-    background: radial-gradient(
-      189.32% 190.93% at 59.76% -23.42%,
-      #4f2ee8 18.03%,
-      #fff 100%
-    );
+    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%,
+        #4f2ee8 18.03%,
+        #fff 100%);
   }
 }
 
@@ -536,14 +557,7 @@ input:checked + .slider:before {
   }
 }
 
-.dark-theme .conteiner-header {
-  background: #111;
-}
 
-.dark-theme .header {
-  border: 1.5px solid #fff;
-  background: #111;
-}
 
 .dark-theme .slider.round {
   border-radius: 34px;
@@ -575,16 +589,3 @@ input:checked + .slider:before {
 }
 
 /* ____________________CLASS________________ */
-.log-out-wrap {
-  width: auto;
-  opacity: 1;
-  position: relative;
-}
-.burger-section .log-out-wrap {
-  height: calc(100% - 20px);
-}
-
-.burger-section .shop-page svg {
-  height: 20px;
-  width: 18px;
-}
