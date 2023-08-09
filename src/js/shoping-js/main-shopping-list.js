@@ -38,7 +38,7 @@ function getVisible() {
   return Number(span.textContent);
 }
 
-const options = {
+let options = {
   totalItems: arrForBacket.length,
   itemsPerPage: itemsPerPage,
   visiblePages: vis,
@@ -48,11 +48,15 @@ const options = {
   lastItemClassName: 'tui-last-child',
 };
 
-const pagination = new Pagination(paginationContainer, options);
+let pagination = new Pagination(paginationContainer, options);
 
 getVisible();
 
 function generatePage(curData) {
+  // не видаляти цю строчку, бо міняється дінамічно arrForBacket !!!!!!
+  let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
+  pagination.reset(arrForBacket.length);
+  // не видаляти!!!!!!
   bookList.innerHTML = '';
   curData = arrForBacket.slice(startIdx, endIdx);
   if (!arrForBacket.length) {
@@ -76,6 +80,9 @@ function generatePage(curData) {
 }
 
 pagination.on('beforeMove', e => {
+  // не видаляти цю строчку, бо міняється дінамічно arrForBacket !!!!!!
+  let arrForBacket = JSON.parse(localStorage.getItem('KEY')) ?? [];
+  // не видаляти!!!!!!
   currentPage = e.page;
   startIdx = (currentPage - 1) * itemsPerPage;
   endIdx = startIdx + itemsPerPage;
