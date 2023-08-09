@@ -20,7 +20,7 @@
     background-color: var(--gray);
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 320px) {
     .category-container {
         margin-left: auto;
         margin-right: auto;
@@ -32,6 +32,8 @@
         overflow: auto;
         padding-top: 40px;
         margin-bottom: 40px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .js-category-item {
