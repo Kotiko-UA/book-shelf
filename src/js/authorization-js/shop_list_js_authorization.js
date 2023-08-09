@@ -110,7 +110,6 @@ async function syncShopingList(user) {
 function showShopingList() {
   document.querySelector('.shop-page').style.display = '';
 }
-console.log(location.pathname);
 let pathArr = location.pathname.split('/');
 
 function hideShopingList() {
