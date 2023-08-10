@@ -297,6 +297,10 @@
   animation: prixClipFix 2s linear infinite;
 }
 
+.dark-theme .loader::before {
+  border-color: #000;
+}
+
 .loader::after {
   border-color: #FF3D00;
   animation: prixClipFix 2s linear infinite, rotate 0.5s linear infinite reverse;
