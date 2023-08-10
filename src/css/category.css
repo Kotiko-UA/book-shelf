@@ -120,6 +120,7 @@
   }
 
   .js-category-item {
+    height: 18px;
     margin-bottom: 24px;
     font-size: 16px;
     line-height: 1.12;
