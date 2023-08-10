@@ -51,7 +51,7 @@ export const teams = [
   {
     id: '5',
     img: kra,
-    h: 'Lusya Kras',
+    h: 'Liudmyla Krasivoron',
     p: 'Team developer',
     aTeam: 'lusya0409@gmail.com',
   },
