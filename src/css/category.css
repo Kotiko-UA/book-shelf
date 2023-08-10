@@ -302,9 +302,13 @@
 }
 
 .loader::after {
-  border-color: #FF3D00;
+  border-color: var(--violet);
   animation: prixClipFix 2s linear infinite, rotate 0.5s linear infinite reverse;
   inset: 6px;
+}
+
+.dark-theme .loader::after {
+  border-color: var(--yellow);
 }
 
 @keyframes rotate {
