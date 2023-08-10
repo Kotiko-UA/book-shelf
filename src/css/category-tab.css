@@ -32,8 +32,8 @@
   }
 
   .wrapper-for-catList {
-    display: flex;
-    width: 704px;
+    display: block;
+    width: 100%;
     overflow: hidden;
     object-fit: fill;
   }
@@ -124,14 +124,13 @@
   }
 
   .wrapper-for-catList {
-    display: flex;
-    width: 996px;
     overflow: hidden;
     object-fit: fill;
   }
 
   .category-list {
     display: flex;
+    justify-content: space-between;
     gap: 24px;
   }
 
