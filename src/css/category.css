@@ -57,6 +57,13 @@
   transform: translatey(73%);
 }
 
+.dark-theme .btnSeeMore:hover,
+.dark-theme .btnSeeMore:hover {
+  color: var(--black);
+  background-color: var(--white);
+  transition: var(--cubic-bezier);
+}
+
 @media screen and (min-width: 320px) {
   .category-container {
     margin-left: auto;
