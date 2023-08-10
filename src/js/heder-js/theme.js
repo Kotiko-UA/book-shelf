@@ -64,3 +64,12 @@ function closeBur() {
   burger.classList.toggle('burgActiv');
   closeBurger.classList.toggle('closeBur');
 }
+window.onresize = function (e) {
+  if (e.target.outerWidth > 768) {
+    document.body.classList.remove('no-scroll');
+    oupenBurger.classList.remove('oupenBur');
+    burger.classList.remove('burgActiv');
+    closeBurger.classList.remove('closeBur');
+    console.log(e.target.outerWidth, e.target.outerHeight);
+  }
+};
