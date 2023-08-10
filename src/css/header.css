@@ -386,6 +386,10 @@ input:checked+.slider:before {
     display: none;
   }
 
+  .burger-close-mob {
+    display: none;
+  }
+
   .nav-list {
     display: flex;
     align-items: center;
