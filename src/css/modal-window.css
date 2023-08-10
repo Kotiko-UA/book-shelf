@@ -10,7 +10,7 @@
 
 .dark-theme .modal-window-conteiner {
     background-color: var(--gray);
-    border: var(--white);
+    border-color: var(--white);
 }
 
 .book-img-modal-window {
