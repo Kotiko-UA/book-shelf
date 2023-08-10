@@ -2,6 +2,7 @@
 @media screen and (min-width: 768px) {
   .category-container {
     width: 768px;
+    padding: 0;
   }
 
   .category-overlay {
@@ -20,6 +21,13 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+  }
+
+  .books-showcase-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
   .wrapper-for-catList {
@@ -42,7 +50,7 @@
     width: 337px;
     height: 472px;
     margin-right: 32px;
-    padding-top: 0;
+    margin-top: 0;
     margin-bottom: 0;
   }
 
@@ -84,12 +92,9 @@
     row-gap: 40px;
     column-gap: 25px;
   }
-
-  /* Loader */
 }
 
 /*--------desktop-------*/
-
 @media screen and (min-width: 1440px) {
   .category-container {
     display: flex;
@@ -105,8 +110,15 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-top: 40px;
-    margin-left: 40px;
+    padding-top: 40px;
+    padding-left: 40px;
+  }
+
+  .books-showcase-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .wrapper-for-catList {
@@ -125,11 +137,9 @@
     width: 180px;
   }
 
-
   .btnSeeMore {
     margin-top: 32px;
     margin-right: 0;
-
   }
 
   .books-category {
@@ -177,5 +187,4 @@
     row-gap: 40px;
     column-gap: 24px;
   }
-
 }
