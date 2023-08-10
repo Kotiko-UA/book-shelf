@@ -484,7 +484,7 @@ input:checked+.slider:before {
     transform: translateY(-10%);
     /* opacity: 0; */
     height: 48px;
-    gap: 90px;
+    width: 100%;
     border-radius: 18px;
     border: 1.5px solid #111;
     background: #fff;
