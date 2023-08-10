@@ -145,14 +145,13 @@
 }
 
 .icon-close {
-    width: 24px;
-    height: 24px;
+    display: block;
+    width: 14px;
+    height: 14px;
 }
 
 .btn-close {
-    display: block;
-    width: 24px;
-    height: 24px;
+    padding: 5px;
     background-color: #fff;
     position: absolute;
     outline: none;
@@ -182,6 +181,10 @@
 }
 
 @media screen and (min-width: 768px) {
+    .btn-close {
+        padding: 7px;
+    }
+
     .modal-window-conteiner {
         width: 579px;
         padding: 40px;
