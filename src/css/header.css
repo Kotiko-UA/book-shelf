@@ -1,9 +1,11 @@
 .conteiner-header {
   width: 100%;
   background: #f3f3f3;
+  border: 1.5px solid #111;
 }
 
 .dark-theme .conteiner-header {
+  border: 1.5px solid #fff;
   background: #111;
 }
 
@@ -49,12 +51,11 @@
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 0px 0px 8px 8px;
-  border: 1.5px solid #111;
+
   background: #f3f3f3;
 }
 
 .dark-theme .header {
-  border: 1.5px solid #fff;
   background: #111;
 }
 
