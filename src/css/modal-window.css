@@ -178,7 +178,7 @@
     padding: 14px 23px;
 }
 
-@media screen and (min-width: 428px) {
+@media screen and (min-width: 768px) {
     .modal-window-conteiner {
         width: 579px;
         padding: 40px;
