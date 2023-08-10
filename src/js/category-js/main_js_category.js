@@ -9,8 +9,6 @@ const elements = {
 };
 
 axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
-axios.defaults.headers.common['Cache-Control'] =
-  'max-age=2419200, must-revalidate, stale-while-revalidate=86400';
 
 async function fetchData(URL) {
   elements.loader.style.display = 'inline-block';
