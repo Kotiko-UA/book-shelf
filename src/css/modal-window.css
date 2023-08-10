@@ -150,6 +150,9 @@
 }
 
 .btn-close {
+    display: block;
+    width: 24px;
+    height: 24px;
     background-color: #fff;
     position: absolute;
     outline: none;
