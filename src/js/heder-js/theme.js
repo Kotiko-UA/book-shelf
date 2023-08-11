@@ -70,6 +70,5 @@ window.onresize = function (e) {
     oupenBurger.classList.remove('oupenBur');
     burger.classList.remove('burgActiv');
     closeBurger.classList.remove('closeBur');
-    console.log(e.target.outerWidth, e.target.outerHeight);
   }
 };
